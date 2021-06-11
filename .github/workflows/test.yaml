@@ -1,0 +1,18 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # Run nightly
+    - cron: '0 0 * * *'
+
+jobs:
+  ubuntu_wheel_test:
+    runs-on: [self-hosted, linux, ARM64, c6g]
+    container: ubuntu:focal
+    name: "Test workflow"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - run: cat LICENSE
