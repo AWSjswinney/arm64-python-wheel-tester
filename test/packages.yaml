@@ -54,6 +54,7 @@ packages:
   - PIP_NAME: pycryptodomex
     PKG_TEST: import Cryptodome
   - PIP_NAME: pandas
+    PIP_ARGS: "--only-binary :all:"
     PKG_TEST: import pandas
   - PIP_NAME: pywavelets
     PKG_TEST: import pywt
