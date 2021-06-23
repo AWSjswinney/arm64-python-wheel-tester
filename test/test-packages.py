@@ -17,8 +17,7 @@ def main():
     for package in packages['packages']:
         package_main_name = re.findall(r'([\S]+)', package['PIP_NAME'])[0]
         package['main_name'] = package_main_name
-        #for container in ['amazon-linux2', 'centos8', 'centos8-py38', 'focal']:
-        for container in ['focal']:
+        for container in ['amazon-linux2', 'centos8', 'centos8-py38', 'focal']:
             print(f"Now testing {package_main_name} on {container}...")
             result = do_test(package, container)
             results[package_main_name][container] = result
