@@ -61,7 +61,7 @@ def do_test(package, container):
     if re.search(f'Downloading {package_main_name}[^\n]*aarch64[^\n]*whl', proc.stdout) is not None:
         result['binary-wheel'] = True
 
-    print(proc.stdout)
+    #print(proc.stdout)
 
     return result
 
