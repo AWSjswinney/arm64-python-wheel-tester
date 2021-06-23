@@ -1,4 +1,4 @@
-name: Test
+name: Wheel Tester
 on:
   push:
     branches:
@@ -10,10 +10,9 @@ on:
 jobs:
   ubuntu_wheel_test:
     runs-on: [self-hosted, linux, ARM64, c6g]
-    container: ubuntu:focal
-    name: "Test workflow"
+    name: "Test Python Wheels"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
       - run: test/setup-containers.sh
-      - run: python3 
+      - run: docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/io --env WORK_PATH=$(realpath .) testhost python3 /io/test-packages.py
