@@ -15,4 +15,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - run: test/setup-containers.sh
-      - run: docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/io --env WORK_PATH=$(realpath .) testhost python3 /io/test-packages.py
+      - run: docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/io --env WORK_PATH=$(realpath test) testhost python3 /io/test-packages.py
