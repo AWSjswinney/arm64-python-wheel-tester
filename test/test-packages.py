@@ -6,6 +6,7 @@ import json
 import time
 import yaml
 import subprocess
+from datetime import datetime
 from collections import defaultdict
 
 def main():
@@ -25,8 +26,14 @@ def main():
                 print("passed!")
             print("")
 
-    print(json.dumps(results, indent=2))
-
+    os.unlink('test-script.py')
+    with open('results.json', 'w') as f:
+        json.dump(results, f, indent=2)
+    subprocess.run(['xz', 'results.json'], check=True)
+    # chmod the results so that the host can remove the file when cleaning up
+    subprocess.run(['chmod', '777', 'results.json.xz'], check=True)
+    now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    os.rename('results.json.xz', f'results-{now}.json.xz')
 
 def do_test(package, container):
     result = {
@@ -61,7 +68,7 @@ def do_test(package, container):
     if re.search(f'Downloading {package_main_name}[^\n]*aarch64[^\n]*whl', proc.stdout) is not None:
         result['binary-wheel'] = True
 
-    #print(proc.stdout)
+    result['output'] = proc.stdout
 
     return result
 
