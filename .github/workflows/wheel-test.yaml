@@ -17,7 +17,7 @@ jobs:
       - run: test/setup-containers.sh
       - run: docker run -i --rm -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd)/test:/io --env WORK_PATH=$(realpath test) testhost python3 /io/test-packages.py
       - name: "Upload results file"
-        users: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: results
           path: test/results*.json.xz
