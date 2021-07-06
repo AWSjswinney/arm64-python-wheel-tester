@@ -1,5 +1,7 @@
 packages:
   - PIP_NAME: numpy
+    YUM_NAME: python3-numpy
+    APT_NAME: python3-numpy
     PKG_TEST: import numpy
   - PIP_NAME: bcrypt
     PKG_TEST: import bcrypt
