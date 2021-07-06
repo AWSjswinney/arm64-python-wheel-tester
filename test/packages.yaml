@@ -124,6 +124,7 @@ packages:
   - PIP_NAME: Shapely
     PKG_TEST: from shapely.geometry import Point
     YUM_NAME: python3-shapely
+    APT_NAME: python3-shapely
   - PIP_NAME: ijson
     PKG_TEST: import ijson
   - PIP_NAME: snowflake-connector-python
@@ -139,6 +140,7 @@ packages:
   - PIP_NAME: h5py
     PKG_TEST: import h5py
     YUM_NAME: python3-h5py
+    APT_NAME: python3-h5py
   - PIP_NAME: tornado
     PKG_TEST: import tornado
   - PIP_NAME: pyzmq
@@ -148,9 +150,11 @@ packages:
   - PIP_NAME: matplotlib
     PKG_TEST: import matplotlib
     YUM_NAME: python3-matplotlib
+    APT_NAME: python3-matplotlib
   - PIP_NAME: psycopg2-binary
     PKG_TEST: import psycopg2
     YUM_NAME: python3-psycopg2
+    APT_NAME: python3-psycopg2
   - PIP_NAME: greenlet
     PKG_TEST: from greenlet import greenlet
   - PIP_NAME: regex
@@ -196,6 +200,7 @@ packages:
   - PIP_NAME: pynacl
     PKG_TEST: import nacl._sodium
     YUM_NAME: python3-pynacl
+    APT_NAME: python3-nacl
   - PIP_NAME: dill
     PKG_TEST: import dill
   - PIP_NAME: nmslib
@@ -203,6 +208,7 @@ packages:
   - PIP_NAME: lz4
     PKG_TEST: import lz4
     YUM_NAME: python3-lz4
+    APT_NAME: python3-lz4
   - PIP_NAME: setproctitle
     PKG_TEST: import setproctitle
   - PIP_NAME: google-crc32c
@@ -237,10 +243,13 @@ packages:
     PKG_TEST: import MeCab
   - PIP_NAME: cassandra-driver
     PKG_TEST: import cassandra
+    APT_NAME: python3-cassandra
   - PIP_NAME: confluent-kafka
     PKG_TEST: import confluent_kafka
+    APT_NAME: python3-confluent-kafka
   - PIP_NAME: coverage
     PKG_TEST: import coverage
+    APT_NAME: python3-coverage
   - PIP_NAME: netifaces
     PKG_TEST: import netifaces
   - PIP_NAME: scrypt
@@ -259,6 +268,7 @@ packages:
     PKG_TEST: import fitz
   - PIP_NAME: pillow
     YUM_NAME: python3-pillow
+    APT_NAME: python3-pil
     PKG_TEST: |
       import PIL
       import PIL._imagingcms
