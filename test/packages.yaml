@@ -123,6 +123,7 @@ packages:
     PKG_TEST: from typing import Dict
   - PIP_NAME: Shapely
     PKG_TEST: from shapely.geometry import Point
+    YUM_NAME: python3-shapely
   - PIP_NAME: ijson
     PKG_TEST: import ijson
   - PIP_NAME: snowflake-connector-python
@@ -137,6 +138,7 @@ packages:
     PKG_TEST: import pyarrow
   - PIP_NAME: h5py
     PKG_TEST: import h5py
+    YUM_NAME: python3-h5py
   - PIP_NAME: tornado
     PKG_TEST: import tornado
   - PIP_NAME: pyzmq
@@ -145,8 +147,10 @@ packages:
   #  PKG_TEST: import psutil
   - PIP_NAME: matplotlib
     PKG_TEST: import matplotlib
+    YUM_NAME: python3-matplotlib
   - PIP_NAME: psycopg2-binary
     PKG_TEST: import psycopg2
+    YUM_NAME: python3-psycopg2
   - PIP_NAME: greenlet
     PKG_TEST: from greenlet import greenlet
   - PIP_NAME: regex
@@ -184,18 +188,21 @@ packages:
     PKG_TEST: from __future__ import (division)
   - PIP_NAME: coverage
     PKG_TEST: import coverage
+    YUM_NAME: python3-coverage
   - PIP_NAME: wrapt
     PKG_TEST: import wrapt
   - PIP_NAME: pyrsistent
     PKG_TEST: from pyrsistent import v, pvector
   - PIP_NAME: pynacl
     PKG_TEST: import nacl._sodium
+    YUM_NAME: python3-pynacl
   - PIP_NAME: dill
     PKG_TEST: import dill
   - PIP_NAME: nmslib
     PKG_TEST: import nmslib
   - PIP_NAME: lz4
     PKG_TEST: import lz4
+    YUM_NAME: python3-lz4
   - PIP_NAME: setproctitle
     PKG_TEST: import setproctitle
   - PIP_NAME: google-crc32c
@@ -250,3 +257,12 @@ packages:
     PKG_TEST: from Bio import SeqIO
   - PIP_NAME: pymupdf
     PKG_TEST: import fitz
+  - PIP_NAME: pillow
+    YUM_NAME: python3-pillow
+    PKG_TEST: |
+      import PIL
+      import PIL._imagingcms
+      import PIL._imaging
+      import PIL._imagingft
+      import PIL._imagingmath
+      import PIL._imagingmorph
