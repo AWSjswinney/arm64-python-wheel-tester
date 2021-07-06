@@ -3,6 +3,7 @@
 import re
 import glob
 import json
+import lzma
 import argparse
 from functools import reduce
 from collections import OrderedDict
@@ -10,25 +11,28 @@ from collections import OrderedDict
 def main():
     parser = argparse.ArgumentParser(description="Parse result files and render an HTML page with a status summary")
     parser.add_argument('resultfiles', type=str, nargs='+', metavar='results.json', help='path to a result file')
+    parser.add_argument('--ignore', type=str, action='append', help='Ignore tests with the specified name; can be used more than once.')
 
     args = parser.parse_args()
-    print_table_report(args.resultfiles)
+    print_table_report(args.resultfiles, args.ignore)
 
-def get_tests_with_result(wheel_dict, key='test-passed', result=False):
+def get_tests_with_result(wheel_dict, key='test-passed', result=False, ignore_tests=[]):
     tests = []
     for test_name, test_results in wheel_dict.items():
+        if test_name in ignore_tests:
+            continue
         if test_results[key] == result:
             tests.append(test_name)
     return tests
 
-def get_failing_tests(wheel_dict):
-    return get_tests_with_result(wheel_dict, 'test-passed', False)
+def get_failing_tests(wheel_dict, ignore_tests=[]):
+    return get_tests_with_result(wheel_dict, 'test-passed', False, ignore_tests)
 
-def get_build_required(wheel_dict):
-    return get_tests_with_result(wheel_dict, 'build-required', True)
+def get_build_required(wheel_dict, ignore_tests=[]):
+    return get_tests_with_result(wheel_dict, 'build-required', True, ignore_tests)
 
-def get_build_required(wheel_dict):
-    return get_tests_with_result(wheel_dict, 'build-required', True)
+def get_build_required(wheel_dict, ignore_tests=[]):
+    return get_tests_with_result(wheel_dict, 'build-required', True, ignore_tests)
 
 def print_report(all_wheels):
     passing = []
@@ -45,23 +49,23 @@ def print_report(all_wheels):
     for wheel, wheel_dict in passing:
         html.append(f'<li>{wheel}</li>')
     html.append('</ul>')
-    
+
     html.append(f'<h1>Failing - {len(failing)}</h1>')
     html.append('<ul>')
     for wheel, wheel_dict in failing:
         html.append(f'<li>{wheel}</li>')
     html.append('</ul>')
-        
+
     html = '\n'.join(html)
     with open('report.html', 'w') as f:
         f.write(html)
-        
-def get_wheel_report_cell(wheel, wheel_dict):
-    failing = get_failing_tests(wheel_dict)
-    build_required = get_build_required(wheel_dict)
-    slow_install = get_tests_with_result(wheel_dict, 'slow-install', True)
+
+def get_wheel_report_cell(wheel, wheel_dict, ignore_tests):
+    failing = get_failing_tests(wheel_dict, ignore_tests=ignore_tests)
+    build_required = get_build_required(wheel_dict, ignore_tests=ignore_tests)
+    slow_install = get_tests_with_result(wheel_dict, 'slow-install', True, ignore_tests=ignore_tests)
     badges = set()
-    
+
     cell_text = []
     cell_text.append('<div>')
     if len(failing) == 0 and len(build_required) == 0 and len(slow_install) == 0:
@@ -83,17 +87,21 @@ def get_wheel_report_cell(wheel, wheel_dict):
     cell_text.append('</div>')
     return ('\n'.join(cell_text), badges)
 
-def print_table_report(test_results_fname_list):
+def print_table_report(test_results_fname_list, ignore_tests=[]):
     test_results_list = []
     for fname in test_results_fname_list:
-        with open(fname) as f:
-            test_results_list.append(json.load(f))
-    
+        if re.search(r'\.xz$', fname) is not None:
+            with lzma.open(fname) as f:
+                test_results_list.append(json.load(f))
+        else:
+            with open(fname) as f:
+                test_results_list.append(json.load(f))
+
     all_keys = set()
     for test_results in test_results_list:
         all_keys.update(test_results.keys())
     all_keys = sorted(list(all_keys), key=str.lower)
-    
+
     html = []
     html.append(HTML_HEADER)
     html.append('<table class="python-wheel-report">')
@@ -107,7 +115,7 @@ def print_table_report(test_results_fname_list):
         for test_results_i, test_results in enumerate(test_results_list):
             if wheel in test_results:
                 wheel_dict = test_results[wheel]
-                test_results_cache[test_results_i] = get_wheel_report_cell(wheel, wheel_dict)
+                test_results_cache[test_results_i] = get_wheel_report_cell(wheel, wheel_dict, ignore_tests)
         # check to see if the sets returned as item index 1 are all the same
         badge_set = None
         wheel_differences = False
@@ -132,7 +140,7 @@ def print_table_report(test_results_fname_list):
     html = '\n'.join(html)
     with open('report.html', 'w') as f:
         f.write(html)
-        
+
 HTML_HEADER = '''
 <!doctype html>
 <html>
@@ -144,6 +152,7 @@ table.python-wheel-report td, table.python-wheel-report th {
     border-width: 0px;
     margin: 5px;
     font-family: monospace;
+    line-height: 1.6em;
 }
 
 table.python-wheel-report span.perfect-score {
@@ -186,6 +195,7 @@ table.python-wheel-report span.badge {
     border-radius: 4px;
     margin: 3px;
     padding: 2px;
+    white-space: nowrap;
 }
 
 
