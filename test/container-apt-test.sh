@@ -3,5 +3,6 @@
 set -e
 
 cd /io
-pip3 install $PIP_EXTRA_ARGS $PACKAGE_LIST
+apt-get update
+apt-get install -y $PACKAGE_LIST
 python3 test-script.py
