@@ -12,9 +12,13 @@ def main():
     parser = argparse.ArgumentParser(description="Parse result files and render an HTML page with a status summary")
     parser.add_argument('resultfiles', type=str, nargs='+', metavar='results.json', help='path to a result file')
     parser.add_argument('--ignore', type=str, action='append', help='Ignore tests with the specified name; can be used more than once.')
+    parser.add_argument('--by-test', action='store_true', help="print results by test (distro)")
 
     args = parser.parse_args()
-    print_table_report(args.resultfiles, args.ignore)
+    if args.by_test:
+        print_table_by_distro_report(args.resultfiles, args.ignore)
+    else:
+        print_table_report(args.resultfiles, args.ignore)
 
 def get_tests_with_result(wheel_dict, key='test-passed', result=False, ignore_tests=[]):
     tests = []
@@ -141,6 +145,71 @@ def print_table_report(test_results_fname_list, ignore_tests=[]):
     with open('report.html', 'w') as f:
         f.write(html)
 
+
+def make_badge(classes=[], text=""):
+    classes.append('badge')
+    classes = " ".join(classes)
+    return f'<span class="{classes}">{text}</span>'
+
+def print_table_by_distro_report(test_results_fname_list, ignore_tests=[]):
+    test_results_list = []
+    for fname in test_results_fname_list:
+        if re.search(r'\.xz$', fname) is not None:
+            with lzma.open(fname) as f:
+                test_results_list.append(json.load(f))
+        else:
+            with open(fname) as f:
+                test_results_list.append(json.load(f))
+
+    # get a sorted list of all the wheel names
+    all_keys = set()
+    # get a sorted list of all the test_names (distros, plus extra, e.g. centos-python38)
+    all_test_names = set()
+    for test_result in test_results_list:
+        all_keys.update(test_result.keys())
+        for wheel, wheel_dict in test_result.items():
+            for test_name, test_name_results in wheel_dict.items():
+                all_test_names.add(test_name)
+    all_keys = sorted(list(all_keys), key=str.lower)
+    all_test_names = sorted(list(all_test_names))
+
+    test_results = test_results_list[0]
+    html = []
+    html.append(HTML_HEADER)
+    html.append('<table class="python-wheel-report">')
+    html.append('<tr>')
+    html.append('<th></th>')
+    for test_name in all_test_names:
+        html.append(f'<th>{test_name}</th>')
+    html.append('</tr>')
+    for i, wheel in enumerate(all_keys):
+
+        odd_even = 'even' if (i+1) % 2 == 0 else 'odd'
+        html.append(f'<tr class="wheel-line {odd_even}">')
+        html.append(f'<td class="wheel-name">{wheel}</td>')
+        for test_name in all_test_names:
+            html.append('<td class="">')
+            if wheel in test_results and test_name in test_results[wheel]:
+                result = test_results[wheel][test_name]
+                if result['test-passed']:
+                    html.append(make_badge(classes=['passed'], text='passed'))
+                else:
+                    html.append(make_badge(classes=['failed'], text='failed'))
+                if result['build-required']:
+                    html.append(make_badge(classes=['warning'], text='build required'))
+                if result['slow-install']:
+                    html.append(make_badge(classes=['warning'], text='slow install'))
+
+            html.append('</td>')
+
+        html.append('</tr>')
+
+    html.append('</table>')
+    html.append(HTML_FOOTER)
+    html = '\n'.join(html)
+    with open('report.html', 'w') as f:
+        f.write(html)
+
 HTML_HEADER = '''
 <!doctype html>
 <html>
@@ -162,21 +231,21 @@ background: #bfd255; /* Old browsers */
 background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
 }
 
-table.python-wheel-report span.test-name {
+table.python-wheel-report span.test-name, span.failed {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f85032+0,f16f5c+50,f6290c+51,f02f17+71,e73827+100;Red+Gloss+%231 */
 background: #f85032; /* Old browsers */
 background: linear-gradient(to bottom,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%);
 }
 
-table.python-wheel-report span.all-passed {
+table.python-wheel-report span.all-passed, span.passed {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
 background: #bfd255; /* Old browsers */
 background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
 }
 
-table.python-wheel-report span.build-required {
+table.python-wheel-report span.build-required, span.warning {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
 background: #ffd65e; /* Old browsers */
