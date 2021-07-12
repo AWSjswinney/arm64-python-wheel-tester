@@ -42,10 +42,14 @@ def main():
     with open('results.json', 'w') as f:
         json.dump(results, f, indent=2)
     subprocess.run(['xz', 'results.json'], check=True)
-    # chmod the results so that the host can remove the file when cleaning up
-    subprocess.run(['chmod', '777', 'results.json.xz'], check=True)
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     os.rename('results.json.xz', f'results-{now}.json.xz')
+
+    # Also generate an html report of the results
+    subprocess.run(f'python3 process-results.py -o report-{now}.html --by-test results-{now}.json.xz', shell=True)
+
+    # chmod the results so that the host can remove the file when cleaning up
+    subprocess.run('chmod 777 results* report*', shell=True, check=True)
 
 process_work_dir = ''
 def do_test_initializer():

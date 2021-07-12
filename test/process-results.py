@@ -13,12 +13,18 @@ def main():
     parser.add_argument('resultfiles', type=str, nargs='+', metavar='results.json', help='path to a result file')
     parser.add_argument('--ignore', type=str, action='append', help='Ignore tests with the specified name; can be used more than once.')
     parser.add_argument('--by-test', action='store_true', help="print results by test (distro)")
+    parser.add_argument('-o', '--output-file', type=str, help="file name to write report")
 
     args = parser.parse_args()
     if args.by_test:
-        print_table_by_distro_report(args.resultfiles, args.ignore)
+        html = print_table_by_distro_report(args.resultfiles, args.ignore)
     else:
-        print_table_report(args.resultfiles, args.ignore)
+        html = print_table_report(args.resultfiles, args.ignore)
+    if args.output_file:
+        with open(args.output_file, 'w') as f:
+            f.write(html)
+    else:
+        print(html)
 
 def get_tests_with_result(wheel_dict, key='test-passed', result=False, ignore_tests=[]):
     tests = []
@@ -61,8 +67,7 @@ def print_report(all_wheels):
     html.append('</ul>')
 
     html = '\n'.join(html)
-    with open('report.html', 'w') as f:
-        f.write(html)
+    return html
 
 def get_wheel_report_cell(wheel, wheel_dict, ignore_tests):
     failing = get_failing_tests(wheel_dict, ignore_tests=ignore_tests)
@@ -142,8 +147,7 @@ def print_table_report(test_results_fname_list, ignore_tests=[]):
     html.append('</table>')
     html.append(HTML_FOOTER)
     html = '\n'.join(html)
-    with open('report.html', 'w') as f:
-        f.write(html)
+    return html
 
 
 def make_badge(classes=[], text=""):
@@ -152,6 +156,7 @@ def make_badge(classes=[], text=""):
     return f'<span class="{classes}">{text}</span>'
 
 def print_table_by_distro_report(test_results_fname_list, ignore_tests=[]):
+    # TODO: add support for multipile result files displayed in tabs
     test_results_list = []
     for fname in test_results_fname_list:
         if re.search(r'\.xz$', fname) is not None:
@@ -176,6 +181,7 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[]):
     test_results = test_results_list[0]
     html = []
     html.append(HTML_HEADER)
+    html.append(f'<h1>{test_results_fname_list[0]}</h1>')
     html.append('<table class="python-wheel-report">')
     html.append('<tr>')
     html.append('<th></th>')
@@ -207,8 +213,7 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[]):
     html.append('</table>')
     html.append(HTML_FOOTER)
     html = '\n'.join(html)
-    with open('report.html', 'w') as f:
-        f.write(html)
+    return html
 
 HTML_HEADER = '''
 <!doctype html>
@@ -216,12 +221,18 @@ HTML_HEADER = '''
 <head>
 <style type="text/css">
 
+table.python-wheel-report {
+    margin: 0 auto;
+    width: 960px;
+}
+
 table.python-wheel-report td, table.python-wheel-report th {
     padding: 5px;
     border-width: 0px;
     margin: 5px;
     font-family: monospace;
     line-height: 1.6em;
+    width: 14%;
 }
 
 table.python-wheel-report span.perfect-score {
