@@ -22,7 +22,9 @@ packages:
     PKG_TEST: |
       import simplejson
       simplejson._speedups
-  - PIP_NAME: Pillow
+  - PIP_NAME: pillow
+    YUM_NAME: python3-pillow
+    APT_NAME: python3-pil
     PKG_TEST: |
       import PIL
       import PIL._imagingcms
@@ -266,13 +268,3 @@ packages:
     PKG_TEST: from Bio import SeqIO
   - PIP_NAME: pymupdf
     PKG_TEST: import fitz
-  - PIP_NAME: pillow
-    YUM_NAME: python3-pillow
-    APT_NAME: python3-pil
-    PKG_TEST: |
-      import PIL
-      import PIL._imagingcms
-      import PIL._imaging
-      import PIL._imagingft
-      import PIL._imagingmath
-      import PIL._imagingmorph
