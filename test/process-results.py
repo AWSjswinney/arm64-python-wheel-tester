@@ -245,12 +245,10 @@ HTML_HEADER = '''
 <html>
 <head>
 <style type="text/css">
-
 table.python-wheel-report {
     margin: 0 auto;
     width: 960px;
 }
-
 table.python-wheel-report td, table.python-wheel-report th {
     padding: 5px;
     border-width: 0px;
@@ -259,62 +257,49 @@ table.python-wheel-report td, table.python-wheel-report th {
     line-height: 1.6em;
     width: 14%;
 }
-
 table.python-wheel-report span.perfect-score {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
 background: #bfd255; /* Old browsers */
 background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
 }
-
 table.python-wheel-report span.test-name, span.failed {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f85032+0,f16f5c+50,f6290c+51,f02f17+71,e73827+100;Red+Gloss+%231 */
 background: #f85032; /* Old browsers */
 background: linear-gradient(to bottom,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%);
 }
-
 table.python-wheel-report span.all-passed, span.passed {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
 background: #bfd255; /* Old browsers */
 background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
 }
-
 table.python-wheel-report span.build-required, span.warning {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
 background: #ffd65e; /* Old browsers */
 background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
 }
-
 table.python-wheel-report span.slow-install {
     color: white;
 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
 background: #ffd65e; /* Old browsers */
 background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
 }
-
-
 table.python-wheel-report span.badge {
     border-radius: 4px;
     margin: 3px;
     padding: 2px;
     white-space: nowrap;
 }
-
-
 table.python-wheel-report tr.odd {
     background-color: #f1f1f1;
 }
-
 table.python-wheel-report td.wheel-name.different {
     background: #d1ffd9;
     font-style: italic;
 }
-
-
-
 </style>
 </head>
 <body>
