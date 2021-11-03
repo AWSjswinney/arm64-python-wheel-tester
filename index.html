@@ -4,6 +4,28 @@
 <head>
 <style type="text/css">
 
+h1 {
+    text-align: center;
+}
+
+section.summary {
+    margin: 0 auto;
+    width: 900px;
+    font-family: sans-serif;
+}
+
+section.summary table {
+    margin: 0 auto;
+    width: 700px;
+    border-collapse: collapse;
+}
+
+section.summary th, section.summary td {
+    border: solid 1px;
+    margin: 0px;
+    padding: 3px;
+}
+
 table.python-wheel-report {
     margin: 0 auto;
     width: 960px;
@@ -16,6 +38,12 @@ table.python-wheel-report td, table.python-wheel-report th {
     font-family: monospace;
     line-height: 1.6em;
     width: 14%;
+}
+
+table.python-wheel-report th {
+    position:sticky;
+    top:0px;
+    background-color: white;
 }
 
 table.python-wheel-report span.perfect-score {
@@ -80,7 +108,38 @@ table.python-wheel-report td.wheel-name.different {
 </head>
 <body>
 
-<h1>Test results from November 03, 2021</h1>
+<h1>Python Wheels on aarch64 test results from November 03, 2021</h1>
+<section class="summary">
+<table class="summary">
+<tr>
+<th>date</th>
+<td>Thursday, October 28, 2021</td>
+<td>Wednesday, November 03, 2021</td>
+<td></td>
+</tr>
+<tr>
+<th>number of wheels</th>
+<td>134</td>
+<td>134</td>
+<td>+0</td>
+</tr>
+<tr>
+<th>all tests passed</th>
+<td>105</td>
+<td>107</td>
+<td>+2</td>
+</tr>
+<tr>
+<th>some tests failed</th>
+<td>29</td>
+<td>27</td>
+<td>-2</td>
+</tr>
+</table>
+<p>The table shows test results from the current test run and differences, if any, with previous runs.
+When differences exist, the first test report exhibting the difference is shown. The current test result
+is always shown, regardless of whether there is any difference.</p>
+</section>
 <table class="python-wheel-report">
 <tr>
 <th></th>
@@ -365,7 +424,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 13, 2021</span></td>
 <td class="">
 <span class="passed badge">passed</span>
 </td>
@@ -384,7 +443,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 27, 2021</span></td>
+<td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 22, 2021</span></td>
 <td class="">
 <span class="failed badge">failed</span>
 </td>
@@ -404,7 +463,26 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 20, 2021</span></td>
+<td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 02, 2021</span></td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+</td>
+</tr>
+<tr class="wheel-line odd">
+<td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 03, 2021</span></td>
 <td class="">
 <span class="passed badge">passed</span>
 </td>
@@ -908,7 +986,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">h5py<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="wheel-name ">h5py</td>
 <td class="">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
@@ -919,52 +997,6 @@ table.python-wheel-report td.wheel-name.different {
 <td class="">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-<span class="warning badge">slow install</span>
-<span class="failed badge">timed out</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">h5py<br /><span class="file-indicator">October 27, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-<span class="warning badge">slow install</span>
-<span class="failed badge">timed out</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">h5py<br /><span class="file-indicator">October 20, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
 </td>
 <td class="">
 <span class="passed badge">passed</span>
@@ -1074,7 +1106,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">jpype1<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="wheel-name ">jpype1</td>
 <td class="">
 <span class="failed badge">failed</span>
 </td>
@@ -1090,46 +1122,6 @@ table.python-wheel-report td.wheel-name.different {
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
-</td>
-<td class="">
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">jpype1<br /><span class="file-indicator">October 27, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-<span class="warning badge">build required</span>
-</td>
-<td class="">
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">jpype1<br /><span class="file-indicator">October 20, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-<span class="warning badge">build required</span>
 </td>
 <td class="">
 </td>
@@ -1915,27 +1907,26 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">pymupdf<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 13, 2021</span></td>
 <td class="">
-<span class="failed badge">failed</span>
+<span class="passed badge">passed</span>
 </td>
 <td class="">
-<span class="failed badge">failed</span>
+<span class="passed badge">passed</span>
 </td>
 <td class="">
-<span class="failed badge">failed</span>
+<span class="passed badge">passed</span>
 </td>
 <td class="">
 </td>
 <td class="">
-<span class="failed badge">failed</span>
-<span class="warning badge">build required</span>
+<span class="passed badge">passed</span>
 </td>
 <td class="">
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 27, 2021</span></td>
+<td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 19, 2021</span></td>
 <td class="">
 <span class="failed badge">failed</span>
 </td>
@@ -1969,6 +1960,46 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 <td class="">
 <span class="passed badge">passed</span>
+</td>
+<td class="">
+</td>
+</tr>
+<tr class="wheel-line even">
+<td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 25, 2021</span></td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+<span class="warning badge">build required</span>
+</td>
+<td class="">
+</td>
+</tr>
+<tr class="wheel-line even">
+<td class="wheel-name different">pymupdf<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+<span class="warning badge">build required</span>
 </td>
 <td class="">
 </td>
@@ -2195,7 +2226,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">regex<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="wheel-name different">regex<br /><span class="file-indicator">October 13, 2021</span></td>
 <td class="">
 <span class="passed badge">passed</span>
 </td>
@@ -2214,7 +2245,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">regex<br /><span class="file-indicator">October 27, 2021</span></td>
+<td class="wheel-name different">regex<br /><span class="file-indicator">October 22, 2021</span></td>
 <td class="">
 <span class="failed badge">failed</span>
 </td>
@@ -2234,7 +2265,26 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">regex<br /><span class="file-indicator">October 20, 2021</span></td>
+<td class="wheel-name different">regex<br /><span class="file-indicator">November 02, 2021</span></td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+</td>
+</tr>
+<tr class="wheel-line even">
+<td class="wheel-name different">regex<br /><span class="file-indicator">November 03, 2021</span></td>
 <td class="">
 <span class="passed badge">passed</span>
 </td>
@@ -2447,49 +2497,7 @@ table.python-wheel-report td.wheel-name.different {
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">Shapely<br /><span class="file-indicator">November 03, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">Shapely<br /><span class="file-indicator">October 27, 2021</span></td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="failed badge">failed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-<td class="">
-<span class="passed badge">passed</span>
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">Shapely<br /><span class="file-indicator">October 20, 2021</span></td>
+<td class="wheel-name different">Shapely<br /><span class="file-indicator">October 13, 2021</span></td>
 <td class="">
 <span class="failed badge">failed</span>
 </td>
@@ -2505,6 +2513,48 @@ table.python-wheel-report td.wheel-name.different {
 <td class="">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+</tr>
+<tr class="wheel-line odd">
+<td class="wheel-name different">Shapely<br /><span class="file-indicator">October 26, 2021</span></td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+</tr>
+<tr class="wheel-line odd">
+<td class="wheel-name different">Shapely<br /><span class="file-indicator">November 03, 2021</span></td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="failed badge">failed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
+</td>
+<td class="">
+<span class="passed badge">passed</span>
 </td>
 <td class="">
 <span class="passed badge">passed</span>
