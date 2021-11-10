@@ -26,9 +26,20 @@ section.summary th, section.summary td {
     padding: 3px;
 }
 
+table.python-wheel-report .test-column {
+    display: none;
+}
+
+section.display-controls > input.package-pip:checked ~ table.python-wheel-report .test-column.package-pip,
+section.display-controls > input.package-os:checked ~ table.python-wheel-report .test-column.package-os,
+section.display-controls > input.package-conda:checked ~ table.python-wheel-report .test-column.package-conda
+{
+    display: table-cell;
+}
+
 table.python-wheel-report {
     margin: 0 auto;
-    width: 960px;
+    width: 100%;
 }
 
 table.python-wheel-report td, table.python-wheel-report th {
@@ -135,2842 +146,4183 @@ table.python-wheel-report td.wheel-name.different {
 <td>27</td>
 <td>+0</td>
 </tr>
+<tr>
+<th>each dist has passing option</th>
+<td>116</td>
+<td>117</td>
+<td>+1</td>
+</tr>
 </table>
 <p>The table shows test results from the current test run and differences, if any, with previous runs.
 When differences exist, the first test report exhibting the difference is shown. The current test result
 is always shown, regardless of whether there is any difference.</p>
 </section>
+<section class="display-controls">
+<input type="checkbox" checked="true" name="pip" class="package-pip" /><label for="pip">pip</label>
+<input type="checkbox" name="os" class="package-os" /><label for="os">apt/yum</label>
+<input type="checkbox" name="conda" class="package-conda"/><label for="conda">anaconda</label>
 <table class="python-wheel-report">
 <tr>
 <th></th>
-<th>amazon-linux2</th>
-<th>centos8</th>
-<th>centos8-py38</th>
-<th>centos8-yum</th>
-<th>focal</th>
-<th>focal-apt</th>
+<th>at least one passing option per distribution?</th>
+<th class="test-column package-pip">amazon-linux2</th>
+<th class="test-column package-conda">amazon-linux2-conda</th>
+<th class="test-column package-pip">centos8</th>
+<th class="test-column package-conda">centos8-conda</th>
+<th class="test-column package-pip">centos8-py38</th>
+<th class="test-column package-os">centos8-yum</th>
+<th class="test-column package-pip">focal</th>
+<th class="test-column package-os">focal-apt</th>
+<th class="test-column package-conda">focal-conda</th>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">absl-py</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">advent-of-code</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">aiohttp</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">ansible</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
+<span class="passed badge">passed</span>
+<span class="warning badge">slow install</span>
+<span class="failed badge">timed out</span>
+</td>
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
-<span class="passed badge">passed</span>
-<span class="warning badge">slow install</span>
+<td class="test-column package-os">
 </td>
-<td class="">
-</td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">apache-beam</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">awkward</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">bcrypt</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">biopython</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">Brotli</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">brotlicffi</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">btrees</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">cassandra-driver</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">cffi</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">cftime</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 20, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">clevercsv<br /><span class="file-indicator">October 26, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 01, 2021</span></td>
+<td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 02, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">clevercsv<br /><span class="file-indicator">November 10, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">clickhouse-driver</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">cmake</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">cmarkgfm</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">confluent-kafka</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">coverage</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">crc32c</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">cryptography</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">Cython</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">ddtrace</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">deap</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">dill</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">docopt</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">dulwich</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">ephem</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">fastavro</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">fastcluster</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">future</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">gensim</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">gevent</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">google-crc32c</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">greenlet</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">grpcio</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">grpcio-tools</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">guppy3</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">h3</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">h5py</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
-<span class="failed badge">failed</span>
-<span class="warning badge">slow install</span>
+<td class="test-column package-conda">
 </td>
-<td class="">
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+</td>
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">hiredis</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">httptools</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">ijson</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">imageio-ffmpeg</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">jellyfish</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">jpype1</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
-<span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">kiwisolver</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">lazy-object-proxy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">Levenshtein-search</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">lightgbm</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">line-profiler</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">lxml</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">lz4</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">markupsafe</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">matplotlib</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">maturin</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">mecab-python3</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">mecab_python3</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">Mosek</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">msgpack</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">multidict</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">mypy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">netifaces</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">ninja</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">nmslib</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">numba</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">numexpr</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">numpy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">numpy-quaternion</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">onnx</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">opencv-python</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">osqp</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pandas</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pandocfilters</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">persistent</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pillow</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">protobuf</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">psd-tools</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">psutil</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">psycopg2-binary</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pyarrow</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pycares</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pycryptodome</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pycryptodomex</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pygit2</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pymongo</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 20, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">pymupdf<br /><span class="file-indicator">October 26, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">pymupdf<br /><span class="file-indicator">November 10, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pynacl</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pyproj</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pyreadstat</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pyrsistent</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pyspark</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">python-rapidjson</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">python-snappy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pywavelets</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">pyyaml</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">pyzmq</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">rapidfuzz</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">regex<br /><span class="file-indicator">October 20, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">regex<br /><span class="file-indicator">October 26, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">regex<br /><span class="file-indicator">November 01, 2021</span></td>
+<td class="wheel-name different">regex<br /><span class="file-indicator">November 02, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name different">regex<br /><span class="file-indicator">November 10, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">retrying</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">ruamel.yaml</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">scikit-build</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">scikit-image</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">scikit-image==0.18.2rc2</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">scikit-learn</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">scipy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">scrypt</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">sentencepiece</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">setproctitle</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">Shapely<br /><span class="file-indicator">October 20, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">Shapely<br /><span class="file-indicator">October 26, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name different">Shapely<br /><span class="file-indicator">November 10, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 <span class="passed badge">passed</span>
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">simplejson</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">snowflake-connector-python</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">spglib</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">sqlalchemy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">statsmodels</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name ">tensorflow</td>
+<td class="wheel-name different">tensorflow<br /><span class="file-indicator">October 20, 2021</span></td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
+</td>
+</tr>
+<tr class="wheel-line odd">
+<td class="wheel-name different">tensorflow<br /><span class="file-indicator">November 10, 2021</span></td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+</td>
+<td class="test-column package-conda">
+<span class="passed badge">passed</span>
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+</td>
+<td class="test-column package-conda">
+<span class="passed badge">passed</span>
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+</td>
+<td class="test-column package-os">
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+</td>
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
+<span class="passed badge">passed</span>
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">tensorflow-data-validation</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">tfx-bsl</td>
 <td class="">
+<span class="failed badge">no</span>
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">thrift</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">torch</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">torchvision</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">tornado</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">twisted</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">typed_ast</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">ujson</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">uvloop</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="failed badge">failed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">websockets</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">wrapt</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">xgboost</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">yarl</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">zope.hookable</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line odd">
 <td class="wheel-name ">zope.interface</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 <tr class="wheel-line even">
 <td class="wheel-name ">zope.proxy</td>
 <td class="">
+<span class="passed badge">yes</span>
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-conda">
+</td>
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
 </td>
-<td class="">
+<td class="test-column package-pip">
 <span class="passed badge">passed</span>
 </td>
-<td class="">
+<td class="test-column package-os">
+</td>
+<td class="test-column package-conda">
 </td>
 </tr>
 </table>
+</section>
 
 </body>
 </html>
