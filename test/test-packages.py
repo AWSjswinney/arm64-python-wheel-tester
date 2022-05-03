@@ -6,6 +6,7 @@ import json
 import time
 import yaml
 import argparse
+import requests
 import importlib
 import itertools
 import subprocess
@@ -63,6 +64,8 @@ def main():
         for result in pool.imap_unordered(do_test_lambda, get_test_set()):
             results_list.append(result)
 
+    return
+
     # cleanup subprocess work directories
     subprocess.run('rm -rf work_pid*', shell=True)
 
@@ -108,6 +111,22 @@ def do_test_initializer():
     subprocess.run(f'cp container-* {process_work_dir}/', shell=True)
 
 def do_test_lambda(x):
+    package_main_name = x[0]
+    r = requests.get(f'https://pypi.org/pypi/{package_main_name}/json')
+    if r.status_code != 200:
+        print(f'Unable to get package information for {package_main_name}')
+        return {}
+
+    releases = r.json()['releases']
+    for release_key, release_files in releases.items():
+        for release in release_files:
+            if 'manylinux2014_aarch64' in release['filename']:
+                test_name = package_main_name + f'=={release_key}'
+                results = do_test(test_name, *x[1:])
+                if results['test-passed']:
+                    print(f'First passing version of {package_main_name} on {x[2]} is {release_key}')
+                    return results
+
     return do_test(*x)
 def do_test(package_main_name, package_list, container, test_sh_script, test_py_script, test_name, package_manager):
     result = {
