@@ -133,13 +133,13 @@ input.output-toggle:checked + label.output-toggle + pre.output-content {
 </head>
 <body>
 
-<h1>Python Wheels on aarch64 test results from December 11, 2022</h1>
+<h1>Python Wheels on aarch64 test results from December 12, 2022</h1>
 <section class="summary">
 <table class="summary">
 <tr>
 <th>date</th>
 <td>Thursday, December 08, 2022</td>
-<td>Sunday, December 11, 2022</td>
+<td>Monday, December 12, 2022</td>
 <td></td>
 </tr>
 <tr>
@@ -586,7 +586,7 @@ is always shown, regardless of whether there is any difference.</p>
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">blosc<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">blosc<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="failed badge">no</span>
 </td>
@@ -608,11 +608,11 @@ is always shown, regardless of whether there is any difference.</p>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_blosc_jammy" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_blosc_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_blosc_jammy" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_blosc_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc
   Downloading blosc-1.10.6.tar.gz (1.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 15.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 21.1 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -628,11 +628,11 @@ Building wheels for collected packages: blosc
   │ exit code: 1
   ╰─&gt; [9 lines of output]
       Traceback (most recent call last):
-        File &quot;/tmp/pip-build-env-4f9y2nr4/overlay/local/lib/python3.10/dist-packages/skbuild/setuptools_wrap.py&quot;, line 612, in setup
+        File &quot;/tmp/pip-build-env-2_xnljtn/overlay/local/lib/python3.10/dist-packages/skbuild/setuptools_wrap.py&quot;, line 612, in setup
           cmkr = cmaker.CMaker(cmake_executable)
-        File &quot;/tmp/pip-build-env-4f9y2nr4/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 148, in __init__
+        File &quot;/tmp/pip-build-env-2_xnljtn/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 148, in __init__
           self.cmake_version = get_cmake_version(self.cmake_executable)
-        File &quot;/tmp/pip-build-env-4f9y2nr4/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 103, in get_cmake_version
+        File &quot;/tmp/pip-build-env-2_xnljtn/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 103, in get_cmake_version
           raise SKBuildError(
       
       Problem with the CMake installation, aborting build. CMake executable is cmake
@@ -677,7 +677,7 @@ ERROR: Could not build wheels for blosc, which is required to install pyproject.
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">blosc<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">blosc<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -703,7 +703,7 @@ ERROR: Could not build wheels for blosc, which is required to install pyproject.
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">blosc2<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">blosc2<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="failed badge">no</span>
 </td>
@@ -712,11 +712,11 @@ ERROR: Could not build wheels for blosc, which is required to install pyproject.
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_blosc2_amazon-linux2" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_blosc2_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_blosc2_amazon-linux2" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_blosc2_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.3.0.tar.gz (2.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 67.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 36.6 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -725,7 +725,6 @@ ERROR: Could not build wheels for blosc, which is required to install pyproject.
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
 Building wheels for collected packages: blosc2
   Building wheel for blosc2 (pyproject.toml): started
-  Building wheel for blosc2 (pyproject.toml): still running...
   Building wheel for blosc2 (pyproject.toml): still running...
   Building wheel for blosc2 (pyproject.toml): still running...
 </pre>
@@ -742,11 +741,11 @@ Building wheels for collected packages: blosc2
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_blosc2_focal" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_blosc2_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_blosc2_focal" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_blosc2_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.5.2.tar.gz (2.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 64.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 63.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -755,7 +754,7 @@ Building wheels for collected packages: blosc2
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
 Collecting msgpack
   Downloading msgpack-1.0.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (313 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 38.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 39.5 MB/s eta 0:00:00
 Building wheels for collected packages: blosc2
   Building wheel for blosc2 (pyproject.toml): started
   Building wheel for blosc2 (pyproject.toml): still running...
@@ -770,11 +769,11 @@ Building wheels for collected packages: blosc2
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_blosc2_jammy" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_blosc2_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_blosc2_jammy" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_blosc2_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.5.2.tar.gz (2.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 30.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 31.0 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -783,7 +782,7 @@ Building wheels for collected packages: blosc2
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
 Collecting msgpack
   Downloading msgpack-1.0.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (309 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.5/309.5 kB 20.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.5/309.5 kB 41.5 MB/s eta 0:00:00
 Building wheels for collected packages: blosc2
   Building wheel for blosc2 (pyproject.toml): started
   Building wheel for blosc2 (pyproject.toml): finished with status &#x27;error&#x27;
@@ -793,11 +792,11 @@ Building wheels for collected packages: blosc2
   │ exit code: 1
   ╰─&gt; [9 lines of output]
       Traceback (most recent call last):
-        File &quot;/tmp/pip-build-env-4eevubo4/overlay/local/lib/python3.10/dist-packages/skbuild/setuptools_wrap.py&quot;, line 612, in setup
+        File &quot;/tmp/pip-build-env-fa74bz1l/overlay/local/lib/python3.10/dist-packages/skbuild/setuptools_wrap.py&quot;, line 612, in setup
           cmkr = cmaker.CMaker(cmake_executable)
-        File &quot;/tmp/pip-build-env-4eevubo4/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 148, in __init__
+        File &quot;/tmp/pip-build-env-fa74bz1l/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 148, in __init__
           self.cmake_version = get_cmake_version(self.cmake_executable)
-        File &quot;/tmp/pip-build-env-4eevubo4/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 103, in get_cmake_version
+        File &quot;/tmp/pip-build-env-fa74bz1l/overlay/local/lib/python3.10/dist-packages/skbuild/cmaker.py&quot;, line 103, in get_cmake_version
           raise SKBuildError(
       
       Problem with the CMake installation, aborting build. CMake executable is cmake
@@ -1088,7 +1087,7 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">blosc2<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">blosc2<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="failed badge">no</span>
 </td>
@@ -1096,43 +1095,19 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 <span class="passed badge">passed</span>
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
-<span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_blosc2_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_blosc2_amazon-linux2" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Collecting blosc2
-  Downloading blosc2-0.3.0.tar.gz (2.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 64.3 MB/s eta 0:00:00
-  Installing build dependencies: started
-  Installing build dependencies: finished with status &#x27;done&#x27;
-  Getting requirements to build wheel: started
-  Getting requirements to build wheel: finished with status &#x27;done&#x27;
-  Preparing metadata (pyproject.toml): started
-  Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
-Building wheels for collected packages: blosc2
-  Building wheel for blosc2 (pyproject.toml): started
-  Building wheel for blosc2 (pyproject.toml): still running...
-  Building wheel for blosc2 (pyproject.toml): still running...
-  Building wheel for blosc2 (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for blosc2: filename=blosc2-0.3.0-cp37-cp37m-linux_aarch64.whl size=4125920 sha256=0e99d3cd706d5e38c86967b7f590d526070f8d3d3f20467a1d5e8594013688f6
-  Stored in directory: /root/.cache/pip/wheels/91/8a/34/d03fbefae255c47e465b092da3e97cdb39933b7f63e1f00a3a
-Successfully built blosc2
-Installing collected packages: blosc2
-Successfully installed blosc2-0.3.0
-WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-</pre>
 </td>
 <td class="test-column package-conda">
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_blosc2_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_blosc2_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_blosc2_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_blosc2_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.6.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 71.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 80.7 MB/s eta 0:00:00
 Collecting msgpack
   Downloading msgpack-1.0.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (313 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 41.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 40.5 MB/s eta 0:00:00
 Installing collected packages: msgpack, blosc2
 Successfully installed blosc2-0.6.5 msgpack-1.0.4
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -1147,14 +1122,14 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_blosc2_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_blosc2_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_blosc2_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_blosc2_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.6.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 74.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 84.1 MB/s eta 0:00:00
 Collecting msgpack
   Downloading msgpack-1.0.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (313 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 41.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 313.6/313.6 kB 43.1 MB/s eta 0:00:00
 Installing collected packages: msgpack, blosc2
 Successfully installed blosc2-0.6.5 msgpack-1.0.4
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -1173,14 +1148,14 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_blosc2_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_blosc2_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_blosc2_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_blosc2_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Downloading blosc2-0.6.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 48.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 44.5 MB/s eta 0:00:00
 Collecting msgpack
   Downloading msgpack-1.0.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (309 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.5/309.5 kB 44.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.5/309.5 kB 50.5 MB/s eta 0:00:00
 Installing collected packages: msgpack, blosc2
 Successfully installed blosc2-0.6.5 msgpack-1.0.4
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -1329,11 +1304,11 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_cassandra-driver_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_cassandra-driver_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_cassandra-driver_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_cassandra-driver_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting cassandra-driver
   Downloading cassandra-driver-3.25.0.tar.gz (289 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 290.0/290.0 kB 9.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 290.0/290.0 kB 12.1 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Collecting geomet&lt;0.3,&gt;=0.1
@@ -1342,7 +1317,7 @@ Collecting six&gt;=1.9
   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting click
   Downloading click-8.1.3-py3-none-any.whl (96 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 21.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 20.0 MB/s eta 0:00:00
 Building wheels for collected packages: cassandra-driver
   Building wheel for cassandra-driver (setup.py): started
   Building wheel for cassandra-driver (setup.py): still running...
@@ -1548,11 +1523,11 @@ Building wheels for collected packages: cassandra-driver
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_confluent-kafka_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_confluent-kafka_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_confluent-kafka_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_confluent-kafka_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting confluent-kafka
   Downloading confluent-kafka-1.9.2.tar.gz (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 14.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 16.1 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Installing collected packages: confluent-kafka
@@ -1605,14 +1580,14 @@ Installing collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.7
       creating build/temp.linux-aarch64-3.7/tmp
-      creating build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u
-      creating build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c
-      creating build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src
-      creating build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka/src
-      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python3.7m -c /tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.7/tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka/src/confluent_kafka.o
-      In file included from /tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka/src/confluent_kafka.c:17:0:
-      /tmp/pip-install-lxz90e5u/confluent-kafka_8157fda75f524579af3096f6fe83b04c/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj
+      creating build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63
+      creating build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src
+      creating build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka/src
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python3.7m -c /tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.7/tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka/src/confluent_kafka.o
+      In file included from /tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka/src/confluent_kafka.c:17:0:
+      /tmp/pip-install-dz6wv0cj/confluent-kafka_df6c25c311334aebb691c82ac681fc63/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
        #include &lt;librdkafka/rdkafka.h&gt;
                 ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -1633,11 +1608,11 @@ hint: See above for output from the failure.
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_confluent-kafka_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_confluent-kafka_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_confluent-kafka_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_confluent-kafka_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting confluent-kafka
   Downloading confluent-kafka-1.9.2.tar.gz (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 16.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 17.2 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Installing collected packages: confluent-kafka
@@ -1690,14 +1665,14 @@ Installing collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.8
       creating build/temp.linux-aarch64-3.8/tmp
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka/src
-      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka/src/confluent_kafka.o
-      In file included from /tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka/src/confluent_kafka.c:17:0:
-      /tmp/pip-install-c7fn2asj/confluent-kafka_5c6d830370254ae2841c8a3aa44bd776/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka/src
+      gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector-strong --param=ssp-buffer-size=4 -grecord-gcc-switches -moutline-atomics -D_GNU_SOURCE -fPIC -fwrapv -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka/src/confluent_kafka.o
+      In file included from /tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka/src/confluent_kafka.c:17:0:
+      /tmp/pip-install-4_qufba3/confluent-kafka_d6a7dbd35e1242b6af2e32e600d4e8dc/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
        #include &lt;librdkafka/rdkafka.h&gt;
                 ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -1717,11 +1692,11 @@ hint: See above for output from the failure.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_confluent-kafka_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_confluent-kafka_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_confluent-kafka_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_confluent-kafka_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting confluent-kafka
   Downloading confluent-kafka-1.9.2.tar.gz (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 17.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 18.5 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Building wheels for collected packages: confluent-kafka
@@ -1773,14 +1748,14 @@ Building wheels for collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.8
       creating build/temp.linux-aarch64-3.8/tmp
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src
-      aarch64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.o
-      In file included from /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.c:17:
-      /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src
+      aarch64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.o
+      In file included from /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.c:17:
+      /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
          23 | #include &lt;librdkafka/rdkafka.h&gt;
             |          ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -1840,14 +1815,14 @@ Installing collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.8
       creating build/temp.linux-aarch64-3.8/tmp
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src
-      aarch64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.o
-      In file included from /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.c:17:
-      /tmp/pip-install-3v6phc1_/confluent-kafka_a137f73998464a7ba08b80169a9bdf98/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src
+      aarch64-linux-gnu-gcc -pthread -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.8 -c /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.c -o build/temp.linux-aarch64-3.8/tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.o
+      In file included from /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.c:17:
+      /tmp/pip-install-c02md2re/confluent-kafka_7df029ebe1054bb9bf285386e55e1f6e/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
          23 | #include &lt;librdkafka/rdkafka.h&gt;
             |          ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -1872,11 +1847,11 @@ hint: See above for output from the failure.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_confluent-kafka_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_confluent-kafka_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_confluent-kafka_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_confluent-kafka_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting confluent-kafka
   Downloading confluent-kafka-1.9.2.tar.gz (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 4.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.8/109.8 kB 3.0 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Building wheels for collected packages: confluent-kafka
@@ -1928,14 +1903,14 @@ Building wheels for collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.10
       creating build/temp.linux-aarch64-3.10/tmp
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src
-      aarch64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.10 -c /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.c -o build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.o
-      In file included from /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.c:17:
-      /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src
+      aarch64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.10 -c /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.c -o build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.o
+      In file included from /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.c:17:
+      /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
          23 | #include &lt;librdkafka/rdkafka.h&gt;
             |          ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -1997,14 +1972,14 @@ Installing collected packages: confluent-kafka
       building &#x27;confluent_kafka.cimpl&#x27; extension
       creating build/temp.linux-aarch64-3.10
       creating build/temp.linux-aarch64-3.10/tmp
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka
-      creating build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src
-      aarch64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.10 -c /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.c -o build/temp.linux-aarch64-3.10/tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.o
-      In file included from /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/Admin.c:17:
-      /tmp/pip-install-sc4x72fg/confluent-kafka_229b0727503540f796911b5dd28154df/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka
+      creating build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src
+      aarch64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -I/usr/include/python3.10 -c /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.c -o build/temp.linux-aarch64-3.10/tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.o
+      In file included from /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/Admin.c:17:
+      /tmp/pip-install-4aj1scnw/confluent-kafka_c8db296ea35143d59ce37602d36c899e/src/confluent_kafka/src/confluent_kafka.h:23:10: fatal error: librdkafka/rdkafka.h: No such file or directory
          23 | #include &lt;librdkafka/rdkafka.h&gt;
             |          ^~~~~~~~~~~~~~~~~~~~~~
       compilation terminated.
@@ -2589,11 +2564,11 @@ hint: See above for output from the failure.
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_faiss-cpu_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_faiss-cpu_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_faiss-cpu_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_faiss-cpu_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting faiss-cpu
   Downloading faiss_cpu-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 60.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 69.8 MB/s eta 0:00:00
 Installing collected packages: faiss-cpu
 Successfully installed faiss-cpu-1.7.3
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -2609,11 +2584,11 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_faiss-cpu_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_faiss-cpu_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_faiss-cpu_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_faiss-cpu_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting faiss-cpu
   Downloading faiss_cpu-1.7.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 65.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 73.4 MB/s eta 0:00:00
 Installing collected packages: faiss-cpu
 Successfully installed faiss-cpu-1.7.3
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -2627,11 +2602,11 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_faiss-cpu_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_faiss-cpu_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_faiss-cpu_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_faiss-cpu_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting faiss-cpu
   Downloading faiss_cpu-1.7.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 69.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 72.6 MB/s eta 0:00:00
 Installing collected packages: faiss-cpu
 Successfully installed faiss-cpu-1.7.3
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -2649,11 +2624,11 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_faiss-cpu_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_faiss-cpu_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_faiss-cpu_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_faiss-cpu_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting faiss-cpu
   Downloading faiss_cpu-1.7.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 46.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.9/2.9 MB 37.9 MB/s eta 0:00:00
 Installing collected packages: faiss-cpu
 Successfully installed faiss-cpu-1.7.3
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -3177,11 +3152,11 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_hidapi_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_hidapi_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_hidapi_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_hidapi_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Downloading hidapi-0.12.0.post2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (889 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 889.2/889.2 kB 39.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 889.2/889.2 kB 35.1 MB/s eta 0:00:00
 Requirement already satisfied: setuptools&gt;=19.0 in /usr/lib/python3.7/site-packages (from hidapi) (49.1.3)
 Installing collected packages: hidapi
 Successfully installed hidapi-0.12.0.post2
@@ -3196,11 +3171,11 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_hidapi_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_hidapi_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_hidapi_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_hidapi_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Downloading hidapi-0.12.0.post2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (926 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 926.7/926.7 kB 34.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 926.7/926.7 kB 57.8 MB/s eta 0:00:00
 Requirement already satisfied: setuptools&gt;=19.0 in /usr/lib/python3.8/site-packages (from hidapi) (38.4.0)
 Installing collected packages: hidapi
 Successfully installed hidapi-0.12.0.post2
@@ -3213,11 +3188,11 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_hidapi_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_hidapi_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_hidapi_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_hidapi_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Downloading hidapi-0.12.0.post2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (926 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 926.7/926.7 kB 40.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 926.7/926.7 kB 43.0 MB/s eta 0:00:00
 Requirement already satisfied: setuptools&gt;=19.0 in /usr/lib/python3/dist-packages (from hidapi) (45.2.0)
 Installing collected packages: hidapi
 Successfully installed hidapi-0.12.0.post2
@@ -3234,11 +3209,11 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_hidapi_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_hidapi_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_hidapi_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_hidapi_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Downloading hidapi-0.12.0.post2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (900 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 900.5/900.5 kB 12.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 900.5/900.5 kB 16.8 MB/s eta 0:00:00
 Requirement already satisfied: setuptools&gt;=19.0 in /usr/lib/python3/dist-packages (from hidapi) (59.6.0)
 Installing collected packages: hidapi
 Successfully installed hidapi-0.12.0.post2
@@ -3546,7 +3521,7 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">landlab<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">landlab<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="failed badge">no</span>
 </td>
@@ -3555,91 +3530,91 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_landlab_amazon-linux2" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_landlab_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_landlab_amazon-linux2" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_landlab_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0.tar.gz (1.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 59.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 27.5 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
   Getting requirements to build wheel: finished with status &#x27;done&#x27;
   Preparing metadata (pyproject.toml): started
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
-Collecting scipy
-  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (36.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 47.8 MB/s eta 0:00:00
+Collecting statsmodels
+  Downloading statsmodels-0.13.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 72.4 MB/s eta 0:00:00
 Collecting matplotlib
   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 68.8 MB/s eta 0:00:00
-Collecting pandas
-  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (10.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 65.9 MB/s eta 0:00:00
-Collecting richdem
-  Downloading richdem-0.3.4.tar.gz (329 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 44.1 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
-Collecting pyyaml
-  Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (656 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 657.0/657.0 kB 57.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 69.4 MB/s eta 0:00:00
+Collecting netcdf4
+  Downloading netCDF4-1.6.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 71.9 MB/s eta 0:00:00
+Collecting xarray&gt;=0.16
+  Downloading xarray-0.20.2-py3-none-any.whl (845 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 845.2/845.2 kB 36.5 MB/s eta 0:00:00
+Collecting pyshp
+  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 10.0 MB/s eta 0:00:00
 Collecting bmipy
   Downloading bmipy-2.0.tar.gz (23 kB)
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
-Collecting xarray&gt;=0.16
-  Downloading xarray-0.20.2-py3-none-any.whl (845 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 845.2/845.2 kB 61.3 MB/s eta 0:00:00
-Collecting statsmodels
-  Downloading statsmodels-0.13.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 74.9 MB/s eta 0:00:00
 Collecting numpy
   Using cached numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
-Collecting pyshp
-  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 8.0 MB/s eta 0:00:00
-Collecting netcdf4
-  Downloading netCDF4-1.6.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 85.4 MB/s eta 0:00:00
+Collecting richdem
+  Downloading richdem-0.3.4.tar.gz (329 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 44.2 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting pandas
+  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (10.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 72.0 MB/s eta 0:00:00
+Collecting scipy
+  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (36.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 41.2 MB/s eta 0:00:00
+Collecting pyyaml
+  Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (656 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 657.0/657.0 kB 55.9 MB/s eta 0:00:00
 Collecting typing-extensions&gt;=3.7
   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Collecting importlib-metadata
   Downloading importlib_metadata-5.0.0-py3-none-any.whl (21 kB)
-Collecting pytz&gt;=2017.3
-  Downloading pytz-2022.6-py2.py3-none-any.whl (498 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 498.1/498.1 kB 52.5 MB/s eta 0:00:00
 Collecting python-dateutil&gt;=2.7.3
   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 36.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 35.6 MB/s eta 0:00:00
+Collecting pytz&gt;=2017.3
+  Downloading pytz-2022.6-py2.py3-none-any.whl (498 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 498.1/498.1 kB 50.6 MB/s eta 0:00:00
 Collecting black
   Downloading black-22.10.0-py3-none-any.whl (165 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.8/165.8 kB 25.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 165.8/165.8 kB 29.4 MB/s eta 0:00:00
 Collecting click
   Downloading click-8.1.3-py3-none-any.whl (96 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 19.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 16.1 MB/s eta 0:00:00
 Collecting jinja2
   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 25.9 MB/s eta 0:00:00
-Collecting pillow&gt;=6.2.0
-  Downloading Pillow-9.3.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 82.5 MB/s eta 0:00:00
-Collecting cycler&gt;=0.10
-  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
-Collecting pyparsing&gt;=2.2.1
-  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 20.1 MB/s eta 0:00:00
-Collecting fonttools&gt;=4.22.0
-  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 62.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 21.6 MB/s eta 0:00:00
 Collecting packaging&gt;=20.0
   Downloading packaging-21.3-py3-none-any.whl (40 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 7.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.8/40.8 kB 7.8 MB/s eta 0:00:00
+Collecting pillow&gt;=6.2.0
+  Downloading Pillow-9.3.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 74.5 MB/s eta 0:00:00
+Collecting pyparsing&gt;=2.2.1
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 18.9 MB/s eta 0:00:00
+Collecting cycler&gt;=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting fonttools&gt;=4.22.0
+  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 68.1 MB/s eta 0:00:00
 Collecting kiwisolver&gt;=1.0.1
   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 74.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 72.9 MB/s eta 0:00:00
 Collecting cftime
   Downloading cftime-1.6.2.tar.gz (52 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 9.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 8.4 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -3648,20 +3623,20 @@ Collecting cftime
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
 Collecting patsy&gt;=0.5.2
   Downloading patsy-0.5.3-py2.py3-none-any.whl (233 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.8/233.8 kB 31.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.8/233.8 kB 33.8 MB/s eta 0:00:00
 Collecting six
   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
-Collecting pathspec&gt;=0.9.0
-  Downloading pathspec-0.10.2-py3-none-any.whl (28 kB)
 Collecting mypy-extensions&gt;=0.4.3
   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)
-Collecting tomli&gt;=1.1.0
-  Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting platformdirs&gt;=2
   Downloading platformdirs-2.5.4-py3-none-any.whl (14 kB)
+Collecting tomli&gt;=1.1.0
+  Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting typed-ast&gt;=1.4.2
   Downloading typed_ast-1.5.4-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (793 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.2/793.2 kB 60.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.2/793.2 kB 59.7 MB/s eta 0:00:00
+Collecting pathspec&gt;=0.9.0
+  Downloading pathspec-0.10.2-py3-none-any.whl (28 kB)
 Collecting zipp&gt;=0.5
   Downloading zipp-3.10.0-py3-none-any.whl (6.2 kB)
 Collecting MarkupSafe&gt;=2.0
@@ -3670,11 +3645,11 @@ Building wheels for collected packages: landlab, cftime
   Building wheel for landlab (pyproject.toml): started
   Building wheel for landlab (pyproject.toml): still running...
   Building wheel for landlab (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for landlab: filename=landlab-2.5.0-cp37-cp37m-linux_aarch64.whl size=5439170 sha256=509e21b55b3ba8c2d60d1f69bce8a809b4aa5a2a5e5c69cba90f5c42908ac972
+  Created wheel for landlab: filename=landlab-2.5.0-cp37-cp37m-linux_aarch64.whl size=5439125 sha256=2b7493229b7dd49c4bb13ea5b46d08f2482512d9f16ed143004f9a8198354746
   Stored in directory: /root/.cache/pip/wheels/06/23/41/1aa342613f9d746af15580557e2438b7f66383d1d1934ccbe8
   Building wheel for cftime (pyproject.toml): started
   Building wheel for cftime (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for cftime: filename=cftime-1.6.2-cp37-cp37m-linux_aarch64.whl size=789178 sha256=8f7d6e991d3532697d80a3cd3e4699496048465d8ffbe0cbf0186e40f65515cb
+  Created wheel for cftime: filename=cftime-1.6.2-cp37-cp37m-linux_aarch64.whl size=789219 sha256=202cd6d24edc8ba8414de2e35c0ece4d56f37ad2019111f6419c38b8d41500b1
   Stored in directory: /root/.cache/pip/wheels/3a/b8/47/0e792b0479e9711f9dc8dbd9cf322021e7d3c0d1fc122c2592
 Successfully built landlab cftime
 Installing collected packages: pytz, mypy-extensions, zipp, typing-extensions, typed-ast, tomli, six, pyyaml, pyshp, pyparsing, platformdirs, pillow, pathspec, numpy, MarkupSafe, fonttools, cycler, scipy, richdem, python-dateutil, patsy, packaging, kiwisolver, jinja2, importlib-metadata, cftime, pandas, netcdf4, matplotlib, click, xarray, statsmodels, black, bmipy, landlab
@@ -3686,14 +3661,23 @@ Installing collected packages: pytz, mypy-extensions, zipp, typing-extensions, t
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_landlab_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_landlab_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_landlab_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_landlab_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (6.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 77.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 79.7 MB/s eta 0:00:00
+Collecting statsmodels
+  Downloading statsmodels-0.13.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 75.2 MB/s eta 0:00:00
+Collecting pandas
+  Downloading pandas-1.5.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.5/11.5 MB 72.9 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 69.2 MB/s eta 0:00:00
 Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 59.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 46.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -3731,11 +3715,11 @@ Collecting netcdf4
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-lltz5z6y/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-i3as684r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-lltz5z6y/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-i3as684r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-lltz5z6y/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-i3as684r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -3754,17 +3738,47 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_landlab_focal" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_landlab_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-11-20 01:41:09_landlab_focal" class="output-toggle" />
+<label for="output_2022-11-20 01:41:09_landlab_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (6.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 75.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 74.9 MB/s eta 0:00:00
 Collecting matplotlib
   Downloading matplotlib-3.6.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 77.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 76.1 MB/s eta 0:00:00
+Collecting scipy
+  Downloading scipy-1.9.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 54.3 MB/s eta 0:00:00
+Collecting xarray&gt;=0.16
+  Downloading xarray-2022.11.0-py3-none-any.whl (963 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 963.7/963.7 kB 74.3 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 77.1 MB/s eta 0:00:00
+Collecting bmipy
+  Downloading bmipy-2.0.tar.gz (23 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting pyyaml
+  Downloading PyYAML-6.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (721 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 721.7/721.7 kB 66.9 MB/s eta 0:00:00
+Collecting richdem
+  Downloading richdem-0.3.4.tar.gz (329 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 45.9 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting pyshp
+  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 9.7 MB/s eta 0:00:00
+Collecting statsmodels
+  Downloading statsmodels-0.13.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 85.9 MB/s eta 0:00:00
+Collecting pandas
+  Downloading pandas-1.5.1-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.5/11.5 MB 65.0 MB/s eta 0:00:00
 Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 65.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 59.8 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -3798,11 +3812,11 @@ Collecting netcdf4
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/dist-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-e1woja9v/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-09j_lau0/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-e1woja9v/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-09j_lau0/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-e1woja9v/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-09j_lau0/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -4628,7 +4642,7 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">landlab<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">landlab<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="failed badge">no</span>
 </td>
@@ -4637,91 +4651,91 @@ note: This error originates from a subprocess, and is likely not a problem with 
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_landlab_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_landlab_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_landlab_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_landlab_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0.tar.gz (1.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 61.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 54.8 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
   Getting requirements to build wheel: finished with status &#x27;done&#x27;
   Preparing metadata (pyproject.toml): started
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
-Collecting statsmodels
-  Downloading statsmodels-0.13.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 71.9 MB/s eta 0:00:00
-Collecting pandas
-  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (10.7 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 76.0 MB/s eta 0:00:00
-Collecting scipy
-  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (36.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 32.7 MB/s eta 0:00:00
-Collecting pyshp
-  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 7.8 MB/s eta 0:00:00
-Collecting xarray&gt;=0.16
-  Downloading xarray-0.20.2-py3-none-any.whl (845 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 845.2/845.2 kB 61.4 MB/s eta 0:00:00
-Collecting richdem
-  Downloading richdem-0.3.4.tar.gz (329 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 41.8 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Collecting pyyaml
   Downloading PyYAML-6.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (656 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 657.0/657.0 kB 51.0 MB/s eta 0:00:00
-Collecting numpy
-  Using cached numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
-Collecting netcdf4
-  Downloading netCDF4-1.6.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 74.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 657.0/657.0 kB 55.1 MB/s eta 0:00:00
+Collecting richdem
+  Downloading richdem-0.3.4.tar.gz (329 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 38.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting xarray&gt;=0.16
+  Downloading xarray-0.20.2-py3-none-any.whl (845 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 845.2/845.2 kB 57.6 MB/s eta 0:00:00
+Collecting statsmodels
+  Downloading statsmodels-0.13.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 68.8 MB/s eta 0:00:00
 Collecting matplotlib
   Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 37.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 64.5 MB/s eta 0:00:00
+Collecting scipy
+  Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (36.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 43.5 MB/s eta 0:00:00
+Collecting numpy
+  Using cached numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
+Collecting pandas
+  Downloading pandas-1.3.5-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (10.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 70.6 MB/s eta 0:00:00
+Collecting pyshp
+  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 7.5 MB/s eta 0:00:00
 Collecting bmipy
   Downloading bmipy-2.0.tar.gz (23 kB)
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting netcdf4
+  Downloading netCDF4-1.6.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.6/4.6 MB 44.8 MB/s eta 0:00:00
 Collecting typing-extensions&gt;=3.7
   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Collecting importlib-metadata
   Downloading importlib_metadata-5.1.0-py3-none-any.whl (21 kB)
 Collecting python-dateutil&gt;=2.7.3
   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 33.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 34.7 MB/s eta 0:00:00
 Collecting pytz&gt;=2017.3
   Downloading pytz-2022.6-py2.py3-none-any.whl (498 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 498.1/498.1 kB 44.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 498.1/498.1 kB 48.6 MB/s eta 0:00:00
 Collecting black
   Downloading black-22.12.0-py3-none-any.whl (167 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.3/167.3 kB 20.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 167.3/167.3 kB 28.8 MB/s eta 0:00:00
 Collecting click
   Downloading click-8.1.3-py3-none-any.whl (96 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 15.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 17.4 MB/s eta 0:00:00
 Collecting jinja2
   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 21.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 25.8 MB/s eta 0:00:00
 Collecting fonttools&gt;=4.22.0
   Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 36.4 MB/s eta 0:00:00
-Collecting pyparsing&gt;=2.2.1
-  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 18.5 MB/s eta 0:00:00
-Collecting pillow&gt;=6.2.0
-  Downloading Pillow-9.3.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 78.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 47.6 MB/s eta 0:00:00
 Collecting cycler&gt;=0.10
   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
 Collecting packaging&gt;=20.0
   Downloading packaging-22.0-py3-none-any.whl (42 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 6.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 8.6 MB/s eta 0:00:00
 Collecting kiwisolver&gt;=1.0.1
   Downloading kiwisolver-1.4.4-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 66.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 68.5 MB/s eta 0:00:00
+Collecting pillow&gt;=6.2.0
+  Downloading Pillow-9.3.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 74.7 MB/s eta 0:00:00
+Collecting pyparsing&gt;=2.2.1
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 17.3 MB/s eta 0:00:00
 Collecting cftime
   Downloading cftime-1.6.2.tar.gz (52 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 10.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.7/52.7 kB 8.8 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -4730,16 +4744,16 @@ Collecting cftime
   Preparing metadata (pyproject.toml): finished with status &#x27;done&#x27;
 Collecting patsy&gt;=0.5.2
   Downloading patsy-0.5.3-py2.py3-none-any.whl (233 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.8/233.8 kB 32.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 233.8/233.8 kB 33.3 MB/s eta 0:00:00
 Collecting six
   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
-Collecting tomli&gt;=1.1.0
-  Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting mypy-extensions&gt;=0.4.3
   Downloading mypy_extensions-0.4.3-py2.py3-none-any.whl (4.5 kB)
+Collecting tomli&gt;=1.1.0
+  Downloading tomli-2.0.1-py3-none-any.whl (12 kB)
 Collecting typed-ast&gt;=1.4.2
   Downloading typed_ast-1.5.4-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (793 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.2/793.2 kB 56.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 793.2/793.2 kB 58.3 MB/s eta 0:00:00
 Collecting platformdirs&gt;=2
   Downloading platformdirs-2.6.0-py3-none-any.whl (14 kB)
 Collecting pathspec&gt;=0.9.0
@@ -4752,11 +4766,11 @@ Building wheels for collected packages: landlab, cftime
   Building wheel for landlab (pyproject.toml): started
   Building wheel for landlab (pyproject.toml): still running...
   Building wheel for landlab (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for landlab: filename=landlab-2.5.0-cp37-cp37m-linux_aarch64.whl size=5439107 sha256=ebb345c5900006e9814eb43c033c957a64e98f1aa0fcfb3b95ca77df975d9c95
+  Created wheel for landlab: filename=landlab-2.5.0-cp37-cp37m-linux_aarch64.whl size=5439074 sha256=62a43cecaae806b6452f5cb69cccb0aefd1c4402ce70a529b8c1dc954aaa135f
   Stored in directory: /root/.cache/pip/wheels/06/23/41/1aa342613f9d746af15580557e2438b7f66383d1d1934ccbe8
   Building wheel for cftime (pyproject.toml): started
   Building wheel for cftime (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for cftime: filename=cftime-1.6.2-cp37-cp37m-linux_aarch64.whl size=789180 sha256=108734f0076832926bb6d0835c28393e6cba955538ef049b7618faa0d9473eb7
+  Created wheel for cftime: filename=cftime-1.6.2-cp37-cp37m-linux_aarch64.whl size=789194 sha256=de4cbf9c5e188af0feaacfe9b4cbacb5d32f5bc43fa236fdc26ea5448f714571
   Stored in directory: /root/.cache/pip/wheels/3a/b8/47/0e792b0479e9711f9dc8dbd9cf322021e7d3c0d1fc122c2592
 Successfully built landlab cftime
 Installing collected packages: pytz, mypy-extensions, zipp, typing-extensions, typed-ast, tomli, six, pyyaml, pyshp, pyparsing, platformdirs, pillow, pathspec, packaging, numpy, MarkupSafe, fonttools, cycler, scipy, richdem, python-dateutil, patsy, kiwisolver, jinja2, importlib-metadata, cftime, pandas, netcdf4, matplotlib, click, xarray, statsmodels, black, bmipy, landlab
@@ -4768,47 +4782,23 @@ Installing collected packages: pytz, mypy-extensions, zipp, typing-extensions, t
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_landlab_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_landlab_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_landlab_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_landlab_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (6.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 49.2 MB/s eta 0:00:00
-Collecting pyyaml
-  Downloading PyYAML-6.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (721 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 721.7/721.7 kB 64.7 MB/s eta 0:00:00
-Collecting xarray&gt;=0.16
-  Downloading xarray-2022.12.0-py3-none-any.whl (969 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 970.0/970.0 kB 72.8 MB/s eta 0:00:00
-Collecting matplotlib
-  Downloading matplotlib-3.6.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 74.6 MB/s eta 0:00:00
-Collecting pyshp
-  Downloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 4.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 40.3 MB/s eta 0:00:00
 Collecting statsmodels
   Downloading statsmodels-0.13.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (9.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 75.3 MB/s eta 0:00:00
-Collecting bmipy
-  Downloading bmipy-2.0.tar.gz (23 kB)
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
-Collecting numpy
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 77.0 MB/s eta 0:00:00
-Collecting richdem
-  Downloading richdem-0.3.4.tar.gz (329 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 329.4/329.4 kB 15.9 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.6/9.6 MB 77.1 MB/s eta 0:00:00
 Collecting pandas
   Downloading pandas-1.5.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.5 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.5/11.5 MB 82.9 MB/s eta 0:00:00
-Collecting scipy
-  Downloading scipy-1.9.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 46.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.5/11.5 MB 68.8 MB/s eta 0:00:00
+Collecting pyyaml
+  Downloading PyYAML-6.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (721 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 721.7/721.7 kB 62.2 MB/s eta 0:00:00
 Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 67.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 64.6 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -4846,11 +4836,11 @@ Collecting netcdf4
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-eohk0ulg/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-8q0jbt2r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-eohk0ulg/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-8q0jbt2r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-eohk0ulg/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-8q0jbt2r/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -4869,14 +4859,14 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_landlab_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_landlab_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_landlab_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_landlab_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Downloading landlab-2.5.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (6.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 85.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.4/6.4 MB 75.0 MB/s eta 0:00:00
 Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 62.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 65.4 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -4910,11 +4900,11 @@ Collecting netcdf4
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/dist-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-zp33d79h/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-mim2exwr/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-zp33d79h/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-mim2exwr/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-zp33d79h/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-mim2exwr/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -5413,26 +5403,20 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_mocpy_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_mocpy_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_mocpy_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_mocpy_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting mocpy
   Downloading MOCPy-0.11.0-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (615 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.6/615.6 kB 43.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 615.6/615.6 kB 44.2 MB/s eta 0:00:00
 Collecting networkx
   Downloading networkx-2.6.3-py3-none-any.whl (1.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 69.1 MB/s eta 0:00:00
-Collecting cdshealpix
-  Downloading cdshealpix-0.6.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (869 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 869.9/869.9 kB 65.3 MB/s eta 0:00:00
-Collecting matplotlib
-  Downloading matplotlib-3.5.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 62.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 71.6 MB/s eta 0:00:00
 Collecting lark-parser
   Downloading lark_parser-0.12.0-py2.py3-none-any.whl (103 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.5/103.5 kB 16.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.5/103.5 kB 18.2 MB/s eta 0:00:00
 Collecting astropy
   Downloading astropy-4.3.1.tar.gz (7.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 73.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.6/7.6 MB 60.0 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -5449,26 +5433,26 @@ Collecting astropy
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.7/site-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 70, in &lt;module&gt;
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/extension_helpers/_setup_helpers.py&quot;, line 67, in get_extensions
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/extension_helpers/_setup_helpers.py&quot;, line 67, in get_extensions
           ext_modules.extend(setuppkg.get_extensions())
         File &quot;./astropy/modeling/setup_package.py&quot;, line 59, in get_extensions
           from jinja2 import Environment, FileSystemLoader
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/jinja2/__init__.py&quot;, line 33, in &lt;module&gt;
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/jinja2/__init__.py&quot;, line 33, in &lt;module&gt;
           from jinja2.environment import Environment, Template
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/jinja2/environment.py&quot;, line 15, in &lt;module&gt;
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/jinja2/environment.py&quot;, line 15, in &lt;module&gt;
           from jinja2 import nodes
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/jinja2/nodes.py&quot;, line 19, in &lt;module&gt;
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/jinja2/nodes.py&quot;, line 19, in &lt;module&gt;
           from jinja2.utils import Markup
-        File &quot;/tmp/pip-build-env-ijii61k7/overlay/lib/python3.7/site-packages/jinja2/utils.py&quot;, line 642, in &lt;module&gt;
+        File &quot;/tmp/pip-build-env-dsan5j9z/overlay/lib/python3.7/site-packages/jinja2/utils.py&quot;, line 642, in &lt;module&gt;
           from markupsafe import Markup, escape, soft_unicode
-      ImportError: cannot import name &#x27;soft_unicode&#x27; from &#x27;markupsafe&#x27; (/tmp/pip-build-env-ijii61k7/overlay/lib64/python3.7/site-packages/markupsafe/__init__.py)
+      ImportError: cannot import name &#x27;soft_unicode&#x27; from &#x27;markupsafe&#x27; (/tmp/pip-build-env-dsan5j9z/overlay/lib64/python3.7/site-packages/markupsafe/__init__.py)
       [end of output]
   
   note: This error originates from a subprocess, and is likely not a problem with pip.
@@ -5559,11 +5543,11 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Mosek_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Mosek_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Mosek_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Mosek_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Mosek
   Downloading Mosek-10.0.31-cp37-cp37m-manylinux2014_aarch64.whl (8.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 59.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 72.2 MB/s eta 0:00:00
 Installing collected packages: Mosek
 Successfully installed Mosek-10.0.31
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -5579,11 +5563,11 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Mosek_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Mosek_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Mosek_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Mosek_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Mosek
   Downloading Mosek-10.0.31-cp38-cp38-manylinux2014_aarch64.whl (8.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 78.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 72.9 MB/s eta 0:00:00
 Installing collected packages: Mosek
 Successfully installed Mosek-10.0.31
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -5725,11 +5709,11 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_netcdf4_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_netcdf4_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_netcdf4_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_netcdf4_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 55.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 48.2 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -5767,11 +5751,11 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-0akk0xkj/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-1nc8jd84/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-0akk0xkj/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-1nc8jd84/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-0akk0xkj/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-1nc8jd84/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -5790,11 +5774,11 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_netcdf4_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_netcdf4_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_netcdf4_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_netcdf4_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting netcdf4
   Downloading netCDF4-1.6.2.tar.gz (777 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 53.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 777.3/777.3 kB 56.8 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -5828,11 +5812,11 @@ note: This error originates from a subprocess, and is likely not a problem with 
           json_out[&#x27;return_val&#x27;] = hook(**hook_input[&#x27;kwargs&#x27;])
         File &quot;/usr/local/lib/python3.8/dist-packages/pip/_vendor/pep517/in_process/_in_process.py&quot;, line 118, in get_requires_for_build_wheel
           return hook(config_settings)
-        File &quot;/tmp/pip-build-env-48qfpl2l/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
+        File &quot;/tmp/pip-build-env-iur166z_/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 338, in get_requires_for_build_wheel
           return self._get_build_requires(config_settings, requirements=[&#x27;wheel&#x27;])
-        File &quot;/tmp/pip-build-env-48qfpl2l/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
+        File &quot;/tmp/pip-build-env-iur166z_/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 320, in _get_build_requires
           self.run_setup()
-        File &quot;/tmp/pip-build-env-48qfpl2l/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
+        File &quot;/tmp/pip-build-env-iur166z_/overlay/lib/python3.8/site-packages/setuptools/build_meta.py&quot;, line 335, in run_setup
           exec(code, locals())
         File &quot;&lt;string&gt;&quot;, line 449, in &lt;module&gt;
         File &quot;&lt;string&gt;&quot;, line 390, in _populate_hdf5_info
@@ -5968,11 +5952,11 @@ note: This error originates from a subprocess, and is likely not a problem with 
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_nmslib_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_nmslib_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_nmslib_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_nmslib_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting nmslib
   Downloading nmslib-2.1.1.tar.gz (188 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 kB 5.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 kB 4.3 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Collecting psutil
@@ -6130,70 +6114,70 @@ Building wheels for collected packages: nmslib
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_open3d_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_open3d_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_open3d_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_open3d_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting open3d
   Downloading open3d-0.16.0-cp37-cp37m-manylinux2014_aarch64.whl (58.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 MB 30.7 MB/s eta 0:00:00
-Collecting nbformat==5.5.0
-  Downloading nbformat-5.5.0-py3-none-any.whl (75 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.3/75.3 kB 13.9 MB/s eta 0:00:00
-Collecting numpy&gt;=1.18.0
-  Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 70.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 MB 30.6 MB/s eta 0:00:00
 Collecting dash&gt;=2.6.0
   Downloading dash-2.7.0-py3-none-any.whl (9.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 63.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 70.4 MB/s eta 0:00:00
+Collecting nbformat==5.5.0
+  Downloading nbformat-5.5.0-py3-none-any.whl (75 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.3/75.3 kB 12.9 MB/s eta 0:00:00
+Collecting numpy&gt;=1.18.0
+  Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 71.3 MB/s eta 0:00:00
 Collecting configargparse
   Downloading ConfigArgParse-1.5.3-py3-none-any.whl (20 kB)
 Collecting fastjsonschema
   Downloading fastjsonschema-2.16.2-py3-none-any.whl (22 kB)
-Collecting jupyter_core
-  Downloading jupyter_core-4.12.0-py3-none-any.whl (89 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 12.1 MB/s eta 0:00:00
 Collecting traitlets&gt;=5.1
   Downloading traitlets-5.7.0-py3-none-any.whl (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.9/109.9 kB 20.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.9/109.9 kB 23.1 MB/s eta 0:00:00
+Collecting jupyter_core
+  Downloading jupyter_core-4.12.0-py3-none-any.whl (89 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 16.8 MB/s eta 0:00:00
 Collecting jsonschema&gt;=2.6
   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 17.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 17.3 MB/s eta 0:00:00
 Collecting dash-html-components==2.0.0
   Downloading dash_html_components-2.0.0-py3-none-any.whl (4.1 kB)
-Collecting dash-core-components==2.0.0
-  Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
-Collecting dash-table==5.0.0
-  Downloading dash_table-5.0.0-py3-none-any.whl (3.9 kB)
 Collecting Flask&gt;=1.0.4
   Downloading Flask-2.2.2-py3-none-any.whl (101 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.5/101.5 kB 18.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.5/101.5 kB 19.1 MB/s eta 0:00:00
+Collecting dash-table==5.0.0
+  Downloading dash_table-5.0.0-py3-none-any.whl (3.9 kB)
 Collecting plotly&gt;=5.0.0
   Downloading plotly-5.11.0-py2.py3-none-any.whl (15.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 71.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 65.6 MB/s eta 0:00:00
+Collecting dash-core-components==2.0.0
+  Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
 Collecting importlib-metadata&gt;=3.6.0
   Downloading importlib_metadata-5.1.0-py3-none-any.whl (21 kB)
-Collecting itsdangerous&gt;=2.0
-  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
-Collecting Werkzeug&gt;=2.2.2
-  Downloading Werkzeug-2.2.2-py3-none-any.whl (232 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.7/232.7 kB 36.0 MB/s eta 0:00:00
-Collecting Jinja2&gt;=3.0
-  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 21.3 MB/s eta 0:00:00
 Collecting click&gt;=8.0
   Downloading click-8.1.3-py3-none-any.whl (96 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 16.1 MB/s eta 0:00:00
-Collecting importlib-resources&gt;=1.4.0
-  Downloading importlib_resources-5.10.1-py3-none-any.whl (34 kB)
-Collecting typing-extensions
-  Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
-Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0
-  Downloading pyrsistent-0.19.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (118 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.0/118.0 kB 21.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 13.1 MB/s eta 0:00:00
+Collecting itsdangerous&gt;=2.0
+  Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
+Collecting Jinja2&gt;=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 23.8 MB/s eta 0:00:00
+Collecting Werkzeug&gt;=2.2.2
+  Downloading Werkzeug-2.2.2-py3-none-any.whl (232 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.7/232.7 kB 30.6 MB/s eta 0:00:00
 Collecting pkgutil-resolve-name&gt;=1.3.10
   Downloading pkgutil_resolve_name-1.3.10-py3-none-any.whl (4.7 kB)
+Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0
+  Downloading pyrsistent-0.19.2-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (118 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 118.0/118.0 kB 20.9 MB/s eta 0:00:00
+Collecting typing-extensions
+  Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Collecting attrs&gt;=17.4.0
   Downloading attrs-22.1.0-py2.py3-none-any.whl (58 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 12.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 12.4 MB/s eta 0:00:00
+Collecting importlib-resources&gt;=1.4.0
+  Downloading importlib_resources-5.10.1-py3-none-any.whl (34 kB)
 Collecting tenacity&gt;=6.2.0
   Downloading tenacity-8.1.0-py3-none-any.whl (23 kB)
 Collecting zipp&gt;=0.5
@@ -6215,68 +6199,68 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_open3d_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_open3d_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_open3d_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_open3d_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting open3d
   Downloading open3d-0.16.0-cp38-cp38-manylinux2014_aarch64.whl (58.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 MB 28.5 MB/s eta 0:00:00
-Collecting numpy&gt;=1.18.0
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 72.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.0/58.0 MB 26.7 MB/s eta 0:00:00
 Collecting dash&gt;=2.6.0
   Downloading dash-2.7.0-py3-none-any.whl (9.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 84.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 75.6 MB/s eta 0:00:00
+Collecting numpy&gt;=1.18.0
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 33.4 MB/s eta 0:00:00
 Collecting nbformat==5.5.0
   Downloading nbformat-5.5.0-py3-none-any.whl (75 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.3/75.3 kB 14.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.3/75.3 kB 15.2 MB/s eta 0:00:00
 Collecting configargparse
   Downloading ConfigArgParse-1.5.3-py3-none-any.whl (20 kB)
-Collecting traitlets&gt;=5.1
-  Downloading traitlets-5.7.0-py3-none-any.whl (109 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.9/109.9 kB 19.8 MB/s eta 0:00:00
 Collecting fastjsonschema
   Downloading fastjsonschema-2.16.2-py3-none-any.whl (22 kB)
 Collecting jsonschema&gt;=2.6
   Downloading jsonschema-4.17.3-py3-none-any.whl (90 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 13.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.4/90.4 kB 19.1 MB/s eta 0:00:00
+Collecting traitlets&gt;=5.1
+  Downloading traitlets-5.7.0-py3-none-any.whl (109 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 109.9/109.9 kB 22.5 MB/s eta 0:00:00
 Collecting jupyter_core
   Downloading jupyter_core-5.1.0-py3-none-any.whl (92 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.7/92.7 kB 18.0 MB/s eta 0:00:00
-Collecting dash-core-components==2.0.0
-  Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 92.7/92.7 kB 17.9 MB/s eta 0:00:00
 Collecting dash-html-components==2.0.0
   Downloading dash_html_components-2.0.0-py3-none-any.whl (4.1 kB)
-Collecting plotly&gt;=5.0.0
-  Downloading plotly-5.11.0-py2.py3-none-any.whl (15.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 69.4 MB/s eta 0:00:00
 Collecting Flask&gt;=1.0.4
   Downloading Flask-2.2.2-py3-none-any.whl (101 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.5/101.5 kB 21.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.5/101.5 kB 21.8 MB/s eta 0:00:00
 Collecting dash-table==5.0.0
   Downloading dash_table-5.0.0-py3-none-any.whl (3.9 kB)
-Collecting Jinja2&gt;=3.0
-  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 8.6 MB/s eta 0:00:00
+Collecting dash-core-components==2.0.0
+  Downloading dash_core_components-2.0.0-py3-none-any.whl (3.8 kB)
+Collecting plotly&gt;=5.0.0
+  Downloading plotly-5.11.0-py2.py3-none-any.whl (15.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.3/15.3 MB 68.6 MB/s eta 0:00:00
 Collecting itsdangerous&gt;=2.0
   Downloading itsdangerous-2.1.2-py3-none-any.whl (15 kB)
 Collecting Werkzeug&gt;=2.2.2
   Downloading Werkzeug-2.2.2-py3-none-any.whl (232 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.7/232.7 kB 36.0 MB/s eta 0:00:00
-Collecting click&gt;=8.0
-  Downloading click-8.1.3-py3-none-any.whl (96 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 18.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 232.7/232.7 kB 34.6 MB/s eta 0:00:00
 Collecting importlib-metadata&gt;=3.6.0
   Downloading importlib_metadata-5.1.0-py3-none-any.whl (21 kB)
-Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0
-  Downloading pyrsistent-0.19.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (120 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.9/120.9 kB 23.6 MB/s eta 0:00:00
-Collecting attrs&gt;=17.4.0
-  Downloading attrs-22.1.0-py2.py3-none-any.whl (58 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 10.8 MB/s eta 0:00:00
-Collecting importlib-resources&gt;=1.4.0
-  Downloading importlib_resources-5.10.1-py3-none-any.whl (34 kB)
+Collecting click&gt;=8.0
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 96.6/96.6 kB 17.7 MB/s eta 0:00:00
+Collecting Jinja2&gt;=3.0
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 133.1/133.1 kB 23.2 MB/s eta 0:00:00
 Collecting pkgutil-resolve-name&gt;=1.3.10
   Downloading pkgutil_resolve_name-1.3.10-py3-none-any.whl (4.7 kB)
+Collecting pyrsistent!=0.17.0,!=0.17.1,!=0.17.2,&gt;=0.14.0
+  Downloading pyrsistent-0.19.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (120 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.9/120.9 kB 20.7 MB/s eta 0:00:00
+Collecting attrs&gt;=17.4.0
+  Downloading attrs-22.1.0-py2.py3-none-any.whl (58 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.8/58.8 kB 9.9 MB/s eta 0:00:00
+Collecting importlib-resources&gt;=1.4.0
+  Downloading importlib_resources-5.10.1-py3-none-any.whl (34 kB)
 Collecting tenacity&gt;=6.2.0
   Downloading tenacity-8.1.0-py3-none-any.whl (23 kB)
 Collecting platformdirs&gt;=2.5
@@ -6342,22 +6326,22 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_osqp_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_osqp_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_osqp_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_osqp_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting osqp
   Downloading osqp-0.6.2.post8-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (292 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 292.7/292.7 kB 25.8 MB/s eta 0:00:00
-Collecting qdldl
-  Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 13.4 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 292.7/292.7 kB 34.0 MB/s eta 0:00:00
 Collecting numpy&gt;=1.7
   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 66.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 56.1 MB/s eta 0:00:00
 Collecting scipy&gt;=0.13.2
   Downloading scipy-1.7.3-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (36.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 44.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.1/36.1 MB 45.6 MB/s eta 0:00:00
+Collecting qdldl
+  Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 12.1 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Installing collected packages: numpy, scipy, qdldl, osqp
   DEPRECATION: qdldl is being installed using the legacy &#x27;setup.py install&#x27; method, because it does not have a &#x27;pyproject.toml&#x27; and the &#x27;wheel&#x27; package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the &#x27;--use-pep517&#x27; option. Discussion can be found at https://github.com/pypa/pip/issues/8559
   Running setup.py install for qdldl: started
@@ -6371,7 +6355,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-dptumi2d/qdldl_2aac405e3d2646508518a402694def91/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-h23nyj_2/qdldl_6232897a49944130bc3bb365786239b3/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib64/python3.7/subprocess.py&quot;, line 411, in check_output
           **kwargs).stdout
@@ -6388,7 +6372,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 36, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-dptumi2d/qdldl_2aac405e3d2646508518a402694def91/setup.py&quot;, line 124, in &lt;module&gt;
+        File &quot;/tmp/pip-install-h23nyj_2/qdldl_6232897a49944130bc3bb365786239b3/setup.py&quot;, line 124, in &lt;module&gt;
           ext_modules=[qdldl],
         File &quot;/usr/lib/python3.7/site-packages/setuptools/__init__.py&quot;, line 165, in setup
           return distutils.core.setup(**attrs)
@@ -6416,7 +6400,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
           _build_ext.run(self)
         File &quot;/usr/lib64/python3.7/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-dptumi2d/qdldl_2aac405e3d2646508518a402694def91/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-h23nyj_2/qdldl_6232897a49944130bc3bb365786239b3/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -6435,22 +6419,22 @@ hint: See above for output from the failure.
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_osqp_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_osqp_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_osqp_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_osqp_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting osqp
   Downloading osqp-0.6.2.post8-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (295 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.1/295.1 kB 33.5 MB/s eta 0:00:00
-Collecting scipy&gt;=0.13.2
-  Downloading scipy-1.9.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 42.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.1/295.1 kB 32.5 MB/s eta 0:00:00
 Collecting qdldl
   Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 12.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 14.1 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Collecting numpy&gt;=1.7
   Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 73.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 72.2 MB/s eta 0:00:00
+Collecting scipy&gt;=0.13.2
+  Downloading scipy-1.9.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 50.1 MB/s eta 0:00:00
 Installing collected packages: numpy, scipy, qdldl, osqp
   DEPRECATION: qdldl is being installed using the legacy &#x27;setup.py install&#x27; method, because it does not have a &#x27;pyproject.toml&#x27; and the &#x27;wheel&#x27; package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the &#x27;--use-pep517&#x27; option. Discussion can be found at https://github.com/pypa/pip/issues/8559
   Running setup.py install for qdldl: started
@@ -6466,7 +6450,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-dejw1kj9/qdldl_58aef60ee91940a784474c27ef34a0ec/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-lrzdg4am/qdldl_7a1c257775f34521aad0b6f7d39bf0b4/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib64/python3.8/subprocess.py&quot;, line 415, in check_output
           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
@@ -6483,7 +6467,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-dejw1kj9/qdldl_58aef60ee91940a784474c27ef34a0ec/setup.py&quot;, line 110, in &lt;module&gt;
+        File &quot;/tmp/pip-install-lrzdg4am/qdldl_7a1c257775f34521aad0b6f7d39bf0b4/setup.py&quot;, line 110, in &lt;module&gt;
           setup(name=&#x27;qdldl&#x27;,
         File &quot;/usr/lib/python3.8/site-packages/setuptools/__init__.py&quot;, line 129, in setup
           return distutils.core.setup(**attrs)
@@ -6511,7 +6495,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
           _build_ext.run(self)
         File &quot;/usr/lib64/python3.8/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-dejw1kj9/qdldl_58aef60ee91940a784474c27ef34a0ec/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-lrzdg4am/qdldl_7a1c257775f34521aad0b6f7d39bf0b4/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -6529,22 +6513,22 @@ hint: See above for output from the failure.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_osqp_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_osqp_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_osqp_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_osqp_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting osqp
   Downloading osqp-0.6.2.post8-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (295 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.1/295.1 kB 33.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 295.1/295.1 kB 25.4 MB/s eta 0:00:00
 Collecting scipy&gt;=0.13.2
   Downloading scipy-1.9.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 55.4 MB/s eta 0:00:00
-Collecting numpy&gt;=1.7
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 78.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 50.0 MB/s eta 0:00:00
 Collecting qdldl
   Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 9.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 15.2 MB/s eta 0:00:00
   Preparing metadata (setup.py): started
   Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+Collecting numpy&gt;=1.7
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 82.1 MB/s eta 0:00:00
 Building wheels for collected packages: qdldl
   Building wheel for qdldl (setup.py): started
   Building wheel for qdldl (setup.py): finished with status &#x27;error&#x27;
@@ -6557,7 +6541,7 @@ Building wheels for collected packages: qdldl
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib/python3.8/subprocess.py&quot;, line 415, in check_output
           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
@@ -6574,7 +6558,7 @@ Building wheels for collected packages: qdldl
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 110, in &lt;module&gt;
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 110, in &lt;module&gt;
           setup(name=&#x27;qdldl&#x27;,
         File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 144, in setup
           return distutils.core.setup(**attrs)
@@ -6600,7 +6584,7 @@ Building wheels for collected packages: qdldl
           _build_ext.run(self)
         File &quot;/usr/lib/python3.8/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -6621,7 +6605,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib/python3.8/subprocess.py&quot;, line 415, in check_output
           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
@@ -6638,7 +6622,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 110, in &lt;module&gt;
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 110, in &lt;module&gt;
           setup(name=&#x27;qdldl&#x27;,
         File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 144, in setup
           return distutils.core.setup(**attrs)
@@ -6666,7 +6650,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
           _build_ext.run(self)
         File &quot;/usr/lib/python3.8/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-j8a0w74m/qdldl_72f9d4ede3944d469fa21a5e3917da2d/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-tvd2id9i/qdldl_216ef57f9f494448ad28df38638e7cde/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -6688,22 +6672,22 @@ hint: See above for output from the failure.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_osqp_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_osqp_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_osqp_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_osqp_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting osqp
   Downloading osqp-0.6.2.post8-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (293 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 293.9/293.9 kB 6.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 293.9/293.9 kB 6.7 MB/s eta 0:00:00
 Collecting numpy&gt;=1.7
   Downloading numpy-1.23.5-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.9/13.9 MB 72.3 MB/s eta 0:00:00
-Collecting qdldl
-  Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 13.3 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.9/13.9 MB 64.7 MB/s eta 0:00:00
 Collecting scipy&gt;=0.13.2
   Downloading scipy-1.9.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (30.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.1/30.1 MB 56.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.1/30.1 MB 59.8 MB/s eta 0:00:00
+Collecting qdldl
+  Downloading qdldl-0.1.5.post2.tar.gz (69 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 69.1/69.1 kB 14.3 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
 Building wheels for collected packages: qdldl
   Building wheel for qdldl (setup.py): started
   Building wheel for qdldl (setup.py): finished with status &#x27;error&#x27;
@@ -6716,7 +6700,7 @@ Building wheels for collected packages: qdldl
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib/python3.10/subprocess.py&quot;, line 420, in check_output
           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
@@ -6733,7 +6717,7 @@ Building wheels for collected packages: qdldl
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 110, in &lt;module&gt;
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 110, in &lt;module&gt;
           setup(name=&#x27;qdldl&#x27;,
         File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup
           return distutils.core.setup(**attrs)
@@ -6759,7 +6743,7 @@ Building wheels for collected packages: qdldl
           _build_ext.run(self)
         File &quot;/usr/lib/python3.10/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -6782,7 +6766,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       running build
       running build_ext
       Traceback (most recent call last):
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 78, in build_extensions
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 78, in build_extensions
           check_output([&#x27;cmake&#x27;, &#x27;--version&#x27;])
         File &quot;/usr/lib/python3.10/subprocess.py&quot;, line 420, in check_output
           return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
@@ -6799,7 +6783,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
       Traceback (most recent call last):
         File &quot;&lt;string&gt;&quot;, line 2, in &lt;module&gt;
         File &quot;&lt;pip-setuptools-caller&gt;&quot;, line 34, in &lt;module&gt;
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 110, in &lt;module&gt;
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 110, in &lt;module&gt;
           setup(name=&#x27;qdldl&#x27;,
         File &quot;/usr/lib/python3/dist-packages/setuptools/__init__.py&quot;, line 153, in setup
           return distutils.core.setup(**attrs)
@@ -6827,7 +6811,7 @@ Installing collected packages: numpy, scipy, qdldl, osqp
           _build_ext.run(self)
         File &quot;/usr/lib/python3.10/distutils/command/build_ext.py&quot;, line 340, in run
           self.build_extensions()
-        File &quot;/tmp/pip-install-ankosjfh/qdldl_b5690fed5e674c5aac9258e2d48b965b/setup.py&quot;, line 80, in build_extensions
+        File &quot;/tmp/pip-install-7xmd1ulz/qdldl_6aa16bdaa3d847b784de940fbc61ae7d/setup.py&quot;, line 80, in build_extensions
           raise RuntimeError(&quot;CMake must be installed to build qdldl&quot;)
       RuntimeError: CMake must be installed to build qdldl
       [end of output]
@@ -7171,7 +7155,7 @@ hint: See above for output from the failure.
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">pyagrum<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">pyagrum<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -7275,7 +7259,7 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">pyagrum<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">pyagrum<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -7286,42 +7270,42 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_pyagrum_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_pyagrum_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_pyagrum_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_pyagrum_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum
   Downloading pyAgrum-1.5.0-cp38-cp38-manylinux2014_aarch64.whl (5.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 71.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 77.6 MB/s eta 0:00:00
 Collecting matplotlib
   Downloading matplotlib-3.6.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 75.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 84.8 MB/s eta 0:00:00
 Collecting numpy
   Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 62.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 79.4 MB/s eta 0:00:00
 Collecting pydot
   Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)
 Collecting cycler&gt;=0.10
   Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
-Collecting pyparsing&gt;=2.2.1
-  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 18.5 MB/s eta 0:00:00
-Collecting pillow&gt;=6.2.0
-  Downloading Pillow-9.3.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 82.5 MB/s eta 0:00:00
-Collecting kiwisolver&gt;=1.0.1
-  Downloading kiwisolver-1.4.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 42.1 MB/s eta 0:00:00
 Collecting packaging&gt;=20.0
   Downloading packaging-22.0-py3-none-any.whl (42 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 7.5 MB/s eta 0:00:00
-Collecting fonttools&gt;=4.22.0
-  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 68.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 7.0 MB/s eta 0:00:00
 Collecting python-dateutil&gt;=2.7
   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 35.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 37.6 MB/s eta 0:00:00
 Collecting contourpy&gt;=1.0.1
   Downloading contourpy-1.0.6-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (278 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.8/278.8 kB 36.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.8/278.8 kB 39.1 MB/s eta 0:00:00
+Collecting pyparsing&gt;=2.2.1
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 20.0 MB/s eta 0:00:00
+Collecting fonttools&gt;=4.22.0
+  Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 70.4 MB/s eta 0:00:00
+Collecting kiwisolver&gt;=1.0.1
+  Downloading kiwisolver-1.4.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 33.9 MB/s eta 0:00:00
+Collecting pillow&gt;=6.2.0
+  Downloading Pillow-9.3.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 82.0 MB/s eta 0:00:00
 Collecting six&gt;=1.5
   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
 Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, pydot, contourpy, matplotlib, pyagrum
@@ -7353,7 +7337,7 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">pyagrum-nightly<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">pyagrum-nightly<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -7457,7 +7441,7 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 </tr>
 <tr class="wheel-line even">
-<td class="wheel-name different">pyagrum-nightly<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">pyagrum-nightly<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -7468,42 +7452,42 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_pyagrum-nightly_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_pyagrum-nightly_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_pyagrum-nightly_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_pyagrum-nightly_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum-nightly
   Downloading pyAgrum_nightly-1.5.0.9.dev202212081670341597-cp38-cp38-manylinux2014_aarch64.whl (5.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 49.5 MB/s eta 0:00:00
-Collecting pydot
-  Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)
-Collecting numpy
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 57.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 74.9 MB/s eta 0:00:00
 Collecting matplotlib
   Downloading matplotlib-3.6.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (11.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 62.5 MB/s eta 0:00:00
-Collecting kiwisolver&gt;=1.0.1
-  Downloading kiwisolver-1.4.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 47.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.6/11.6 MB 74.2 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 71.7 MB/s eta 0:00:00
+Collecting pydot
+  Downloading pydot-1.4.2-py2.py3-none-any.whl (21 kB)
 Collecting packaging&gt;=20.0
   Downloading packaging-22.0-py3-none-any.whl (42 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 8.0 MB/s eta 0:00:00
-Collecting python-dateutil&gt;=2.7
-  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 32.3 MB/s eta 0:00:00
-Collecting pyparsing&gt;=2.2.1
-  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 18.8 MB/s eta 0:00:00
-Collecting cycler&gt;=0.10
-  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
-Collecting pillow&gt;=6.2.0
-  Downloading Pillow-9.3.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 52.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.6/42.6 kB 9.6 MB/s eta 0:00:00
 Collecting fonttools&gt;=4.22.0
   Downloading fonttools-4.38.0-py3-none-any.whl (965 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 64.5 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 965.4/965.4 kB 69.0 MB/s eta 0:00:00
+Collecting pyparsing&gt;=2.2.1
+  Downloading pyparsing-3.0.9-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.3/98.3 kB 19.3 MB/s eta 0:00:00
 Collecting contourpy&gt;=1.0.1
   Downloading contourpy-1.0.6-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (278 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.8/278.8 kB 23.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.8/278.8 kB 37.4 MB/s eta 0:00:00
+Collecting kiwisolver&gt;=1.0.1
+  Downloading kiwisolver-1.4.4-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 73.7 MB/s eta 0:00:00
+Collecting pillow&gt;=6.2.0
+  Downloading Pillow-9.3.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 46.9 MB/s eta 0:00:00
+Collecting python-dateutil&gt;=2.7
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.7/247.7 kB 38.7 MB/s eta 0:00:00
+Collecting cycler&gt;=0.10
+  Downloading cycler-0.11.0-py3-none-any.whl (6.4 kB)
 Collecting six&gt;=1.5
   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
 Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, pydot, contourpy, matplotlib, pyagrum-nightly
@@ -8085,11 +8069,11 @@ ImportError: /lib64/libm.so.6: version `GLIBC_2.27&#x27; not found (required by 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_pyorc_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_pyorc_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_pyorc_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_pyorc_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyorc
   Downloading pyorc-0.8.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 39.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 30.8 MB/s eta 0:00:00
 Installing collected packages: pyorc
 Successfully installed pyorc-0.8.0
 WARNING: Running pip as the &#x27;root&#x27; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
@@ -8374,81 +8358,7 @@ zoneinfo._common.ZoneInfoNotFoundError: &#x27;No time zone found with key UTC&#x
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">python-sat<br /><span class="file-indicator">November 19, 2022</span></td>
-<td class="">
-<span class="failed badge">no</span>
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-<span class="warning badge">slow install</span>
-</td>
-<td class="test-column package-conda">
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-<span class="warning badge">slow install</span>
-</td>
-<td class="test-column package-pip">
-<span class="failed badge">failed</span>
-<span class="warning badge">build required</span>
-<span class="warning badge">slow install</span>
-<span class="failed badge">timed out</span>
-<input type="checkbox" id="output_2022-11-19 01:45:15_python-sat_focal" class="output-toggle" />
-<label for="output_2022-11-19 01:45:15_python-sat_focal" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Collecting python-sat
-  Downloading python-sat-0.1.7.dev20.tar.gz (3.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 76.9 MB/s eta 0:00:00
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status &#x27;done&#x27;
-Collecting six
-  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
-Building wheels for collected packages: python-sat
-  Building wheel for python-sat (setup.py): started
-  Building wheel for python-sat (setup.py): still running...
-  Building wheel for python-sat (setup.py): still running...
-  Building wheel for python-sat (setup.py): still running...
-</pre>
-</td>
-<td class="test-column package-os">
-</td>
-<td class="test-column package-conda">
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-<span class="warning badge">build required</span>
-<span class="warning badge">slow install</span>
-</td>
-<td class="test-column package-os">
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">python-sat<br /><span class="file-indicator">November 26, 2022</span></td>
-<td class="">
-<span class="passed badge">yes</span>
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-</td>
-<td class="test-column package-conda">
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-</td>
-<td class="test-column package-os">
-</td>
-<td class="test-column package-conda">
-</td>
-<td class="test-column package-pip">
-<span class="passed badge">passed</span>
-</td>
-<td class="test-column package-os">
-</td>
-</tr>
-<tr class="wheel-line odd">
-<td class="wheel-name different">python-sat<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name ">python-sat</td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -8521,8 +8431,8 @@ Building wheels for collected packages: python-sat
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_pytokenizations_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_pytokenizations_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_pytokenizations_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_pytokenizations_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pytokenizations
   Downloading pytokenizations-0.8.4.tar.gz (3.8 kB)
   Installing build dependencies: started
@@ -8795,7 +8705,7 @@ hint: See above for details.
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">retrying<br /><span class="file-indicator">November 19, 2022</span></td>
+<td class="wheel-name different">retrying<br /><span class="file-indicator">November 20, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -8823,7 +8733,7 @@ hint: See above for details.
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">retrying<br /><span class="file-indicator">November 26, 2022</span></td>
+<td class="wheel-name different">retrying<br /><span class="file-indicator">November 27, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -8849,7 +8759,7 @@ hint: See above for details.
 </td>
 </tr>
 <tr class="wheel-line odd">
-<td class="wheel-name different">retrying<br /><span class="file-indicator">December 11, 2022</span></td>
+<td class="wheel-name different">retrying<br /><span class="file-indicator">December 12, 2022</span></td>
 <td class="">
 <span class="passed badge">yes</span>
 </td>
@@ -9132,11 +9042,11 @@ hint: See above for details.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_scrypt_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_scrypt_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_scrypt_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_scrypt_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting scrypt
   Downloading scrypt-0.8.20.tar.gz (55 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.9/55.9 kB 2.2 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 55.9/55.9 kB 3.1 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   Getting requirements to build wheel: started
@@ -9318,11 +9228,11 @@ ERROR: Could not build wheels for scrypt, which is required to install pyproject
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Shapely_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Shapely_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Shapely_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Shapely_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Shapely
   Downloading Shapely-1.8.5.post1.tar.gz (200 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 9.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 21.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   WARNING: Missing build requirements in pyproject.toml for Shapely from https://files.pythonhosted.org/packages/92/2e/a8bbe3c6b414c3c61c4b639ab16d5b1f9c4c4095817d417b503413e613c0/Shapely-1.8.5.post1.tar.gz.
@@ -9336,7 +9246,7 @@ ERROR: Could not build wheels for scrypt, which is required to install pyproject
 Building wheels for collected packages: Shapely
   Building wheel for Shapely (pyproject.toml): started
   Building wheel for Shapely (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=9eb03ee010508ee950536dc73fdcd891670939087a63024987f4a7428934c641
+  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=45da5e959644790a6559a424376a28c4edae372de8feec4f71c3ee907293697e
   Stored in directory: /root/.cache/pip/wheels/65/ab/2c/df13b2f98ff70c1dc11c4c5c5ee502adf1b05c51df49f654e9
 Successfully built Shapely
 Installing collected packages: Shapely
@@ -9363,11 +9273,11 @@ OSError: Could not find lib geos_c or load any of its variants [&#x27;libgeos_c.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Shapely_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Shapely_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Shapely_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Shapely_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Shapely
   Downloading Shapely-1.8.5.post1.tar.gz (200 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 25.1 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 18.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   WARNING: Missing build requirements in pyproject.toml for Shapely from https://files.pythonhosted.org/packages/92/2e/a8bbe3c6b414c3c61c4b639ab16d5b1f9c4c4095817d417b503413e613c0/Shapely-1.8.5.post1.tar.gz.
@@ -9381,7 +9291,7 @@ OSError: Could not find lib geos_c or load any of its variants [&#x27;libgeos_c.
 Building wheels for collected packages: Shapely
   Building wheel for Shapely (pyproject.toml): started
   Building wheel for Shapely (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=9ffc90eadfbfe2fd08c82bd817ace54865a1d665935c886a5614574a7fddeb94
+  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=a6bf77498d6b9e87d2aa9f1859d2115d6f082a773e2bf2a30e5a30c1ceb06c1c
   Stored in directory: /root/.cache/pip/wheels/51/23/0c/e7002cae5338ad7176c537f8de2ba69b162264071641c91a18
 Successfully built Shapely
 Installing collected packages: Shapely
@@ -9406,11 +9316,11 @@ OSError: Could not find lib geos_c or load any of its variants [&#x27;libgeos_c.
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 <span class="warning badge">build required</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Shapely_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Shapely_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Shapely_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Shapely_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Shapely
   Downloading Shapely-1.8.5.post1.tar.gz (200 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 21.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 22.6 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   WARNING: Missing build requirements in pyproject.toml for Shapely from https://files.pythonhosted.org/packages/92/2e/a8bbe3c6b414c3c61c4b639ab16d5b1f9c4c4095817d417b503413e613c0/Shapely-1.8.5.post1.tar.gz.
@@ -9424,7 +9334,7 @@ OSError: Could not find lib geos_c or load any of its variants [&#x27;libgeos_c.
 Building wheels for collected packages: Shapely
   Building wheel for Shapely (pyproject.toml): started
   Building wheel for Shapely (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=76590f9485949d5d03131b1ae4d87ab419f943e1f227e57ca8a251e708137aaa
+  Created wheel for Shapely: filename=Shapely-1.8.5.post1-py3-none-any.whl size=182739 sha256=18a4f0a88f606d7d8c11fb83f246f701b63a1062ba91d5115a7097c4b7a4d135
   Stored in directory: /root/.cache/pip/wheels/51/23/0c/e7002cae5338ad7176c537f8de2ba69b162264071641c91a18
 Successfully built Shapely
 Installing collected packages: Shapely
@@ -9453,11 +9363,11 @@ OSError: Could not find lib geos_c or load any of its variants [&#x27;libgeos_c.
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_Shapely_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_Shapely_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_Shapely_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_Shapely_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting Shapely
   Downloading Shapely-1.8.5.post1.tar.gz (200 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 4.6 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 kB 6.9 MB/s eta 0:00:00
   Installing build dependencies: started
   Installing build dependencies: finished with status &#x27;done&#x27;
   WARNING: Missing build requirements in pyproject.toml for Shapely from https://files.pythonhosted.org/packages/92/2e/a8bbe3c6b414c3c61c4b639ab16d5b1f9c4c4095817d417b503413e613c0/Shapely-1.8.5.post1.tar.gz#sha256=ef3be705c3eac282a28058e6c6e5503419b250f482320df2172abcbea642c831.
@@ -9759,8 +9669,8 @@ note: This error originates from a subprocess, and is likely not a problem with 
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tensorflow-data-validation_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tensorflow-data-validation_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tensorflow-data-validation_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tensorflow-data-validation_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tensorflow-data-validation (from versions: none)
 ERROR: No matching distribution found for tensorflow-data-validation
 </pre>
@@ -9769,16 +9679,16 @@ ERROR: No matching distribution found for tensorflow-data-validation
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tensorflow-data-validation_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tensorflow-data-validation_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tensorflow-data-validation_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tensorflow-data-validation_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tensorflow-data-validation (from versions: none)
 ERROR: No matching distribution found for tensorflow-data-validation
 </pre>
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tensorflow-data-validation_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tensorflow-data-validation_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tensorflow-data-validation_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tensorflow-data-validation_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tensorflow-data-validation (from versions: none)
 ERROR: No matching distribution found for tensorflow-data-validation
 </pre>
@@ -9789,8 +9699,8 @@ ERROR: No matching distribution found for tensorflow-data-validation
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tensorflow-data-validation_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tensorflow-data-validation_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tensorflow-data-validation_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tensorflow-data-validation_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tensorflow-data-validation (from versions: none)
 ERROR: No matching distribution found for tensorflow-data-validation
 
@@ -9808,8 +9718,8 @@ ERROR: No matching distribution found for tensorflow-data-validation
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tfx-bsl_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tfx-bsl_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tfx-bsl_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tfx-bsl_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tfx-bsl (from versions: none)
 ERROR: No matching distribution found for tfx-bsl
 </pre>
@@ -9818,16 +9728,16 @@ ERROR: No matching distribution found for tfx-bsl
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tfx-bsl_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tfx-bsl_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tfx-bsl_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tfx-bsl_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tfx-bsl (from versions: none)
 ERROR: No matching distribution found for tfx-bsl
 </pre>
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tfx-bsl_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tfx-bsl_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tfx-bsl_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tfx-bsl_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tfx-bsl (from versions: none)
 ERROR: No matching distribution found for tfx-bsl
 </pre>
@@ -9838,8 +9748,8 @@ ERROR: No matching distribution found for tfx-bsl
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_tfx-bsl_jammy" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_tfx-bsl_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_tfx-bsl_jammy" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_tfx-bsl_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">ERROR: Could not find a version that satisfies the requirement tfx-bsl (from versions: none)
 ERROR: No matching distribution found for tfx-bsl
 
@@ -9963,34 +9873,34 @@ ERROR: No matching distribution found for tfx-bsl
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_torchtext_amazon-linux2" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_torchtext_amazon-linux2" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_torchtext_amazon-linux2" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_torchtext_amazon-linux2" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Downloading torchtext-0.13.1-cp37-cp37m-manylinux2014_aarch64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 61.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 68.3 MB/s eta 0:00:00
 Collecting numpy
   Downloading numpy-1.21.6-cp37-cp37m-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 61.5 MB/s eta 0:00:00
-Collecting torch
-  Downloading torch-1.13.0-cp37-cp37m-manylinux2014_aarch64.whl (73.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.3/73.3 MB 22.9 MB/s eta 0:00:00
-Collecting tqdm
-  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 16.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.0/13.0 MB 73.4 MB/s eta 0:00:00
 Collecting requests
   Downloading requests-2.28.1-py3-none-any.whl (62 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 9.6 MB/s eta 0:00:00
-Collecting certifi&gt;=2017.4.17
-  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 16.9 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 6.2 MB/s eta 0:00:00
+Collecting tqdm
+  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 8.1 MB/s eta 0:00:00
+Collecting torch
+  Downloading torch-1.13.0-cp37-cp37m-manylinux2014_aarch64.whl (73.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.3/73.3 MB 23.0 MB/s eta 0:00:00
 Collecting urllib3&lt;1.27,&gt;=1.21.1
   Downloading urllib3-1.26.13-py2.py3-none-any.whl (140 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 24.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 17.7 MB/s eta 0:00:00
 Collecting idna&lt;4,&gt;=2.5
   Downloading idna-3.4-py3-none-any.whl (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 12.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 11.8 MB/s eta 0:00:00
 Collecting charset-normalizer&lt;3,&gt;=2
   Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
+Collecting certifi&gt;=2017.4.17
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 24.9 MB/s eta 0:00:00
 Collecting typing-extensions
   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Installing collected packages: urllib3, typing-extensions, tqdm, numpy, idna, charset-normalizer, certifi, torch, requests, torchtext
@@ -10018,34 +9928,34 @@ OSError: /usr/local/lib64/python3.7/site-packages/torchtext/lib/libtorchtext.so:
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_torchtext_amazon-linux2-py38" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_torchtext_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_torchtext_amazon-linux2-py38" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_torchtext_amazon-linux2-py38" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Downloading torchtext-0.13.1-cp38-cp38-manylinux2014_aarch64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 52.5 MB/s eta 0:00:00
-Collecting numpy
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 74.8 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 63.1 MB/s eta 0:00:00
 Collecting torch
   Downloading torch-1.13.0-cp38-cp38-manylinux2014_aarch64.whl (73.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 MB 30.0 MB/s eta 0:00:00
-Collecting tqdm
-  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 12.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 MB 28.2 MB/s eta 0:00:00
 Collecting requests
   Downloading requests-2.28.1-py3-none-any.whl (62 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 9.0 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 11.7 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 66.4 MB/s eta 0:00:00
+Collecting tqdm
+  Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 16.3 MB/s eta 0:00:00
 Collecting urllib3&lt;1.27,&gt;=1.21.1
   Downloading urllib3-1.26.13-py2.py3-none-any.whl (140 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 20.3 MB/s eta 0:00:00
-Collecting certifi&gt;=2017.4.17
-  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 25.9 MB/s eta 0:00:00
-Collecting idna&lt;4,&gt;=2.5
-  Downloading idna-3.4-py3-none-any.whl (61 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 9.7 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 22.5 MB/s eta 0:00:00
 Collecting charset-normalizer&lt;3,&gt;=2
   Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
+Collecting idna&lt;4,&gt;=2.5
+  Downloading idna-3.4-py3-none-any.whl (61 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 8.5 MB/s eta 0:00:00
+Collecting certifi&gt;=2017.4.17
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 28.9 MB/s eta 0:00:00
 Collecting typing-extensions
   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Installing collected packages: urllib3, typing-extensions, tqdm, numpy, idna, charset-normalizer, certifi, torch, requests, torchtext
@@ -10071,34 +9981,34 @@ OSError: /usr/local/lib64/python3.8/site-packages/torchtext/lib/libtorchtext.so:
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<input type="checkbox" id="output_2022-12-11 01:34:27_torchtext_focal" class="output-toggle" />
-<label for="output_2022-12-11 01:34:27_torchtext_focal" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2022-12-12 01:33:12_torchtext_focal" class="output-toggle" />
+<label for="output_2022-12-12 01:33:12_torchtext_focal" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Downloading torchtext-0.13.1-cp38-cp38-manylinux2014_aarch64.whl (1.8 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 62.7 MB/s eta 0:00:00
-Collecting numpy
-  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 78.4 MB/s eta 0:00:00
-Collecting torch
-  Downloading torch-1.13.0-cp38-cp38-manylinux2014_aarch64.whl (73.2 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 MB 23.3 MB/s eta 0:00:00
-Collecting requests
-  Downloading requests-2.28.1-py3-none-any.whl (62 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 12.3 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 70.9 MB/s eta 0:00:00
 Collecting tqdm
   Downloading tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 9.0 MB/s eta 0:00:00
-Collecting certifi&gt;=2017.4.17
-  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 29.4 MB/s eta 0:00:00
-Collecting urllib3&lt;1.27,&gt;=1.21.1
-  Downloading urllib3-1.26.13-py2.py3-none-any.whl (140 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 24.4 MB/s eta 0:00:00
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 14.3 MB/s eta 0:00:00
+Collecting requests
+  Downloading requests-2.28.1-py3-none-any.whl (62 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB 13.2 MB/s eta 0:00:00
+Collecting numpy
+  Downloading numpy-1.23.5-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 68.7 MB/s eta 0:00:00
+Collecting torch
+  Downloading torch-1.13.0-cp38-cp38-manylinux2014_aarch64.whl (73.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.2/73.2 MB 24.5 MB/s eta 0:00:00
+Collecting charset-normalizer&lt;3,&gt;=2
+  Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
 Collecting idna&lt;4,&gt;=2.5
   Downloading idna-3.4-py3-none-any.whl (61 kB)
      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.5/61.5 kB 12.9 MB/s eta 0:00:00
-Collecting charset-normalizer&lt;3,&gt;=2
-  Downloading charset_normalizer-2.1.1-py3-none-any.whl (39 kB)
+Collecting certifi&gt;=2017.4.17
+  Downloading certifi-2022.12.7-py3-none-any.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.3/155.3 kB 26.2 MB/s eta 0:00:00
+Collecting urllib3&lt;1.27,&gt;=1.21.1
+  Downloading urllib3-1.26.13-py2.py3-none-any.whl (140 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 140.6/140.6 kB 24.6 MB/s eta 0:00:00
 Collecting typing-extensions
   Downloading typing_extensions-4.4.0-py3-none-any.whl (26 kB)
 Installing collected packages: urllib3, typing-extensions, tqdm, numpy, idna, charset-normalizer, certifi, torch, requests, torchtext
