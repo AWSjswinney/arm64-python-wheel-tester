@@ -43,6 +43,7 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
     results = [new_results]
     results.extend(previous_results)
     html = process_results.print_table_by_distro_report(results, compare_weekday_num=compare_weekday_num, ignore_tests=ignore_tests)
+    json = process_results.create_output_json(new_results)
 
     try:
         os.mkdir(output_dir)
@@ -50,6 +51,8 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
         pass
     with open(f'{output_dir}/index.html', 'w') as f:
         f.write(html)
+    with open(f'{output_dir}/results.json', 'w') as f:
+        f.write(json)
 
 
 

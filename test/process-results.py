@@ -230,6 +230,27 @@ def get_wheel_ranks():
         print('unable to parse top pypi packages list; the format may have changed')
         return []
 
+def create_output_json(fname):
+    if re.search(r'\.xz$', fname) is not None:
+        with lzma.open(fname) as f:
+            content = json.load(f)
+    else:
+        with open(fname) as f:
+            content = json.load(f)
+
+    for wheel in content.keys():
+        for test_name in content[wheel]:
+            # delete output nodes; this should reduce file size significantly
+            del content[wheel][test_name]["output"]
+
+    output = {}
+    result_date = re.search(r'\d{4}-\d{2}-\d{2}', fname)
+    if result_date:
+        output['date'] = result_date.group(0)
+
+    output['content'] = content
+    return json.dumps(output)
+
 def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compare_weekday_num=None):
 
     test_results_list = []

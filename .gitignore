@@ -12,3 +12,6 @@ arm64_wheel_tester_stack/arm64_wheel_tester_stack.egg-info/
 
 # Environment variables
 .aws_creds
+
+# Mac silliness
+.DS_Store
