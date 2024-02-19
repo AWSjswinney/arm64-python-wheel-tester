@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
 
-import re
 import os
-import json
-import time
 import argparse
 import importlib
-import itertools
-import subprocess
-import multiprocessing
-from datetime import datetime
-from collections import defaultdict
 
 process_results = importlib.import_module("process-results")
 generate_website = importlib.import_module("generate-website")
