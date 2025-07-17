@@ -8,5 +8,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
     tzdata
-RUN python3 -m venv .test
-RUN /bin/bash -c "source .test/bin/activate && python3 -m pip install --upgrade pip"
+
+RUN /bin/bash -c "python3 -m venv /python-venv && source /python-venv/bin/activate && pip install --upgrade pip"
+ENV PATH=/python-venv/bin:$PATH
+ENV VIRTUAL_ENV=/python-venv
