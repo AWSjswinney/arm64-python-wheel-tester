@@ -7,6 +7,7 @@ docker run -it --rm \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v $(pwd)/test:/io \
     -v $(pwd):/repo \
+    -w /io \
     --env WORK_PATH=$(realpath test) \
     --env GITHUB_REPOSITORY="geoffreyblake/arm64-python-wheel-tester" \
     --env GITHUB_API_URL="https://api.github.com" \
