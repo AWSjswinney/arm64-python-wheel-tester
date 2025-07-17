@@ -4,8 +4,7 @@ RUN dnf install -y \
     docker \
     git \
     which \
-    python3.11-pip \
-    python3-virtualenv
+    python3.11-pip
 
 ARG USER_GID=100
 ARG USER_UID=1000
@@ -16,7 +15,7 @@ RUN grep $DOCKER_GID /etc/group || groupadd -g $DOCKER_GID docker_group
 RUN useradd -m --no-log-init -g $USER_GID -u $USER_UID $USER_NAME && usermod -aG $DOCKER_GID $USER_NAME
 
 USER $USER_NAME:$USER_GID
-RUN virtualenv -p python3.11 /home/$USER_NAME/.local/python-env
-ENV PATH=/home/$USER_NAME/.local/python-env/bin:$PATH
-ENV VIRTUAL_ENV=/home/$USER_NAME/.local/python-env
+RUN /bin/bash -c "python3.11 -m venv $HOME/python-venv && source $HOME/python-venv/bin/activate && pip install --upgrade pip"
+ENV PATH=/home/$USER_NAME/python-venv/bin:$PATH
+ENV VIRTUAL_ENV=/home/$USER_NAME/python-venv
 RUN pip3 install --upgrade pip pyyaml requests
