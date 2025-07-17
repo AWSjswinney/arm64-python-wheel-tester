@@ -42,11 +42,8 @@ def main():
             'YUM': 'container-yum-test.sh',
         }
         containers = {
-            'amazon-linux2': ['PIP', 'CONDA'],
-            'focal': ['PIP', 'APT', 'CONDA'],
             'jammy': ['PIP', 'APT'],
             'noble': ['PIP'],
-            'amazon-linux2-py38': ['PIP'],
             'amazon-linux2023': ['PIP', 'YUM'],
         }
         if args.container is not None and len(args.container) > 0:
