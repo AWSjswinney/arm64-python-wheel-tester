@@ -1,0 +1,12 @@
+FROM amazonlinux:2023
+
+RUN dnf install -y \
+        "@Development tools" \
+        python3.11-devel \
+        python3.11-pip \
+        libgomp \
+        mesa-libGL
+
+RUN /bin/bash -c "python3.11 -m venv /python-venv && source /python-venv/bin/activate && pip install --upgrade pip"
+ENV PATH=/python-venv/bin:$PATH
+ENV VIRTUAL_ENV=/python-venv

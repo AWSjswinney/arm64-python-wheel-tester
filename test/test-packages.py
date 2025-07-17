@@ -45,6 +45,7 @@ def main():
             'jammy': ['PIP', 'APT'],
             'noble': ['PIP'],
             'amazon-linux2023': ['PIP', 'YUM'],
+            'amazon-linux2023-py311': ['PIP'],
         }
         if args.container is not None and len(args.container) > 0:
             test_containers = args.container
