@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Extract test results from the index.html file in the arm64-python-wheel-tester-pages directory
-for multiple commits and save them in JSON format, matching the structure of the test results JSON files.
+Extract test results from the index.html file in a repository
+for a range of commits and save them in JSON format.
 """
 
 import os
@@ -13,13 +13,31 @@ from bs4 import BeautifulSoup
 import shutil
 import argparse
 
-def get_commit_list(num_commits=10):
-    """Get a list of the last N commits in the pages repository."""
+def get_commit_list(repo_path, commit_range=None, num_commits=10):
+    """
+    Get a list of commits in the repository.
+    
+    Args:
+        repo_path: Path to the repository
+        commit_range: Git commit range (e.g., 'abcdef..master')
+        num_commits: Number of commits to retrieve if commit_range is not specified
+        
+    Returns:
+        List of (commit_hash, commit_datetime) tuples
+    """
     try:
+        # Construct the git log command
+        git_cmd = ["git", "log", "--format=%H %ad", "--date=format:%Y-%m-%d %H:%M:%S"]
+        
+        if commit_range:
+            git_cmd.append(commit_range)
+        else:
+            git_cmd.append(f"-{num_commits}")
+        
         # Get the list of commits
         result = subprocess.run(
-            ["git", "log", f"-{num_commits}", "--format=%H %ad", "--date=format:%Y-%m-%d %H:%M:%S"],
-            check=True, capture_output=True, text=True, cwd="arm64-python-wheel-tester-pages"
+            git_cmd,
+            check=True, capture_output=True, text=True, cwd=repo_path
         )
         
         # Parse the output into a list of (commit_hash, commit_datetime) tuples
@@ -36,10 +54,17 @@ def get_commit_list(num_commits=10):
         print(f"Warning: Could not get commit list: {e}")
         return []
 
-def get_html_content_for_commit(commit_hash):
+def get_html_content_for_commit(repo_path, commit_hash):
     """
     Get the index.html content for a specific commit.
     Creates a temporary file in the current working directory.
+    
+    Args:
+        repo_path: Path to the repository
+        commit_hash: Git commit hash
+        
+    Returns:
+        Tuple of (html_path, temp_dir) or (None, None) if there was an error
     """
     # Create a temporary directory in the current working directory
     temp_dir = os.path.join(os.getcwd(), f"temp_pages_{commit_hash[:8]}")
@@ -52,7 +77,7 @@ def get_html_content_for_commit(commit_hash):
         # Extract the index.html content from the specific commit
         result = subprocess.run(
             ["git", "show", f"{commit_hash}:index.html"],
-            check=True, capture_output=True, text=True, cwd="arm64-python-wheel-tester-pages"
+            check=True, capture_output=True, text=True, cwd=repo_path
         )
         
         # Write the content to the temporary file
@@ -66,8 +91,16 @@ def get_html_content_for_commit(commit_hash):
             shutil.rmtree(temp_dir)
         return None, None
 
-def parse_html_results(html_path, commit_datetime):
-    """Parse the index.html file and extract test results."""
+def parse_html_results(html_path):
+    """
+    Parse the index.html file and extract test results.
+    
+    Args:
+        html_path: Path to the HTML file
+        
+    Returns:
+        Dictionary of package results
+    """
     with open(html_path, 'r', encoding='utf-8') as f:
         html_content = f.read()
     
@@ -184,7 +217,16 @@ def parse_html_results(html_path, commit_datetime):
     return package_results
 
 def save_results(results, output_path=None):
-    """Save the extracted results to a JSON file in the current working directory."""
+    """
+    Save the extracted results to a JSON file in the current working directory.
+    
+    Args:
+        results: Dictionary of results
+        output_path: Path to the output file (optional)
+        
+    Returns:
+        Path to the saved file
+    """
     if output_path is None:
         # Generate a filename with current timestamp
         timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -198,15 +240,21 @@ def save_results(results, output_path=None):
 
 def main():
     parser = argparse.ArgumentParser(description='Extract test results from multiple commits.')
-    parser.add_argument('--commits', type=int, default=10, help='Number of commits to process (default: 10)')
-    parser.add_argument('--output', type=str, help='Output file path (default: extracted-results-TIMESTAMP.json)')
+    parser.add_argument('--repo', type=str, default='arm64-python-wheel-tester-pages',
+                        help='Path to the repository (default: arm64-python-wheel-tester-pages)')
+    parser.add_argument('--commits', type=int, default=10,
+                        help='Number of commits to process if commit-range is not specified (default: 10)')
+    parser.add_argument('--commit-range', type=str,
+                        help='Git commit range (e.g., "abcdef..master")')
+    parser.add_argument('--output', type=str,
+                        help='Output file path (default: extracted-results-TIMESTAMP.json)')
     args = parser.parse_args()
     
     # Initialize the results structure
     results = {"executions": {}}
     
     # Get the list of commits
-    commits = get_commit_list(args.commits)
+    commits = get_commit_list(args.repo, args.commit_range, args.commits)
     print(f"Found {len(commits)} commits to process")
     
     try:
@@ -215,14 +263,14 @@ def main():
             print(f"Processing commit {i+1}/{len(commits)}: {commit_hash[:8]} ({commit_datetime})")
             
             # Get the HTML content for this commit
-            html_path, temp_dir = get_html_content_for_commit(commit_hash)
+            html_path, temp_dir = get_html_content_for_commit(args.repo, commit_hash)
             if not html_path:
                 print(f"Skipping commit {commit_hash[:8]} due to error")
                 continue
             
             try:
                 # Parse HTML and extract results
-                package_results = parse_html_results(html_path, commit_datetime)
+                package_results = parse_html_results(html_path)
                 
                 # Add to the results structure
                 results["executions"][commit_datetime] = package_results
