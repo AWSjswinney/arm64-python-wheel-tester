@@ -12,6 +12,10 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 import shutil
 import argparse
+import multiprocessing
+from multiprocessing import Pool
+from tqdm import tqdm
+import tempfile
 
 def get_commit_list(repo_path, commit_range=None, num_commits=10):
     """
@@ -54,23 +58,20 @@ def get_commit_list(repo_path, commit_range=None, num_commits=10):
         print(f"Warning: Could not get commit list: {e}")
         return []
 
-def get_html_content_for_commit(repo_path, commit_hash):
+def process_commit(args):
     """
-    Get the index.html content for a specific commit.
-    Creates a temporary file in the current working directory.
+    Process a single commit (to be used with multiprocessing).
     
     Args:
-        repo_path: Path to the repository
-        commit_hash: Git commit hash
+        args: Tuple of (repo_path, commit_hash, commit_datetime)
         
     Returns:
-        Tuple of (html_path, temp_dir) or (None, None) if there was an error
+        Tuple of (commit_datetime, package_results) or (commit_datetime, None) if there was an error
     """
-    # Create a temporary directory in the current working directory
-    temp_dir = os.path.join(os.getcwd(), f"temp_pages_{commit_hash[:8]}")
-    os.makedirs(temp_dir, exist_ok=True)
+    repo_path, commit_hash, commit_datetime = args
     
-    # Path to the temporary index.html file
+    # Create a temporary directory
+    temp_dir = tempfile.mkdtemp(prefix=f"temp_pages_{commit_hash[:8]}_")
     html_path = os.path.join(temp_dir, "index.html")
     
     try:
@@ -84,12 +85,16 @@ def get_html_content_for_commit(repo_path, commit_hash):
         with open(html_path, 'w', encoding='utf-8') as f:
             f.write(result.stdout)
         
-        return html_path, temp_dir
-    except subprocess.CalledProcessError as e:
-        print(f"Error extracting content for commit {commit_hash}: {e}")
+        # Parse HTML and extract results
+        package_results = parse_html_results(html_path)
+        
+        return commit_datetime, package_results
+    except Exception as e:
+        return commit_datetime, None
+    finally:
+        # Clean up temporary directory
         if os.path.exists(temp_dir):
             shutil.rmtree(temp_dir)
-        return None, None
 
 def parse_html_results(html_path):
     """
@@ -248,6 +253,8 @@ def main():
                         help='Git commit range (e.g., "abcdef..master")')
     parser.add_argument('--output', type=str,
                         help='Output file path (default: extracted-results-TIMESTAMP.json)')
+    parser.add_argument('--processes', type=int, default=multiprocessing.cpu_count(),
+                        help=f'Number of processes to use (default: {multiprocessing.cpu_count()})')
     args = parser.parse_args()
     
     # Initialize the results structure
@@ -258,29 +265,20 @@ def main():
     print(f"Found {len(commits)} commits to process")
     
     try:
-        # Process each commit
-        for i, (commit_hash, commit_datetime) in enumerate(commits):
-            print(f"Processing commit {i+1}/{len(commits)}: {commit_hash[:8]} ({commit_datetime})")
-            
-            # Get the HTML content for this commit
-            html_path, temp_dir = get_html_content_for_commit(args.repo, commit_hash)
-            if not html_path:
-                print(f"Skipping commit {commit_hash[:8]} due to error")
-                continue
-            
-            try:
-                # Parse HTML and extract results
-                package_results = parse_html_results(html_path)
-                
-                # Add to the results structure
-                results["executions"][commit_datetime] = package_results
-                
-                print(f"Successfully extracted test results for {len(package_results)} packages")
-                
-            finally:
-                # Clean up temporary directory
-                if temp_dir and os.path.exists(temp_dir):
-                    shutil.rmtree(temp_dir)
+        # Prepare arguments for multiprocessing
+        process_args = [(args.repo, commit_hash, commit_datetime) for commit_hash, commit_datetime in commits]
+        
+        # Process commits in parallel with a progress bar
+        with Pool(processes=args.processes) as pool:
+            for commit_datetime, package_results in tqdm(
+                pool.imap_unordered(process_commit, process_args),
+                total=len(commits),
+                desc="Processing commits"
+            ):
+                if package_results is not None:
+                    results["executions"][commit_datetime] = package_results
+                else:
+                    print(f"Failed to extract test results for {commit_datetime}")
         
         # Save all results to a single JSON file
         output_path = args.output
@@ -290,7 +288,7 @@ def main():
         
         save_results(results, output_path)
         
-        print(f"Processed {len(results['executions'])} commits")
+        print(f"Processed {len(results['executions'])} commits successfully")
         
     except Exception as e:
         print(f"Error: {e}")
