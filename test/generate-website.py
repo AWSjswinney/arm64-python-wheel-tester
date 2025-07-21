@@ -38,18 +38,35 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
     #subprocess.run(f'git clone --no-checkout -b {website_branch} {repo_path} {webrepo}', shell=True)
 
     # download results from previous run
+    print("Fetching previous results...")
     previous_results = fetch_previous_results(days_ago_list, github_token=github_token)
+    
+    if not previous_results:
+        print("No previous results found. Proceeding with current results only.")
+    else:
+        print(f"Found {len(previous_results)} previous result files.")
 
     results = [new_results]
     results.extend(previous_results)
+    
+    print("Generating HTML report...")
     html = process_results.print_table_by_distro_report(results, compare_weekday_num=compare_weekday_num, ignore_tests=ignore_tests)
 
     try:
-        os.mkdir(output_dir)
-    except FileExistsError:
-        pass
-    with open(f'{output_dir}/index.html', 'w') as f:
-        f.write(html)
+        os.makedirs(output_dir, exist_ok=True)
+    except Exception as e:
+        print(f"Warning: Failed to create output directory {output_dir}: {str(e)}")
+        # Try to use a temporary directory instead
+        output_dir = tempfile.mkdtemp()
+        print(f"Using temporary directory instead: {output_dir}")
+        
+    try:
+        with open(f'{output_dir}/index.html', 'w') as f:
+            f.write(html)
+        print(f"Website generated successfully at {output_dir}/index.html")
+    except Exception as e:
+        print(f"Error writing HTML output: {str(e)}")
+        return
 
 
 
@@ -62,16 +79,28 @@ def fetch_previous_results(days_ago_list, github_token):
         github_repo = os.environ['GITHUB_REPOSITORY']
         github_api_url = os.environ['GITHUB_API_URL']
     except KeyError:
+        print("Warning: GITHUB_REPOSITORY or GITHUB_API_URL environment variables not set")
         return []
 
     url = f'{github_api_url}/repos/{github_repo}/actions/artifacts'
     try:
         r = requests.get(url, headers={'Accept': 'application/vnd.github.v3+json'})
-    except requests.RequestsError:
-        print("failed to read from github api")
+        if r.status_code != 200:
+            print(f"Warning: GitHub API returned status code {r.status_code}")
+            return []
+    except Exception as e:
+        print(f"Warning: Failed to read from GitHub API: {str(e)}")
         return []
 
-    response_data = r.json()
+    try:
+        response_data = r.json()
+        if 'artifacts' not in response_data:
+            print(f"Warning: No artifacts found in GitHub API response")
+            return []
+    except Exception as e:
+        print(f"Warning: Failed to parse GitHub API response: {str(e)}")
+        return []
+
     days_ago_list = sorted(days_ago_list, reverse=True)
     artifacts = sorted(response_data['artifacts'], reverse=True, key=lambda x: datetime.strptime(x['created_at'], api_date_format))
     now = datetime.utcnow()
@@ -85,30 +114,50 @@ def fetch_previous_results(days_ago_list, github_token):
             days_ago_list.pop()
 
     if len(results) == 0:
+        print("Warning: No matching artifacts found for the specified days")
         return []
 
     result_fnames = []
     previous_results_dir = tempfile.mkdtemp()
     for previous_result in results:
         url = previous_result['archive_download_url']
-        r = requests.get(url, headers={'Accept': 'application/vnd.github.v3+json', 'Authorization': f'Bearer {github_token}'})
+        try:
+            r = requests.get(url, headers={'Accept': 'application/vnd.github.v3+json', 'Authorization': f'Bearer {github_token}'})
+            if r.status_code != 200:
+                print(f"Warning: Failed to download artifact from {url}, status code: {r.status_code}")
+                continue
+        except Exception as e:
+            print(f"Warning: Failed to download artifact from {url}: {str(e)}")
+            continue
+            
         try:
             zf = zipfile.ZipFile(io.BytesIO(r.content))
         except zipfile.BadZipFile:
-            print(f"Bad zip file at {previous_result['archive_download_url']}. Skipping.")
+            print(f"Warning: Bad zip file at {previous_result['archive_download_url']}. Skipping.")
             continue
 
         # find the first xz file
+        found_xz = False
         for fname in zf.namelist():
             if fname[-3:] == '.xz':
-                with zf.open(fname) as f:
-                    result_fname = f'{previous_results_dir}/{fname}'
-                    with open(result_fname, 'wb') as dest_f:
-                        dest_f.write(f.read())
-                    result_fnames.append(result_fname)
-                break
+                found_xz = True
+                try:
+                    with zf.open(fname) as f:
+                        result_fname = f'{previous_results_dir}/{fname}'
+                        with open(result_fname, 'wb') as dest_f:
+                            dest_f.write(f.read())
+                        result_fnames.append(result_fname)
+                    break
+                except Exception as e:
+                    print(f"Warning: Failed to extract {fname} from zip: {str(e)}")
+                    continue
+        
+        if not found_xz:
+            print(f"Warning: No .xz file found in artifact {previous_result['name']}")
 
-
+    if not result_fnames:
+        print("Warning: No valid result files were found in the artifacts")
+        
     return result_fnames
 
 
