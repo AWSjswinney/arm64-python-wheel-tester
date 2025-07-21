@@ -284,18 +284,33 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
         current_weekday = test_results_list[0].date.weekday()
         if current_weekday <= compare_weekday_num:
             reference_date -= timedelta(days=7)
+        
+        reference_test_file = None
         for test_result_file in test_results_list:
             if test_result_file.date < reference_date:
                 reference_test_file = test_result_file
                 break
-        summary_table = [['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']]
-        for test_result_file in [reference_test_file, test_results_list[0]]:
+                
+        # If no reference test file was found, only show current results
+        if reference_test_file is None or reference_test_file.content is None:
+            print("Warning: No valid reference test file found for comparison")
+            summary_table = [['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']]
+            test_result_file = test_results_list[0]
             count = len(test_result_file.content)
             failures = len(get_failing_tests(test_result_file.content))
             all_passing = count - failures
             date = test_result_file.date.strftime("%A, %B %d, %Y")
             passing_options = len(list(filter(lambda wheel: wheel['each-distribution-has-passing-option'], test_result_file.wheels.values())))
             summary_table.append([date, count, all_passing, failures, passing_options])
+        else:
+            summary_table = [['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']]
+            for test_result_file in [reference_test_file, test_results_list[0]]:
+                count = len(test_result_file.content)
+                failures = len(get_failing_tests(test_result_file.content))
+                all_passing = count - failures
+                date = test_result_file.date.strftime("%A, %B %d, %Y")
+                passing_options = len(list(filter(lambda wheel: wheel['each-distribution-has-passing-option'], test_result_file.wheels.values())))
+                summary_table.append([date, count, all_passing, failures, passing_options])
 
         html.append('<table class="summary">')
         for index in range(len(summary_table[0])):
@@ -303,10 +318,14 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
             for column_index, column_data in enumerate(summary_table):
                 element = 'th' if column_index == 0 else 'td'
                 html.append(f'<{element}>{column_data[index]}</{element}>')
-            if summary_table[0][index] != 'date':
+            
+            # Only add difference column if we have a reference test file
+            if len(summary_table) > 2 and summary_table[0][index] != 'date':
                 difference = summary_table[2][index] - summary_table[1][index]
                 plus = '+' if difference >= 0 else ''
                 html.append(f'<td>{plus}{difference}</td>')
+            elif summary_table[0][index] != 'date':
+                html.append('<td>N/A</td>')  # No comparison available
             else:
                 html.append('<td></td>')
             html.append('</tr>')
