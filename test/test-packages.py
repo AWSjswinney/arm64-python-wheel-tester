@@ -170,58 +170,86 @@ def do_test(package_main_name, package_list, container, test_sh_script, test_py_
             '--env', f'PACKAGE_LIST={package_list}',
             f'wheel-tester/{container}',
             'bash', f'/io/{test_sh_script}'],
-            encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    container_id = proc.stdout.strip()
-
-    # wait until the timeout for the container to complete
-    while True:
-        time.sleep(1)
-        runtime = time.time() - start
-        proc = subprocess.run(['docker', 'container', 'inspect', '-f', '{{ .State.Running }}', container_id],
-                encoding='utf-8', stdout=subprocess.PIPE)
-        if proc.stdout.strip() != "true":
-            result['runtime'] = runtime
-            break
-        elif runtime > TIMEOUT:
-            result['timeout'] = True
-            result['runtime'] = runtime
-            subprocess.run(['docker', 'stop', container_id])
-            print(f"{package_manager}: Package {package_main_name} on {test_name} TIMED OUT!!")
-            break
-
-    proc = subprocess.run(['docker', 'container', 'inspect', '-f', '{{ .State.ExitCode }}', container_id],
-            encoding='utf-8', stdout=subprocess.PIPE)
-    return_code = int(proc.stdout.strip())
-    proc = subprocess.run(['docker', 'logs', container_id],
-            encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    output = proc.stdout
-
-    if time.time() - start > SLOW_INSTALL_TIME:
-        result['slow-install'] = True
-
-    if not result['timeout'] and return_code == 0:
-        result['test-passed'] = True
-
-    if re.search(r'Building wheel for', output) is not None:
-        result['build-required'] = True
-
-    if re.search(f'Downloading {package_main_name}[^\n]*aarch64[^\n]*whl', output) is not None:
-        result['binary-wheel'] = True
-
-    # Primary package assumed the first listed
-    primary_package = package_list.split()[0] 
-    if latest_version := process_pip_report(f"{process_work_dir}/pip_latest.json", primary_package):
-        result["latest-version"] = latest_version
-    if binary_version := process_pip_report(f"{process_work_dir}/pip_binary.json", primary_package):
-        result['installed-version'] = binary_version
-
-    result['output'] = output
-
-    outcome = "passed" if result['test-passed'] else "failed"
-    print(f"{package_manager}: Package {package_main_name} on {test_name} {outcome}.")
-
-    subprocess.run(['docker', 'container', 'rm', container_id],
             encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    
+    container_id = proc.stdout.strip()
+    if not container_id:
+        print(f"{package_manager}: Package {package_main_name} on {test_name} - Failed to start Docker container.")
+        print(f"Docker run stderr: {proc.stderr}")
+        result['runtime'] = time.time() - start
+        return result
+
+    try:
+        # wait until the timeout for the container to complete
+        while True:
+            time.sleep(1)
+            runtime = time.time() - start
+            proc = subprocess.run(['docker', 'container', 'inspect', '-f', '{{ .State.Running }}', container_id],
+                    encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            
+            running_status = proc.stdout.strip()
+            if not running_status:
+                print(f"{package_manager}: Package {package_main_name} on {test_name} - Failed to get container running status. Assuming container stopped.")
+                result['runtime'] = runtime
+                break
+            elif running_status != "true":
+                result['runtime'] = runtime
+                break
+            elif runtime > TIMEOUT:
+                result['timeout'] = True
+                result['runtime'] = runtime
+                subprocess.run(['docker', 'stop', container_id])
+                print(f"{package_manager}: Package {package_main_name} on {test_name} TIMED OUT!!")
+                break
+
+        proc = subprocess.run(['docker', 'container', 'inspect', '-f', '{{ .State.ExitCode }}', container_id],
+                encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        # Handle case where docker inspect fails or returns empty output
+        exit_code_str = proc.stdout.strip()
+        if not exit_code_str:
+            print(f"{package_manager}: Package {package_main_name} on {test_name} - Failed to get container exit code. Docker inspect returned empty output.")
+            print(f"Docker inspect stderr: {proc.stderr}")
+            return_code = 1  # Assume failure if we can't get the exit code
+        else:
+            try:
+                return_code = int(exit_code_str)
+            except ValueError:
+                print(f"{package_manager}: Package {package_main_name} on {test_name} - Invalid exit code: '{exit_code_str}'")
+                return_code = 1  # Assume failure if exit code is not a valid integer
+        
+        proc = subprocess.run(['docker', 'logs', container_id],
+                encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        output = proc.stdout
+
+        if time.time() - start > SLOW_INSTALL_TIME:
+            result['slow-install'] = True
+
+        if not result['timeout'] and return_code == 0:
+            result['test-passed'] = True
+
+        if re.search(r'Building wheel for', output) is not None:
+            result['build-required'] = True
+
+        if re.search(f'Downloading {package_main_name}[^\n]*aarch64[^\n]*whl', output) is not None:
+            result['binary-wheel'] = True
+
+        # Primary package assumed the first listed
+        primary_package = package_list.split()[0] 
+        if latest_version := process_pip_report(f"{process_work_dir}/pip_latest.json", primary_package):
+            result["latest-version"] = latest_version
+        if binary_version := process_pip_report(f"{process_work_dir}/pip_binary.json", primary_package):
+            result['installed-version'] = binary_version
+
+        result['output'] = output
+
+        outcome = "passed" if result['test-passed'] else "failed"
+        print(f"{package_manager}: Package {package_main_name} on {test_name} {outcome}.")
+
+    finally:
+        # Always clean up the container, even if there were errors
+        subprocess.run(['docker', 'container', 'rm', container_id],
+                encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     return result
 
