@@ -132,13 +132,13 @@ input.output-toggle:checked + label.output-toggle + pre.output-content {
 </head>
 <body>
 
-<h1>Python Wheels on aarch64 test results from October 29, 2025</h1>
+<h1>Python Wheels on aarch64 test results from October 30, 2025</h1>
 <section class="summary">
 <table class="summary">
 <tr>
 <th>date</th>
-<td>Sunday, October 26, 2025</td>
-<td>Wednesday, October 29, 2025</td>
+<td>Saturday, October 25, 2025</td>
+<td>Thursday, October 30, 2025</td>
 <td></td>
 </tr>
 <tr>
@@ -631,8 +631,8 @@ is always shown, regardless of whether there is any difference.</p>
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 2.5.1</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_blosc2_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_blosc2_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_blosc2_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_blosc2_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting blosc2
   Using cached blosc2-2.5.1-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (9.2 kB)
 Collecting numpy&gt;=1.20.3 (from blosc2)
@@ -810,21 +810,21 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_cassandra-driver_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_cassandra-driver_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_cassandra-driver_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_cassandra-driver_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Fetched 21.2 MB in 3s (8044 kB/s)
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Fetched 21.3 MB in 1s (14.7 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -836,7 +836,7 @@ Suggested packages:
 The following NEW packages will be installed:
   libev4 python3-cassandra python3-click python3-colorama python3-geomet
   python3-six
-0 upgraded, 6 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 6 newly installed, 0 to remove and 9 not upgraded.
 Need to get 2605 kB of archives.
 After this operation, 9676 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-colorama all 0.4.4-1 [24.5 kB]
@@ -846,7 +846,7 @@ Get:4 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-geomet a
 Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 libev4 arm64 1:4.33-1 [27.4 kB]
 Get:6 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-cassandra arm64 3.24.0-1build3 [2448 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 2605 kB in 1s (2592 kB/s)
+Fetched 2605 kB in 0s (17.7 MB/s)
 Selecting previously unselected package python3-colorama.
 (Reading database ... 
 (Reading database ... 5%
@@ -1117,21 +1117,21 @@ ModuleNotFoundError: No module named &#x27;cassandra&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_confluent-kafka_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_confluent-kafka_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_confluent-kafka_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_confluent-kafka_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
 Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Fetched 21.2 MB in 2s (8552 kB/s)
+Fetched 21.3 MB in 1s (14.4 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -1143,13 +1143,13 @@ Suggested packages:
   python3-requests
 The following NEW packages will be installed:
   librdkafka1 python3-confluent-kafka
-0 upgraded, 2 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 2 newly installed, 0 to remove and 9 not upgraded.
 Need to get 682 kB of archives.
 After this operation, 2047 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 librdkafka1 arm64 1.8.0-1build1 [601 kB]
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-confluent-kafka arm64 1.7.0-2 [80.4 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 682 kB in 0s (4998 kB/s)
+Fetched 682 kB in 0s (5539 kB/s)
 Selecting previously unselected package librdkafka1:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -1236,10 +1236,9 @@ ModuleNotFoundError: No module named &#x27;confluent_kafka&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_coverage_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_coverage_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_coverage_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_coverage_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Amazon Linux 2023 repository                     14 kB/s | 3.6 kB     00:00    
-Last metadata expiration check: 0:00:01 ago on Tue Oct  7 01:39:33 2025.
 Dependencies resolved.
 ================================================================================
  Package              Arch        Version                 Repository       Size
@@ -1254,9 +1253,9 @@ Install  1 Package
 Total download size: 284 k
 Installed size: 1.5 M
 Downloading Packages:
-python3-coverage-5.5-1.amzn2023.0.3.aarch64.rpm 7.7 MB/s | 284 kB     00:00    
+python3-coverage-5.5-1.amzn2023.0.3.aarch64.rpm 934 kB/s | 284 kB     00:00    
 --------------------------------------------------------------------------------
-Total                                           1.9 MB/s | 284 kB     00:00     
+Total                                           684 kB/s | 284 kB     00:00     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -1284,21 +1283,21 @@ ModuleNotFoundError: No module named &#x27;coverage&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_coverage_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_coverage_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_coverage_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_coverage_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
 Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Fetched 21.2 MB in 1s (14.5 MB/s)
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Fetched 21.3 MB in 3s (8086 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -1307,12 +1306,12 @@ Suggested packages:
   python-coverage-doc
 The following NEW packages will be installed:
   python3-coverage
-0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 1 newly installed, 0 to remove and 9 not upgraded.
 Need to get 131 kB of archives.
 After this operation, 635 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-coverage arm64 6.2+dfsg1-2build1 [131 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 131 kB in 0s (1380 kB/s)
+Fetched 131 kB in 1s (261 kB/s)
 Selecting previously unselected package python3-coverage.
 (Reading database ... 
 (Reading database ... 5%
@@ -1523,23 +1522,23 @@ ModuleNotFoundError: No module named &#x27;coverage&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 3.17.1</span>
+<span class="passed badge">installed version 3.17.2</span>
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 3.17.1</span>
+<span class="passed badge">installed version 3.17.2</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 3.17.1</span>
+<span class="passed badge">installed version 3.17.2</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 3.17.1</span>
+<span class="passed badge">installed version 3.17.2</span>
 </td>
 </tr>
 <tr class="wheel-line even">
@@ -1580,8 +1579,8 @@ ModuleNotFoundError: No module named &#x27;coverage&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.3.9</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_dedupe-hcluster_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_dedupe-hcluster_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_dedupe-hcluster_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_dedupe-hcluster_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting dedupe-hcluster
   Using cached dedupe_hcluster-0.3.9-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (1.7 kB)
 Collecting numpy (from dedupe-hcluster)
@@ -1615,8 +1614,8 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.3.9</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_dedupe-hcluster_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_dedupe-hcluster_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_dedupe-hcluster_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_dedupe-hcluster_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting dedupe-hcluster
   Using cached dedupe_hcluster-0.3.9-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (1.7 kB)
 Collecting numpy (from dedupe-hcluster)
@@ -1714,8 +1713,8 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <span class="warning badge">latest version 3.2.4</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_divik_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_divik_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_divik_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_divik_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting divik
   Downloading divik-3.2.3-cp39-cp39-manylinux_2_17_aarch64.whl.metadata (7.3 kB)
 Collecting dask-distance&lt;0.3.0,&gt;=0.2.0 (from divik)
@@ -1847,7 +1846,7 @@ Using cached locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
 Building wheels for collected packages: dask-distance
   Building wheel for dask-distance (pyproject.toml): started
   Building wheel for dask-distance (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=e0dd10c5ffa15c1c36ebef67932a5fbd9a0ba6f49161bd8a5b2f3953978041da
+  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=c5eb77b938421f55306cb1cf4c02e32364249dd506686405dfcafc9835df1c79
   Stored in directory: /root/.cache/pip/wheels/f0/dc/86/a1cda14932f21a53a27d58823f2c5c36b03e619d701236992b
 Successfully built dask-distance
 Installing collected packages: pytz, zipp, tzdata, tqdm, toolz, threadpoolctl, six, pyyaml, pyparsing, pyarrow, pillow, packaging, numpy, networkx, locket, kiwisolver, joblib, fsspec, fonttools, cycler, cloudpickle, click, tifffile, scipy, python-dateutil, partd, lazy-loader, importlib-resources, importlib-metadata, imageio, h5py, contourpy, scikit-learn, scikit-image, pandas, matplotlib, kneed, dask, dask-expr, dask-distance, divik
@@ -1885,8 +1884,8 @@ AttributeError: No skimage.feature attribute greycomatrix
 <span class="warning badge">build required</span>
 <span class="warning badge">slow install</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_divik_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_divik_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_divik_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_divik_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting divik
   Using cached divik-3.2.4.tar.gz (83 kB)
   Installing build dependencies: started
@@ -2017,11 +2016,11 @@ Using cached locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
 Building wheels for collected packages: divik, dask-distance
   Building wheel for divik (pyproject.toml): started
   Building wheel for divik (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for divik: filename=divik-3.2.4-cp311-cp311-manylinux_2_34_aarch64.whl size=165527 sha256=fb1f5c0d7b77b9de96a242f250ced4cdb44dc85d8b53436bb7b352a41c6bb0a2
+  Created wheel for divik: filename=divik-3.2.4-cp311-cp311-manylinux_2_34_aarch64.whl size=165526 sha256=0d45cbc5e80baaf7c591b048e1bb16a30022700ecf844f4fb5a579650a650ada
   Stored in directory: /root/.cache/pip/wheels/e6/1e/71/9edb21157e81e7b2af6428016f44f108bd7796fbf4478697b9
   Building wheel for dask-distance (pyproject.toml): started
   Building wheel for dask-distance (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=4671e87f60a088f56a322e45ae094779fdbdb94ae16097c2806b49f9eab702c4
+  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=9ef7fbdd516f6b2ea4e715efbe8114bd7da9666cf7ba44166adcb9e50d71c89f
   Stored in directory: /root/.cache/pip/wheels/fd/6f/2b/46209cb41c599a721277eedf2c9f6ded363fe9f52a4d1b12cd
 Successfully built divik dask-distance
 Installing collected packages: pytz, zipp, tzdata, tqdm, toolz, threadpoolctl, six, pyyaml, pyparsing, pyarrow, pillow, packaging, numpy, networkx, locket, kiwisolver, joblib, fsspec, fonttools, cycler, cloudpickle, click, tifffile, scipy, python-dateutil, partd, lazy-loader, importlib_metadata, imageio, h5py, contourpy, scikit-learn, scikit-image, pandas, matplotlib, kneed, dask, dask-distance, divik
@@ -2079,8 +2078,8 @@ ImportError: numpy.core.multiarray failed to import
 <span class="passed badge">installed version 3.2.4</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_divik_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_divik_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_divik_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_divik_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting divik
   Using cached divik-3.2.4.tar.gz (83 kB)
   Installing build dependencies: started
@@ -2211,11 +2210,11 @@ Using cached locket-1.0.0-py2.py3-none-any.whl (4.4 kB)
 Building wheels for collected packages: divik, dask-distance
   Building wheel for divik (pyproject.toml): started
   Building wheel for divik (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for divik: filename=divik-3.2.4-cp310-cp310-manylinux_2_35_aarch64.whl size=159639 sha256=ea8d3129519a55c17a1499989d093543534f013bef96145915851251f897949d
+  Created wheel for divik: filename=divik-3.2.4-cp310-cp310-manylinux_2_35_aarch64.whl size=159642 sha256=cccaa253167f283f37b1fb2d3855a056179d06ec6b3dbd0765c1d0ace19d120d
   Stored in directory: /root/.cache/pip/wheels/5d/e8/8f/7ed27b86439e75c827a29d91e7e6b7f9428b8fab1a06e170f5
   Building wheel for dask-distance (pyproject.toml): started
   Building wheel for dask-distance (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=86f378db811b2cbaec50d08012818417cd534178bcf666b93aa7b7bdd1928f07
+  Created wheel for dask-distance: filename=dask_distance-0.2.0-py2.py3-none-any.whl size=9184 sha256=f309d686036e165a7c34929c796e07c094cd201c867b0e34ad24a19d3d48c408
   Stored in directory: /root/.cache/pip/wheels/54/64/fe/4c4f1d1961291e59480394abf8cbbaedafc0f7c796189f31ae
 Successfully built divik dask-distance
 Installing collected packages: pytz, zipp, tzdata, tqdm, toolz, threadpoolctl, six, pyyaml, pyparsing, pyarrow, pillow, packaging, numpy, networkx, locket, kiwisolver, joblib, fsspec, fonttools, cycler, cloudpickle, click, tifffile, scipy, python-dateutil, partd, lazy-loader, importlib_metadata, imageio, h5py, contourpy, scikit-learn, scikit-image, pandas, matplotlib, kneed, dask, dask-distance, divik
@@ -2271,8 +2270,8 @@ ImportError: numpy.core.multiarray failed to import
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_divik_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_divik_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_divik_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_divik_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -2342,23 +2341,23 @@ ImportError: numpy.core.multiarray failed to import
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.24.7</span>
+<span class="passed badge">installed version 0.24.8</span>
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.24.7</span>
+<span class="passed badge">installed version 0.24.8</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.24.7</span>
+<span class="passed badge">installed version 0.24.8</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.24.7</span>
+<span class="passed badge">installed version 0.24.8</span>
 </td>
 </tr>
 <tr class="wheel-line even">
@@ -2534,8 +2533,8 @@ ImportError: numpy.core.multiarray failed to import
 <span class="passed badge">installed version 1.2.6</span>
 <span class="warning badge">latest version 1.3.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_fastcluster_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_fastcluster_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_fastcluster_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_fastcluster_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting fastcluster
   Downloading fastcluster-1.2.6-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.1 kB)
 Collecting numpy&gt;=1.9 (from fastcluster)
@@ -2835,8 +2834,8 @@ ImportError: numpy.core.multiarray failed to import
 <span class="passed badge">installed version 3.0.0</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_glcontext_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_glcontext_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_glcontext_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_glcontext_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting glcontext
   Using cached glcontext-3.0.0.tar.gz (16 kB)
   Installing build dependencies: started
@@ -2853,7 +2852,7 @@ Building wheels for collected packages: glcontext
   × Building wheel for glcontext (pyproject.toml) did not run successfully.
   │ exit code: 1
   ╰─&gt; [28 lines of output]
-      /tmp/pip-build-env-3q1bfbee/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      /tmp/pip-build-env-d_22iteo/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
       !!
       
               ********************************************************************************
@@ -3102,9 +3101,10 @@ error: failed-wheel-build-for-install
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_h5py_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_h5py_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_h5py_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_h5py_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Amazon Linux 2023 repository                     14 kB/s | 3.6 kB     00:00    
+Last metadata expiration check: 0:00:01 ago on Tue Oct  7 01:39:33 2025.
 No match for argument: python3-h5py
 Error: Unable to find a match: python3-h5py
 </pre>
@@ -3116,21 +3116,21 @@ Error: Unable to find a match: python3-h5py
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_h5py_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_h5py_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_h5py_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_h5py_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Fetched 21.2 MB in 2s (8933 kB/s)
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Fetched 21.3 MB in 1s (15.2 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -3145,7 +3145,7 @@ The following NEW packages will be installed:
   libaec0 libblas3 libcurl4 libgfortran5 libhdf5-103-1 libhdf5-hl-100
   liblapack3 liblzf1 libnghttp2-14 libpsl5 librtmp1 libssh-4 libsz2
   publicsuffix python3-h5py python3-h5py-serial python3-numpy
-0 upgraded, 17 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 17 newly installed, 0 to remove and 9 not upgraded.
 Need to get 9621 kB of archives.
 After this operation, 40.8 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libnghttp2-14 arm64 1.43.0-1ubuntu0.2 [76.0 kB]
@@ -3166,7 +3166,7 @@ Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 python3-num
 Get:16 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-h5py-serial arm64 3.6.0-2build1 [856 kB]
 Get:17 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-h5py all 3.6.0-2build1 [4740 B]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 9621 kB in 0s (38.3 MB/s)
+Fetched 9621 kB in 2s (5036 kB/s)
 Selecting previously unselected package libnghttp2-14:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -3282,8 +3282,8 @@ ModuleNotFoundError: No module named &#x27;h5py&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.14.0.post4</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_hidapi_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_hidapi_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_hidapi_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_hidapi_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Using cached hidapi-0.14.0.post4-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.6 kB)
 Requirement already satisfied: setuptools&gt;=19.0 in /python-venv/lib/python3.9/site-packages (from hidapi) (59.6.0)
@@ -3303,8 +3303,8 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.14.0.post4</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_hidapi_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_hidapi_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_hidapi_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_hidapi_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Using cached hidapi-0.14.0.post4-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.6 kB)
 Requirement already satisfied: setuptools&gt;=19.0 in /python-venv/lib64/python3.11/site-packages (from hidapi) (65.5.1)
@@ -3326,8 +3326,8 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.14.0.post4</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_hidapi_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_hidapi_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_hidapi_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_hidapi_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Using cached hidapi-0.14.0.post4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.6 kB)
 Requirement already satisfied: setuptools&gt;=19.0 in /python-venv/lib/python3.10/site-packages (from hidapi) (59.6.0)
@@ -3349,8 +3349,8 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.14.0.post4</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_hidapi_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_hidapi_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_hidapi_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_hidapi_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting hidapi
   Using cached hidapi-0.14.0.post4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (3.6 kB)
 Collecting setuptools&gt;=19.0 (from hidapi)
@@ -3677,8 +3677,8 @@ ModuleNotFoundError: No module named &#x27;hidapi&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 2.6.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_landlab_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_landlab_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_landlab_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_landlab_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting landlab
   Using cached landlab-2.6.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (12 kB)
 Collecting bmipy (from landlab)
@@ -3937,8 +3937,8 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <span class="passed badge">installed version 4.0.0</span>
 <span class="warning badge">latest version None</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_line-profiler_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_line-profiler_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_line-profiler_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_line-profiler_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting line-profiler
   Downloading line_profiler-4.0.0-py3-none-any.whl.metadata (6.9 kB)
 Downloading line_profiler-4.0.0-py3-none-any.whl (16 kB)
@@ -3969,8 +3969,8 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <span class="passed badge">installed version 4.0.0</span>
 <span class="warning badge">latest version None</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_line-profiler_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_line-profiler_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_line-profiler_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_line-profiler_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting line-profiler
   Downloading line_profiler-4.0.0-py3-none-any.whl.metadata (6.9 kB)
 Downloading line_profiler-4.0.0-py3-none-any.whl (16 kB)
@@ -4003,8 +4003,8 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <span class="passed badge">installed version 4.0.0</span>
 <span class="warning badge">latest version None</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_line-profiler_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_line-profiler_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_line-profiler_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_line-profiler_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting line-profiler
   Downloading line_profiler-4.0.0-py3-none-any.whl.metadata (6.9 kB)
 Downloading line_profiler-4.0.0-py3-none-any.whl (16 kB)
@@ -4037,8 +4037,8 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <span class="passed badge">installed version 4.0.0</span>
 <span class="warning badge">latest version None</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_line-profiler_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_line-profiler_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_line-profiler_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_line-profiler_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting line-profiler
   Downloading line_profiler-4.0.0-py3-none-any.whl.metadata (6.9 kB)
 Downloading line_profiler-4.0.0-py3-none-any.whl (16 kB)
@@ -4133,8 +4133,8 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_lukeparser_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_lukeparser_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_lukeparser_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_lukeparser_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 <td class="test-column package-os">
@@ -4148,8 +4148,8 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_lukeparser_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_lukeparser_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_lukeparser_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_lukeparser_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -4197,9 +4197,9 @@ ImportError: The line_profiler._line_profiler c-extension is not importable. Has
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_lz4_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_lz4_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Amazon Linux 2023 repository                     31 kB/s | 3.6 kB     00:00    
+<input type="checkbox" id="output_2025-10-30 02:31:41_lz4_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_lz4_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<pre class="output-content">Amazon Linux 2023 repository                     14 kB/s | 3.6 kB     00:00    
 No match for argument: python3-lz4
 Error: Unable to find a match: python3-lz4
 </pre>
@@ -4211,33 +4211,33 @@ Error: Unable to find a match: python3-lz4
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_lz4_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_lz4_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_lz4_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_lz4_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
 Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Fetched 21.2 MB in 1s (14.4 MB/s)
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Fetched 21.3 MB in 2s (9691 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
 Reading state information...
 The following NEW packages will be installed:
   python3-lz4
-0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 1 newly installed, 0 to remove and 9 not upgraded.
 Need to get 33.1 kB of archives.
 After this operation, 159 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-lz4 arm64 3.1.3+dfsg-1build3 [33.1 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 33.1 kB in 0s (547 kB/s)
+Fetched 33.1 kB in 0s (102 kB/s)
 Selecting previously unselected package python3-lz4.
 (Reading database ... 
 (Reading database ... 5%
@@ -4353,21 +4353,21 @@ ModuleNotFoundError: No module named &#x27;lz4&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_matplotlib_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_matplotlib_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_matplotlib_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_matplotlib_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Fetched 21.2 MB in 3s (7971 kB/s)
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Fetched 21.3 MB in 1s (14.9 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -4427,7 +4427,7 @@ The following NEW packages will be installed:
   python3-soupsieve python3-sympy python3-tk python3-tz python3-ufolib2
   python3-unicodedata2 python3-webencodings tk8.6-blt2.5 unicode-data
   x11-common
-0 upgraded, 69 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 69 newly installed, 0 to remove and 9 not upgraded.
 Need to get 69.2 MB of archives.
 After this operation, 425 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libfribidi0 arm64 1.0.8-2ubuntu3.1 [26.4 kB]
@@ -4500,7 +4500,7 @@ Get:67 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-packaging a
 Get:68 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-matplotlib arm64 3.5.1-2build1 [5771 kB]
 Get:69 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-olefile all 0.46-3 [33.8 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 69.2 MB in 8s (8599 kB/s)
+Fetched 69.2 MB in 1s (75.0 MB/s)
 Selecting previously unselected package libfribidi0:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -4937,19 +4937,19 @@ ModuleNotFoundError: No module named &#x27;matplotlib&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.2.20</span>
+<span class="passed badge">installed version 0.2.21</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.2.20</span>
+<span class="passed badge">installed version 0.2.21</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 0.2.20</span>
+<span class="passed badge">installed version 0.2.21</span>
 </td>
 </tr>
 <tr class="wheel-line even">
@@ -5010,8 +5010,8 @@ ModuleNotFoundError: No module named &#x27;matplotlib&#x27;
 <span class="passed badge">installed version 5.12.0</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_moderngl_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_moderngl_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_moderngl_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_moderngl_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting moderngl
   Using cached moderngl-5.12.0.tar.gz (193 kB)
   Installing build dependencies: started
@@ -5031,7 +5031,7 @@ Collecting glcontext&gt;=3.0.0 (from moderngl)
 Building wheels for collected packages: moderngl, glcontext
   Building wheel for moderngl (pyproject.toml): started
   Building wheel for moderngl (pyproject.toml): finished with status &#x27;done&#x27;
-  Created wheel for moderngl: filename=moderngl-5.12.0-cp312-cp312-linux_aarch64.whl size=264281 sha256=4a94be1c2ee90f666e6c10b3470933e7a8a472bbd4581b69918b8a4ff5a7ad22
+  Created wheel for moderngl: filename=moderngl-5.12.0-cp312-cp312-linux_aarch64.whl size=264285 sha256=ad6552b8f3487886f5c3e83dde8a19230a0540e386c971727bf8d5d084860108
   Stored in directory: /root/.cache/pip/wheels/74/83/f0/79d800488a1acaf1cbdd2b2db6fe7f3ebc37ea210b626fbdf2
   Building wheel for glcontext (pyproject.toml): started
   Building wheel for glcontext (pyproject.toml): finished with status &#x27;error&#x27;
@@ -5040,7 +5040,7 @@ Building wheels for collected packages: moderngl, glcontext
   × Building wheel for glcontext (pyproject.toml) did not run successfully.
   │ exit code: 1
   ╰─&gt; [28 lines of output]
-      /tmp/pip-build-env-6h9kapiw/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      /tmp/pip-build-env-19qpt9sm/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
       !!
       
               ********************************************************************************
@@ -5316,23 +5316,23 @@ error: failed-wheel-build-for-install
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 9.0.1.dev11</span>
+<span class="passed badge">installed version 9.0.1.dev12</span>
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 9.0.1.dev11</span>
+<span class="passed badge">installed version 9.0.1.dev12</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 9.0.1.dev11</span>
+<span class="passed badge">installed version 9.0.1.dev12</span>
 </td>
 <td class="test-column package-os">
 </td>
 <td class="test-column package-pip">
 <span class="passed badge">passed</span>
-<span class="passed badge">installed version 9.0.1.dev11</span>
+<span class="passed badge">installed version 9.0.1.dev12</span>
 </td>
 </tr>
 <tr class="wheel-line odd">
@@ -5381,8 +5381,8 @@ error: failed-wheel-build-for-install
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_nmslib_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_nmslib_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_nmslib_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_nmslib_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting nmslib
   Using cached nmslib-2.1.2.tar.gz (197 kB)
   Installing build dependencies: started
@@ -5417,8 +5417,8 @@ Building wheels for collected packages: nmslib
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_nmslib_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_nmslib_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_nmslib_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_nmslib_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting nmslib
   Using cached nmslib-2.1.2.tar.gz (197 kB)
   Installing build dependencies: started
@@ -5453,8 +5453,8 @@ Building wheels for collected packages: nmslib
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_nmslib_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_nmslib_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_nmslib_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_nmslib_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting nmslib
   Using cached nmslib-2.1.2.tar.gz (197 kB)
   Installing build dependencies: started
@@ -5552,9 +5552,10 @@ Building wheels for collected packages: nmslib
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_numpy_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_numpy_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Amazon Linux 2023 repository                     23 kB/s | 3.6 kB     00:00    
+<input type="checkbox" id="output_2025-10-30 02:31:41_numpy_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_numpy_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<pre class="output-content">Amazon Linux 2023 repository                     30 kB/s | 3.6 kB     00:00    
+Last metadata expiration check: 0:00:01 ago on Tue Oct  7 01:39:33 2025.
 Dependencies resolved.
 ================================================================================
  Package                   Arch    Version                    Repository   Size
@@ -5575,14 +5576,14 @@ Install  6 Packages
 Total download size: 12 M
 Installed size: 62 M
 Downloading Packages:
-(1/6): flexiblas-3.0.4-3.amzn2023.0.2.aarch64.r 947 kB/s |  31 kB     00:00    
-(2/6): flexiblas-openblas-openmp-3.0.4-3.amzn20 368 kB/s |  16 kB     00:00    
-(3/6): openblas-0.3.18-1.amzn2023.0.3.aarch64.r 2.2 MB/s |  33 kB     00:00    
-(4/6): flexiblas-netlib-3.0.4-3.amzn2023.0.2.aa  33 MB/s | 3.3 MB     00:00    
-(5/6): openblas-openmp-0.3.18-1.amzn2023.0.3.aa  55 MB/s | 3.9 MB     00:00    
-(6/6): python3-numpy-1.21.1-1.amzn2023.0.3.aarc  51 MB/s | 4.7 MB     00:00    
+(1/6): flexiblas-openblas-openmp-3.0.4-3.amzn20 414 kB/s |  16 kB     00:00    
+(2/6): flexiblas-3.0.4-3.amzn2023.0.2.aarch64.r 663 kB/s |  31 kB     00:00    
+(3/6): openblas-0.3.18-1.amzn2023.0.3.aarch64.r 2.4 MB/s |  33 kB     00:00    
+(4/6): flexiblas-netlib-3.0.4-3.amzn2023.0.2.aa  29 MB/s | 3.3 MB     00:00    
+(5/6): openblas-openmp-0.3.18-1.amzn2023.0.3.aa  44 MB/s | 3.9 MB     00:00    
+(6/6): python3-numpy-1.21.1-1.amzn2023.0.3.aarc  46 MB/s | 4.7 MB     00:00    
 --------------------------------------------------------------------------------
-Total                                            32 MB/s |  12 MB     00:00     
+Total                                            30 MB/s |  12 MB     00:00     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -5625,21 +5626,21 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_numpy_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_numpy_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_numpy_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_numpy_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
 Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Fetched 21.2 MB in 1s (15.6 MB/s)
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Fetched 21.3 MB in 3s (8090 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -5650,7 +5651,7 @@ Suggested packages:
   gfortran python-numpy-doc python3-pytest
 The following NEW packages will be installed:
   libblas3 libgfortran5 liblapack3 python3-numpy
-0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 4 newly installed, 0 to remove and 9 not upgraded.
 Need to get 6671 kB of archives.
 After this operation, 30.6 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libblas3 arm64 3.10.0-2ubuntu1 [141 kB]
@@ -5658,7 +5659,7 @@ Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libgfortran5
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 liblapack3 arm64 3.10.0-2ubuntu1 [2009 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 python3-numpy arm64 1:1.21.5-1ubuntu22.04.1 [4105 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 6671 kB in 0s (33.0 MB/s)
+Fetched 6671 kB in 1s (7017 kB/s)
 Selecting previously unselected package libblas3:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -5791,8 +5792,8 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_open3d_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_open3d_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_open3d_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_open3d_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -6029,9 +6030,9 @@ ModuleNotFoundError: No module named &#x27;numpy&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pillow_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pillow_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Amazon Linux 2023 repository                     14 kB/s | 3.6 kB     00:00    
+<input type="checkbox" id="output_2025-10-30 02:31:41_pillow_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pillow_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<pre class="output-content">Amazon Linux 2023 repository                     31 kB/s | 3.6 kB     00:00    
 Dependencies resolved.
 ================================================================================
  Package            Arch       Version                     Repository      Size
@@ -6050,12 +6051,12 @@ Install  4 Packages
 Total download size: 885 k
 Installed size: 4.8 M
 Downloading Packages:
-(1/4): libraqm-0.7.2-1.amzn2023.0.2.aarch64.rpm 633 kB/s |  21 kB     00:00    
-(2/4): python3-olefile-0.46-13.amzn2023.0.2.noa 1.4 MB/s |  56 kB     00:00    
-(3/4): libimagequant-2.14.1-1.amzn2023.0.2.aarc 1.4 MB/s |  63 kB     00:00    
-(4/4): python3-pillow-9.4.0-2.amzn2023.0.6.aarc  31 MB/s | 746 kB     00:00    
+(1/4): libraqm-0.7.2-1.amzn2023.0.2.aarch64.rpm 683 kB/s |  21 kB     00:00    
+(2/4): python3-olefile-0.46-13.amzn2023.0.2.noa 1.6 MB/s |  56 kB     00:00    
+(3/4): libimagequant-2.14.1-1.amzn2023.0.2.aarc 1.5 MB/s |  63 kB     00:00    
+(4/4): python3-pillow-9.4.0-2.amzn2023.0.6.aarc 2.5 MB/s | 746 kB     00:00    
 --------------------------------------------------------------------------------
-Total                                           4.5 MB/s | 885 kB     00:00     
+Total                                           1.5 MB/s | 885 kB     00:00     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -6092,21 +6093,21 @@ ModuleNotFoundError: No module named &#x27;PIL&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pillow_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pillow_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pillow_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pillow_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
 Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
 Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Fetched 21.2 MB in 2s (9207 kB/s)
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Fetched 21.3 MB in 3s (7944 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -6121,7 +6122,7 @@ The following NEW packages will be installed:
   file libfribidi0 libgraphite2-3 libharfbuzz0b libimagequant0 liblcms2-2
   libmagic-mgc libmagic1 libopenjp2-7 libraqm0 libwebpdemux2 libwebpmux3
   mailcap mime-support python3-olefile python3-pil
-0 upgraded, 16 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 16 newly installed, 0 to remove and 9 not upgraded.
 Need to get 1675 kB of archives.
 After this operation, 11.6 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libfribidi0 arm64 1.0.8-2ubuntu3.1 [26.4 kB]
@@ -6141,7 +6142,7 @@ Get:14 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-olefile all
 Get:15 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libopenjp2-7 arm64 2.4.0-6ubuntu0.4 [155 kB]
 Get:16 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 python3-pil arm64 9.0.1-1ubuntu0.3 [412 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 1675 kB in 0s (8460 kB/s)
+Fetched 1675 kB in 0s (10.9 MB/s)
 Selecting previously unselected package libfribidi0:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -6338,9 +6339,9 @@ ModuleNotFoundError: No module named &#x27;PIL&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_psycopg2-binary_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_psycopg2-binary_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Amazon Linux 2023 repository                     15 kB/s | 3.6 kB     00:00    
+<input type="checkbox" id="output_2025-10-30 02:31:41_psycopg2-binary_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_psycopg2-binary_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<pre class="output-content">Amazon Linux 2023 repository                     12 kB/s | 3.6 kB     00:00    
 Dependencies resolved.
 ================================================================================
  Package             Arch       Version                    Repository      Size
@@ -6358,11 +6359,11 @@ Install  3 Packages
 Total download size: 691 k
 Installed size: 2.8 M
 Downloading Packages:
-(1/3): openldap-2.4.57-6.amzn2023.0.7.aarch64.r 9.2 MB/s | 253 kB     00:00    
-(2/3): libpq-17.6-1.amzn2023.0.1.aarch64.rpm    7.1 MB/s | 260 kB     00:00    
-(3/3): python3-psycopg2-2.8.6-3.amzn2023.0.3.aa 4.3 MB/s | 178 kB     00:00    
+(1/3): openldap-2.4.57-6.amzn2023.0.7.aarch64.r 6.5 MB/s | 253 kB     00:00    
+(2/3): libpq-17.6-1.amzn2023.0.1.aarch64.rpm    5.4 MB/s | 260 kB     00:00    
+(3/3): python3-psycopg2-2.8.6-3.amzn2023.0.3.aa 561 kB/s | 178 kB     00:00    
 --------------------------------------------------------------------------------
-Total                                           2.5 MB/s | 691 kB     00:00     
+Total                                           1.6 MB/s | 691 kB     00:00     
 Running transaction check
 Transaction check succeeded.
 Running transaction test
@@ -6396,21 +6397,21 @@ ModuleNotFoundError: No module named &#x27;psycopg2&#x27;
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_psycopg2-binary_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_psycopg2-binary_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_psycopg2-binary_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_psycopg2-binary_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Fetched 21.2 MB in 3s (8360 kB/s)
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Fetched 21.3 MB in 3s (6944 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -6421,13 +6422,13 @@ Suggested packages:
   python-psycopg2-doc
 The following NEW packages will be installed:
   libpq5 python3-psycopg2
-0 upgraded, 2 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 2 newly installed, 0 to remove and 9 not upgraded.
 Need to get 280 kB of archives.
 After this operation, 900 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 libpq5 arm64 14.19-0ubuntu0.22.04.1 [148 kB]
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-psycopg2 arm64 2.9.2-1build2 [132 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 280 kB in 0s (2278 kB/s)
+Fetched 280 kB in 0s (2051 kB/s)
 Selecting previously unselected package libpq5:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -6512,8 +6513,8 @@ ModuleNotFoundError: No module named &#x27;psycopg2&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 2.3.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum
   Using cached pyagrum-2.3.0-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.3 kB)
 Collecting numpy (from pyagrum)
@@ -6570,8 +6571,8 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 2.3.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum
   Using cached pyagrum-2.3.0-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.3 kB)
 Collecting numpy (from pyagrum)
@@ -6628,8 +6629,8 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 2.3.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum
   Using cached pyagrum-2.3.0-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.3 kB)
 Collecting numpy (from pyagrum)
@@ -6694,12 +6695,12 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<span class="passed badge">installed version 2.3.0.9.dev202510281761586496</span>
+<span class="passed badge">installed version 2.3.0.9.dev202510291761586496</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum-nightly_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum-nightly_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum-nightly_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum-nightly_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum-nightly
-  Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
+  Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
 Collecting numpy (from pyagrum-nightly)
   Using cached numpy-2.3.4-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (62 kB)
 Collecting matplotlib (from pyagrum-nightly)
@@ -6724,7 +6725,7 @@ Collecting python-dateutil&gt;=2.7 (from matplotlib-&gt;pyagrum-nightly)
   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
 Collecting six&gt;=1.5 (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;pyagrum-nightly)
   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
+Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
 Using cached matplotlib-3.10.7-cp311-cp311-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (9.5 MB)
 Using cached contourpy-1.3.3-cp311-cp311-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (329 kB)
 Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
@@ -6738,7 +6739,7 @@ Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
 Using cached pydot-4.0.1-py3-none-any.whl (37 kB)
 Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, pydot, contourpy, matplotlib, pyagrum-nightly
-Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.3.4 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510281761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
+Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.3.4 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510291761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
 
 [notice] A new release of pip is available: 25.2 -&gt; 25.3
 [notice] To update, run: pip install --upgrade pip
@@ -6752,12 +6753,12 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<span class="passed badge">installed version 2.3.0.9.dev202510281761586496</span>
+<span class="passed badge">installed version 2.3.0.9.dev202510291761586496</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum-nightly_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum-nightly_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum-nightly_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum-nightly_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum-nightly
-  Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
+  Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
 Collecting numpy (from pyagrum-nightly)
   Using cached numpy-2.2.6-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (63 kB)
 Collecting matplotlib (from pyagrum-nightly)
@@ -6782,7 +6783,7 @@ Collecting python-dateutil&gt;=2.7 (from matplotlib-&gt;pyagrum-nightly)
   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
 Collecting six&gt;=1.5 (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;pyagrum-nightly)
   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
+Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
 Using cached matplotlib-3.10.7-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (9.5 MB)
 Using cached contourpy-1.3.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (312 kB)
 Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
@@ -6796,7 +6797,7 @@ Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
 Using cached pydot-4.0.1-py3-none-any.whl (37 kB)
 Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, pydot, contourpy, matplotlib, pyagrum-nightly
-Successfully installed contourpy-1.3.2 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.2.6 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510281761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
+Successfully installed contourpy-1.3.2 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.2.6 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510291761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
 
 [notice] A new release of pip is available: 25.2 -&gt; 25.3
 [notice] To update, run: pip install --upgrade pip
@@ -6810,12 +6811,12 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
-<span class="passed badge">installed version 2.3.0.9.dev202510281761586496</span>
+<span class="passed badge">installed version 2.3.0.9.dev202510291761586496</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyagrum-nightly_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyagrum-nightly_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyagrum-nightly_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyagrum-nightly_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pyagrum-nightly
-  Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
+  Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl.metadata (5.4 kB)
 Collecting numpy (from pyagrum-nightly)
   Using cached numpy-2.3.4-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (62 kB)
 Collecting matplotlib (from pyagrum-nightly)
@@ -6840,7 +6841,7 @@ Collecting python-dateutil&gt;=2.7 (from matplotlib-&gt;pyagrum-nightly)
   Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
 Collecting six&gt;=1.5 (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;pyagrum-nightly)
   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
-Using cached pyagrum_nightly-2.3.0.9.dev202510281761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
+Using cached pyagrum_nightly-2.3.0.9.dev202510291761586496-cp310-abi3-manylinux2014_aarch64.whl (6.0 MB)
 Using cached matplotlib-3.10.7-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (9.5 MB)
 Using cached contourpy-1.3.3-cp312-cp312-manylinux_2_26_aarch64.manylinux_2_28_aarch64.whl (332 kB)
 Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
@@ -6854,7 +6855,7 @@ Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
 Using cached pydot-4.0.1-py3-none-any.whl (37 kB)
 Installing collected packages: six, pyparsing, pillow, packaging, numpy, kiwisolver, fonttools, cycler, python-dateutil, pydot, contourpy, matplotlib, pyagrum-nightly
-Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.3.4 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510281761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
+Successfully installed contourpy-1.3.3 cycler-0.12.1 fonttools-4.60.1 kiwisolver-1.4.9 matplotlib-3.10.7 numpy-2.3.4 packaging-25.0 pillow-12.0.0 pyagrum-nightly-2.3.0.9.dev202510291761586496 pydot-4.0.1 pyparsing-3.2.5 python-dateutil-2.9.0.post0 six-1.17.0
 
 [notice] A new release of pip is available: 25.2 -&gt; 25.3
 [notice] To update, run: pip install --upgrade pip
@@ -7093,8 +7094,8 @@ ModuleNotFoundError: No module named &#x27;pyAgrum&#x27;
 <span class="passed badge">installed version 0.13</span>
 <span class="warning badge">latest version 0.14</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pygeos_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pygeos_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pygeos_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pygeos_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pygeos
   Downloading pygeos-0.13-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
 Collecting numpy&gt;=1.13 (from pygeos)
@@ -7134,8 +7135,8 @@ ImportError: numpy.core.multiarray failed to import
 <span class="passed badge">installed version 0.14</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pygeos_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pygeos_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pygeos_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pygeos_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pygeos
   Using cached pygeos-0.14.tar.gz (141 kB)
   Installing build dependencies: started
@@ -7211,7 +7212,7 @@ Building wheels for collected packages: pygeos
       running build_ext
       building &#x27;pygeos.lib&#x27; extension
       creating build/temp.linux-aarch64-cpython-311/src
-      gcc -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -fPIC -I/python-venv/include -I/usr/include/python3.11 -I/tmp/pip-build-env-3uas_y6_/overlay/lib64/python3.11/site-packages/numpy/core/include -c src/c_api.c -o build/temp.linux-aarch64-cpython-311/src/c_api.o
+      gcc -Wsign-compare -DDYNAMIC_ANNOTATIONS_ENABLED=1 -DNDEBUG -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -O2 -ftree-vectorize -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -Wp,-D_GLIBCXX_ASSERTIONS -fstack-protector-strong -march=armv8.2-a+crypto -mtune=neoverse-n1 -mbranch-protection=standard -fasynchronous-unwind-tables -fstack-clash-protection -fPIC -I/python-venv/include -I/usr/include/python3.11 -I/tmp/pip-build-env-ya9um0fs/overlay/lib64/python3.11/site-packages/numpy/core/include -c src/c_api.c -o build/temp.linux-aarch64-cpython-311/src/c_api.o
       In file included from src/c_api.h:22,
                        from src/c_api.c:15:
       src/geos.h:15:10: fatal error: geos_c.h: No such file or directory
@@ -7240,8 +7241,8 @@ error: failed-wheel-build-for-install
 <span class="passed badge">installed version 0.13</span>
 <span class="warning badge">latest version 0.14</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pygeos_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pygeos_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pygeos_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pygeos_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pygeos
   Downloading pygeos-0.13-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
 Collecting numpy&gt;=1.13 (from pygeos)
@@ -7281,8 +7282,8 @@ ImportError: numpy.core.multiarray failed to import
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pygeos_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pygeos_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pygeos_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pygeos_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -7432,8 +7433,8 @@ ImportError: numpy.core.multiarray failed to import
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.10.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pymars_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pymars_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pymars_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pymars_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pymars
   Using cached pymars-0.10.0-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (18 kB)
 Collecting numpy&gt;=1.14.0 (from pymars)
@@ -7534,8 +7535,8 @@ AttributeError: `np.unicode_` was removed in the NumPy 2.0 release. Use `np.str_
 <span class="warning badge">slow install</span>
 <span class="failed badge">timed out</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pymars_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pymars_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pymars_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pymars_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pymars
   Using cached pymars-0.10.0.tar.gz (1.8 MB)
   Installing build dependencies: started
@@ -7618,8 +7619,8 @@ Building wheels for collected packages: pymars
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.10.0</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pymars_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pymars_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pymars_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pymars_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pymars
   Using cached pymars-0.10.0-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (18 kB)
 Collecting numpy&gt;=1.14.0 (from pymars)
@@ -7718,8 +7719,8 @@ AttributeError: `np.unicode_` was removed in the NumPy 2.0 release. Use `np.str_
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pymars_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pymars_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pymars_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pymars_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -7800,21 +7801,21 @@ AttributeError: `np.unicode_` was removed in the NumPy 2.0 release. Use `np.str_
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pynacl_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pynacl_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pynacl_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pynacl_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1314 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
 Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
-Fetched 21.2 MB in 1s (14.7 MB/s)
+Fetched 21.3 MB in 1s (14.3 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -7825,14 +7826,14 @@ Suggested packages:
   python-nacl-doc
 The following NEW packages will be installed:
   libsodium23 python3-cffi-backend python3-nacl
-0 upgraded, 3 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 3 newly installed, 0 to remove and 9 not upgraded.
 Need to get 264 kB of archives.
 After this operation, 928 kB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libsodium23 arm64 1.0.18-1build2 [123 kB]
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-cffi-backend arm64 1.15.0-1build2 [81.0 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 python3-nacl arm64 1.5.0-2 [59.9 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 264 kB in 0s (2274 kB/s)
+Fetched 264 kB in 1s (375 kB/s)
 Selecting previously unselected package libsodium23:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -7932,8 +7933,8 @@ ModuleNotFoundError: No module named &#x27;nacl&#x27;
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pyonmttok_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pyonmttok_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pyonmttok_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pyonmttok_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -8301,8 +8302,8 @@ ModuleNotFoundError: No module named &#x27;nacl&#x27;
 <span class="passed badge">installed version 0.8.4</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_pytokenizations_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_pytokenizations_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_pytokenizations_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_pytokenizations_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting pytokenizations
   Using cached pytokenizations-0.8.4.tar.gz (3.8 kB)
   Installing build dependencies: started
@@ -8343,28 +8344,28 @@ Building wheels for collected packages: pytokenizations
       🔗 Found pyo3 bindings
       🐍 Found CPython 3.12 at /python-venv/bin/python3
          Compiling proc-macro2 v1.0.103
-         Compiling quote v1.0.41
          Compiling unicode-ident v1.0.20
+         Compiling quote v1.0.41
          Compiling proc-macro-hack v0.5.20+deprecated
-         Compiling pyo3-build-config v0.14.5
          Compiling syn v1.0.109
+         Compiling pyo3-build-config v0.14.5
          Compiling once_cell v1.21.3
          Compiling libc v0.2.177
-         Compiling cfg-if v1.0.4
          Compiling parking_lot_core v0.8.6
+         Compiling cfg-if v1.0.4
          Compiling instant v0.1.13
-         Compiling scopeguard v1.2.0
          Compiling smallvec v1.15.1
-         Compiling tinyvec_macros v0.1.1
+         Compiling scopeguard v1.2.0
          Compiling unindent v0.1.11
+         Compiling tinyvec_macros v0.1.1
          Compiling tinyvec v1.10.0
-         Compiling pyo3 v0.14.5
          Compiling lock_api v0.4.14
+         Compiling pyo3 v0.14.5
          Compiling paste-impl v0.1.18
          Compiling unicode-normalization v0.1.24
          Compiling parking_lot v0.11.2
-         Compiling paste v0.1.18
          Compiling seqdiff v0.3.0
+         Compiling paste v0.1.18
          Compiling tokenizations v0.4.2
          Compiling pyo3-macros-backend v0.14.5
          Compiling indoc-impl v0.3.6
@@ -8394,7 +8395,7 @@ Building wheels for collected packages: pytokenizations
       error: could not compile `pyo3` (lib) due to 1 previous error
       💥 maturin failed
         Caused by: Failed to build a native library through cargo
-        Caused by: Cargo build finished with &quot;exit status: 101&quot;: `env -u CARGO PYO3_BUILD_EXTENSION_MODULE=&quot;1&quot; PYO3_ENVIRONMENT_SIGNATURE=&quot;cpython-3.12-64bit&quot; PYO3_PYTHON=&quot;/python-venv/bin/python3&quot; PYTHON_SYS_EXECUTABLE=&quot;/python-venv/bin/python3&quot; &quot;cargo&quot; &quot;rustc&quot; &quot;--message-format&quot; &quot;json-render-diagnostics&quot; &quot;--manifest-path&quot; &quot;/tmp/pip-install-6_30qmpb/pytokenizations_b8f7692f68a94544bf8052b6da03730e/Cargo.toml&quot; &quot;--release&quot; &quot;--lib&quot;`
+        Caused by: Cargo build finished with &quot;exit status: 101&quot;: `env -u CARGO PYO3_BUILD_EXTENSION_MODULE=&quot;1&quot; PYO3_ENVIRONMENT_SIGNATURE=&quot;cpython-3.12-64bit&quot; PYO3_PYTHON=&quot;/python-venv/bin/python3&quot; PYTHON_SYS_EXECUTABLE=&quot;/python-venv/bin/python3&quot; &quot;cargo&quot; &quot;rustc&quot; &quot;--message-format&quot; &quot;json-render-diagnostics&quot; &quot;--manifest-path&quot; &quot;/tmp/pip-install-1981t95f/pytokenizations_3496c8f1ccdb4e9a8c74f47f31dc44d8/Cargo.toml&quot; &quot;--release&quot; &quot;--lib&quot;`
       Rust not found, installing into a temporary directory
       Error: command [&#x27;maturin&#x27;, &#x27;pep517&#x27;, &#x27;build-wheel&#x27;, &#x27;-i&#x27;, &#x27;/python-venv/bin/python3&#x27;, &#x27;--compatibility&#x27;, &#x27;off&#x27;] returned non-zero exit status 1
       [end of output]
@@ -9080,10 +9081,9 @@ error: failed-wheel-build-for-install
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_Shapely_amazon-linux2023-yum" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_Shapely_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
-<pre class="output-content">Amazon Linux 2023 repository                     14 kB/s | 3.6 kB     00:00    
-Last metadata expiration check: 0:00:01 ago on Tue Oct  7 01:39:33 2025.
+<input type="checkbox" id="output_2025-10-30 02:31:41_Shapely_amazon-linux2023-yum" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_Shapely_amazon-linux2023-yum" class="output-toggle">Toggle Output</label>
+<pre class="output-content">Amazon Linux 2023 repository                     13 kB/s | 3.6 kB     00:00    
 No match for argument: python3-shapely
 Error: Unable to find a match: python3-shapely
 </pre>
@@ -9095,21 +9095,21 @@ Error: Unable to find a match: python3-shapely
 <td class="test-column package-os">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_Shapely_jammy-apt" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_Shapely_jammy-apt" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_Shapely_jammy-apt" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_Shapely_jammy-apt" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Hit:1 http://ports.ubuntu.com/ubuntu-ports jammy InRelease
 Get:2 http://ports.ubuntu.com/ubuntu-ports jammy-updates InRelease [128 kB]
 Get:3 http://ports.ubuntu.com/ubuntu-ports jammy-backports InRelease [127 kB]
 Get:4 http://ports.ubuntu.com/ubuntu-ports jammy-security InRelease [129 kB]
-Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5644 kB]
-Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
-Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3534 kB]
-Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
-Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
-Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports jammy-updates/restricted arm64 Packages [5708 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/multiverse arm64 Packages [46.0 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports jammy-updates/universe arm64 Packages [1612 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 Packages [3556 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports jammy-security/main arm64 Packages [3211 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
 Get:11 http://ports.ubuntu.com/ubuntu-ports jammy-security/restricted arm64 Packages [5446 kB]
-Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/multiverse arm64 Packages [39.5 kB]
-Fetched 21.2 MB in 1s (14.3 MB/s)
+Get:12 http://ports.ubuntu.com/ubuntu-ports jammy-security/universe arm64 Packages [1313 kB]
+Fetched 21.3 MB in 1s (15.3 MB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -9121,7 +9121,7 @@ Suggested packages:
 The following NEW packages will be installed:
   libblas3 libgeos-c1v5 libgeos3.10.2 libgfortran5 liblapack3 python3-numpy
   python3-shapely
-0 upgraded, 7 newly installed, 0 to remove and 3 not upgraded.
+0 upgraded, 7 newly installed, 0 to remove and 9 not upgraded.
 Need to get 7670 kB of archives.
 After this operation, 34.5 MB of additional disk space will be used.
 Get:1 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 libblas3 arm64 3.10.0-2ubuntu1 [141 kB]
@@ -9132,7 +9132,7 @@ Get:5 http://ports.ubuntu.com/ubuntu-ports jammy/main arm64 liblapack3 arm64 3.1
 Get:6 http://ports.ubuntu.com/ubuntu-ports jammy-updates/main arm64 python3-numpy arm64 1:1.21.5-1ubuntu22.04.1 [4105 kB]
 Get:7 http://ports.ubuntu.com/ubuntu-ports jammy/universe arm64 python3-shapely arm64 1.8.0-1build1 [243 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 7670 kB in 0s (32.0 MB/s)
+Fetched 7670 kB in 0s (33.9 MB/s)
 Selecting previously unselected package libblas3:arm64.
 (Reading database ... 
 (Reading database ... 5%
@@ -9396,8 +9396,8 @@ ModuleNotFoundError: No module named &#x27;shapely&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 3.9.2</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tables_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tables_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tables_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tables_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting tables
   Using cached tables-3.9.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (2.3 kB)
 Collecting numpy&gt;=1.19.0 (from tables)
@@ -9494,24 +9494,15 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tensorflow-data-validation_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tensorflow-data-validation_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tensorflow-data-validation_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tensorflow-data-validation_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tensorflow-data-validation_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tensorflow-data-validation_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
-<pre class="output-content"></pre>
-</td>
-<td class="test-column package-os">
-</td>
-<td class="test-column package-pip">
-<span class="failed badge">failed</span>
-
-<input type="checkbox" id="output_2025-10-29 02:32:19_tensorflow-data-validation_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tensorflow-data-validation_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tensorflow-data-validation_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tensorflow-data-validation_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 <td class="test-column package-os">
@@ -9519,8 +9510,17 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tensorflow-data-validation_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tensorflow-data-validation_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tensorflow-data-validation_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tensorflow-data-validation_jammy" class="output-toggle">Toggle Output</label>
+<pre class="output-content"></pre>
+</td>
+<td class="test-column package-os">
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+
+<input type="checkbox" id="output_2025-10-30 02:31:41_tensorflow-data-validation_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tensorflow-data-validation_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -9534,24 +9534,15 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tfx-bsl_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tfx-bsl_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tfx-bsl_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tfx-bsl_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tfx-bsl_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tfx-bsl_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
-<pre class="output-content"></pre>
-</td>
-<td class="test-column package-os">
-</td>
-<td class="test-column package-pip">
-<span class="failed badge">failed</span>
-
-<input type="checkbox" id="output_2025-10-29 02:32:19_tfx-bsl_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tfx-bsl_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tfx-bsl_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tfx-bsl_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 <td class="test-column package-os">
@@ -9559,8 +9550,17 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <td class="test-column package-pip">
 <span class="failed badge">failed</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_tfx-bsl_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_tfx-bsl_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_tfx-bsl_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tfx-bsl_jammy" class="output-toggle">Toggle Output</label>
+<pre class="output-content"></pre>
+</td>
+<td class="test-column package-os">
+</td>
+<td class="test-column package-pip">
+<span class="failed badge">failed</span>
+
+<input type="checkbox" id="output_2025-10-30 02:31:41_tfx-bsl_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_tfx-bsl_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content"></pre>
 </td>
 </tr>
@@ -9687,8 +9687,8 @@ ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expec
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.15.2</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_torchtext_amazon-linux2023" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_torchtext_amazon-linux2023" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_torchtext_amazon-linux2023" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_torchtext_amazon-linux2023" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Using cached torchtext-0.15.2-cp39-cp39-manylinux2014_aarch64.whl.metadata (7.4 kB)
 Collecting tqdm (from torchtext)
@@ -9761,8 +9761,8 @@ ModuleNotFoundError: No module named &#x27;torchdata.datapipes&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.15.2</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_torchtext_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_torchtext_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_torchtext_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_torchtext_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Using cached torchtext-0.15.2-cp311-cp311-manylinux2014_aarch64.whl.metadata (7.4 kB)
 Collecting tqdm (from torchtext)
@@ -9837,8 +9837,8 @@ ModuleNotFoundError: No module named &#x27;torchdata.datapipes&#x27;
 <span class="failed badge">failed</span>
 <span class="passed badge">installed version 0.15.2</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_torchtext_jammy" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_torchtext_jammy" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_torchtext_jammy" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_torchtext_jammy" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting torchtext
   Using cached torchtext-0.15.2-cp310-cp310-manylinux2014_aarch64.whl.metadata (7.4 kB)
 Collecting tqdm (from torchtext)
@@ -10150,8 +10150,8 @@ ModuleNotFoundError: No module named &#x27;torchdata.datapipes&#x27;
 <span class="passed badge">installed version 9.10.0</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_vowpalwabbit_amazon-linux2023-py311" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_vowpalwabbit_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_vowpalwabbit_amazon-linux2023-py311" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_vowpalwabbit_amazon-linux2023-py311" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting vowpalwabbit
   Using cached vowpalwabbit-9.10.0.tar.gz (33.3 MB)
   Installing build dependencies: started
@@ -10168,7 +10168,7 @@ Building wheels for collected packages: vowpalwabbit
   × Building wheel for vowpalwabbit (pyproject.toml) did not run successfully.
   │ exit code: 1
   ╰─&gt; [48 lines of output]
-      /tmp/pip-build-env-6k9z5603/overlay/lib/python3.11/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      /tmp/pip-build-env-8ikblnw1/overlay/lib/python3.11/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
       !!
       
               ********************************************************************************
@@ -10214,7 +10214,7 @@ Building wheels for collected packages: vowpalwabbit
       copying python/vowpalwabbit/conda_install.sh -&gt; build/lib.linux-aarch64-cpython-311/vowpalwabbit
       running build_ext
       creating build/temp.linux-aarch64-cpython-311
-      cmake -DCMAKE_BUILD_TYPE=Release -DPY_VERSION=3.11 -DBUILD_PYTHON=On -DBUILD_TESTING=Off -DWARNINGS=Off -DVW_FEAT_CB_GRAPH_FEEDBACK=On -DSTD_INV_SQRT=On -DVW_PYTHON_SHARED_LIB_SUFFIX=.cpython-311-aarch64-linux-gnu.so -DBoost_NO_BOOST_CMAKE=ON -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/pip-install-elw6z1k8/vowpalwabbit_307734e0306f4622a78b2f0383202874/build/lib.linux-aarch64-cpython-311 /tmp/pip-install-elw6z1k8/vowpalwabbit_307734e0306f4622a78b2f0383202874
+      cmake -DCMAKE_BUILD_TYPE=Release -DPY_VERSION=3.11 -DBUILD_PYTHON=On -DBUILD_TESTING=Off -DWARNINGS=Off -DVW_FEAT_CB_GRAPH_FEEDBACK=On -DSTD_INV_SQRT=On -DVW_PYTHON_SHARED_LIB_SUFFIX=.cpython-311-aarch64-linux-gnu.so -DBoost_NO_BOOST_CMAKE=ON -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/pip-install-6lnxldjr/vowpalwabbit_dca738a49fb44726a77e060bf5ffec84/build/lib.linux-aarch64-cpython-311 /tmp/pip-install-6lnxldjr/vowpalwabbit_dca738a49fb44726a77e060bf5ffec84
       error: command &#x27;cmake&#x27; failed: No such file or directory
       [end of output]
   
@@ -10243,8 +10243,8 @@ error: failed-wheel-build-for-install
 <span class="passed badge">installed version 9.10.0</span>
 <span class="warning badge">build required</span>
 
-<input type="checkbox" id="output_2025-10-29 02:32:19_vowpalwabbit_noble" class="output-toggle" />
-<label for="output_2025-10-29 02:32:19_vowpalwabbit_noble" class="output-toggle">Toggle Output</label>
+<input type="checkbox" id="output_2025-10-30 02:31:41_vowpalwabbit_noble" class="output-toggle" />
+<label for="output_2025-10-30 02:31:41_vowpalwabbit_noble" class="output-toggle">Toggle Output</label>
 <pre class="output-content">Collecting vowpalwabbit
   Using cached vowpalwabbit-9.10.0.tar.gz (33.3 MB)
   Installing build dependencies: started
@@ -10261,7 +10261,7 @@ Building wheels for collected packages: vowpalwabbit
   × Building wheel for vowpalwabbit (pyproject.toml) did not run successfully.
   │ exit code: 1
   ╰─&gt; [48 lines of output]
-      /tmp/pip-build-env-ea7ze3ki/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      /tmp/pip-build-env-yd6qyoba/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
       !!
       
               ********************************************************************************
@@ -10307,16 +10307,16 @@ Building wheels for collected packages: vowpalwabbit
       copying python/vowpalwabbit/conda_install.sh -&gt; build/lib.linux-aarch64-cpython-312/vowpalwabbit
       running build_ext
       creating build/temp.linux-aarch64-cpython-312
-      cmake -DCMAKE_BUILD_TYPE=Release -DPY_VERSION=3.12 -DBUILD_PYTHON=On -DBUILD_TESTING=Off -DWARNINGS=Off -DVW_FEAT_CB_GRAPH_FEEDBACK=On -DSTD_INV_SQRT=On -DVW_PYTHON_SHARED_LIB_SUFFIX=.cpython-312-aarch64-linux-gnu.so -DBoost_NO_BOOST_CMAKE=ON -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/pip-install-dgi32q9i/vowpalwabbit_3344fd5180994fe5a5ebbe8423fe6d69/build/lib.linux-aarch64-cpython-312 /tmp/pip-install-dgi32q9i/vowpalwabbit_3344fd5180994fe5a5ebbe8423fe6d69
+      cmake -DCMAKE_BUILD_TYPE=Release -DPY_VERSION=3.12 -DBUILD_PYTHON=On -DBUILD_TESTING=Off -DWARNINGS=Off -DVW_FEAT_CB_GRAPH_FEEDBACK=On -DSTD_INV_SQRT=On -DVW_PYTHON_SHARED_LIB_SUFFIX=.cpython-312-aarch64-linux-gnu.so -DBoost_NO_BOOST_CMAKE=ON -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/tmp/pip-install-o5ludu31/vowpalwabbit_281bbfe80dbe4db787396b34a42c4ac4/build/lib.linux-aarch64-cpython-312 /tmp/pip-install-o5ludu31/vowpalwabbit_281bbfe80dbe4db787396b34a42c4ac4
       error: command &#x27;cmake&#x27; failed: No such file or directory
       [end of output]
   
   note: This error originates from a subprocess, and is likely not a problem with pip.
   ERROR: Failed building wheel for vowpalwabbit
-Failed to build vowpalwabbit
 
 [notice] A new release of pip is available: 25.2 -&gt; 25.3
 [notice] To update, run: pip install --upgrade pip
+Failed to build vowpalwabbit
 error: failed-wheel-build-for-install
 
 × Failed to build installable wheels for some pyproject.toml based projects
