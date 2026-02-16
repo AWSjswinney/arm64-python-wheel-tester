@@ -10,12 +10,10 @@ import re
 import subprocess
 from datetime import datetime
 from bs4 import BeautifulSoup
-import shutil
 import argparse
 import multiprocessing
 from multiprocessing import Pool
 from tqdm import tqdm
-import tempfile
 
 def get_commit_list(repo_path, commit_range=None, num_commits=10):
     """
@@ -70,45 +68,27 @@ def process_commit(args):
     """
     repo_path, commit_hash, commit_datetime = args
     
-    # Create a temporary directory
-    temp_dir = tempfile.mkdtemp(prefix=f"temp_pages_{commit_hash[:8]}_")
-    html_path = os.path.join(temp_dir, "index.html")
-    
     try:
-        # Extract the index.html content from the specific commit
         result = subprocess.run(
             ["git", "show", f"{commit_hash}:index.html"],
             check=True, capture_output=True, text=True, cwd=repo_path
         )
-        
-        # Write the content to the temporary file
-        with open(html_path, 'w', encoding='utf-8') as f:
-            f.write(result.stdout)
-        
-        # Parse HTML and extract results
-        package_results = parse_html_results(html_path)
-        
+        package_results = parse_html_results(result.stdout)
         return commit_datetime, package_results
     except Exception as e:
+        print(f"Error processing commit {commit_hash[:8]} ({commit_datetime}): {e}")
         return commit_datetime, None
-    finally:
-        # Clean up temporary directory
-        if os.path.exists(temp_dir):
-            shutil.rmtree(temp_dir)
 
-def parse_html_results(html_path):
+def parse_html_results(html_content):
     """
-    Parse the index.html file and extract test results.
+    Parse HTML content and extract test results.
     
     Args:
-        html_path: Path to the HTML file
+        html_content: HTML string
         
     Returns:
         Dictionary of package results
     """
-    with open(html_path, 'r', encoding='utf-8') as f:
-        html_content = f.read()
-    
     soup = BeautifulSoup(html_content, 'html.parser')
     
     # Extract package results
@@ -135,21 +115,20 @@ def parse_html_results(html_path):
             if not dist_class or len(dist_class) < 2:
                 continue
             
-            # The class will be something like "test-column package-pip" or "test-column package-os"
-            # We need to extract the column header to get the distribution name
-            col_index = list(col.parent.children).index(col)
+            # Use element-only indexing to avoid whitespace text nodes
+            col_index = col.parent.find_all('td').index(col)
             
             # Find the corresponding header cell
             header_row = soup.select_one('thead tr')
-            if header_row and col_index < len(list(header_row.children)):
-                header_cell = list(header_row.children)[col_index]
-                dist_name = header_cell.text.strip()
+            if header_row:
+                header_cells = header_row.find_all('th')
+                if col_index < len(header_cells):
+                    dist_name = header_cells[col_index].text.strip()
+                else:
+                    dist_name = dist_class[1].split('-')[-1]
             else:
-                # Fallback to using the class name
-                dist_name = col.get('class')[0].split('-')[-1]
+                dist_name = dist_class[1].split('-')[-1]
             
-            # Check if this is a distribution we want to track
-            # The class will contain something like "test-column package-pip" or "test-column package-os"
             if 'package-pip' in dist_class or 'package-os' in dist_class:
                 # Initialize distribution results with default values
                 dist_results = {
@@ -199,25 +178,7 @@ def parse_html_results(html_path):
                 if timeout_badge and 'timeout' in timeout_badge.text:
                     dist_results["timeout"] = True
                 
-                # Add to results
-                # Map the distribution name to match the format in the reference JSON
-                dist_key = dist_name
-                if dist_name == 'focal':
-                    dist_key = 'focal'
-                elif dist_name == 'focal-apt':
-                    dist_key = 'focal-apt'
-                elif dist_name == 'jammy':
-                    dist_key = 'jammy'
-                elif dist_name == 'jammy-apt':
-                    dist_key = 'jammy-apt'
-                elif dist_name == 'noble':
-                    dist_key = 'noble'
-                elif dist_name == 'amazon-linux2023':
-                    dist_key = 'amazon-linux2023'
-                elif dist_name == 'amazon-linux2023-yum':
-                    dist_key = 'amazon-linux2023-yum'
-                
-                package_results[package_name][dist_key] = dist_results
+                package_results[package_name][dist_name] = dist_results
     
     return package_results
 
