@@ -242,7 +242,7 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
             with open(fname) as f:
                 test_result_file.content = json.load(f)
 
-        mo = re.search('[^/]-([0-9\-_]+).json.xz', fname)
+        mo = re.search(r'[^/]-([0-9\-_]+)\.json(?:\.xz)?$', fname)
         if mo is not None:
             test_result_file.date = datetime.strptime(mo.group(1), "%Y-%m-%d_%H-%M-%S")
         test_result_file.add_inferred_meta_data()

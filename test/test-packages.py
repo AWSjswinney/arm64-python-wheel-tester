@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--container', type=str, nargs='*', help='Specify which containers to test')
     parser.add_argument('--packages', type=str, nargs='*', help='Specify which packages to test')
     parser.add_argument('--skip-webpage', action='store_true', help='Do not download history from GitHub to generate the web report')
+    parser.add_argument('--results-dir', type=str, help='Local directory containing previous result files', default=None)
     args = parser.parse_args()
 
     # change working directory the path of this script
@@ -112,7 +113,8 @@ def main():
             github_token=args.token,
             days_ago_list=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 21],
             compare_weekday_num=0,
-            ignore_tests=args.ignore)
+            ignore_tests=args.ignore,
+            results_dir=args.results_dir)
 
 
 process_work_dir = ''

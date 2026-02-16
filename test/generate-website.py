@@ -2,6 +2,7 @@
 
 import io
 import os
+import glob
 import json
 import zipfile
 import argparse
@@ -20,7 +21,8 @@ def main():
     parser.add_argument('--website-branch', type=str, help="name of website branch", default=None)
     parser.add_argument('--new-results', type=str, help="result file to add to website", required=True)
     parser.add_argument('--compare-n-days-ago', type=int, help="number of days in the past to compare against", nargs='+')
-    parser.add_argument('--github-token', type=str, help="github api token", required=True)
+    parser.add_argument('--github-token', type=str, help="github api token", default=None)
+    parser.add_argument('--results-dir', type=str, help="local directory containing previous result files (alternative to github artifacts)", default=None)
     parser.add_argument('--compare-weekday-num', type=int, help="integer weekday number to hinge the summary report on", default=None)
     parser.add_argument('--ignore', type=str, action='append', help='Ignore tests with the specified name; can be used more than once.', default=[])
 
@@ -28,10 +30,10 @@ def main():
 
     generate_website(args.output_dir, args.new_results, args.github_token, args.compare_n_days_ago,
             repo_path=args.repo, website_branch=args.website_branch, compare_weekday_num=args.compare_weekday_num,
-            ignore_tests=args.ignore)
+            ignore_tests=args.ignore, results_dir=args.results_dir)
 
 def generate_website(output_dir, new_results, github_token, days_ago_list=[], repo_path="/repo", website_branch="gh-pages",
-        compare_weekday_num=None, ignore_tests=[]):
+        compare_weekday_num=None, ignore_tests=[], results_dir=None):
     # TODO: checkout the existing gh-pages and update it with a new report rather than replacing it completely
     # clone the repo to a temporary directory and checkout the website branch
     #webrepo = tempfile.mkdtemp()
@@ -39,7 +41,12 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
 
     # download results from previous run
     print("Fetching previous results...")
-    previous_results = fetch_previous_results(days_ago_list, github_token=github_token)
+    if results_dir:
+        previous_results = fetch_local_results(results_dir, new_results)
+    elif github_token and days_ago_list:
+        previous_results = fetch_previous_results(days_ago_list, github_token=github_token)
+    else:
+        previous_results = []
     
     if not previous_results:
         print("No previous results found. Proceeding with current results only.")
@@ -68,6 +75,19 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
         print(f"Error writing HTML output: {str(e)}")
         return
 
+
+
+def fetch_local_results(results_dir, exclude_fname=None):
+    """Load result files from a local directory, excluding the current run's file."""
+    fnames = sorted(glob.glob(os.path.join(results_dir, 'results-*.json.xz')), reverse=True)
+    if exclude_fname:
+        exclude_base = os.path.basename(exclude_fname)
+        fnames = [f for f in fnames if os.path.basename(f) != exclude_base]
+    if not fnames:
+        print("Warning: No previous result files found in " + results_dir)
+    else:
+        print(f"Found {len(fnames)} previous result files in {results_dir}")
+    return fnames
 
 
 def fetch_previous_results(days_ago_list, github_token):

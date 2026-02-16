@@ -176,27 +176,25 @@ def parse_html_results(html_content):
     
     return package_results
 
-def save_results(results, output_path=None):
+def save_results(results, output_dir):
     """
-    Save the extracted results to a JSON file in the current working directory.
+    Save each execution as an individual JSON file, matching the format
+    consumed by process-results.py.
     
     Args:
-        results: Dictionary of results
-        output_path: Path to the output file (optional)
-        
-    Returns:
-        Path to the saved file
+        results: Dictionary with "executions" key
+        output_dir: Directory to write result files into
     """
-    if output_path is None:
-        # Generate a filename with current timestamp
-        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        output_path = os.path.join(os.getcwd(), f"extracted-results-{timestamp}.json")
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2)
-    
-    print(f"Results saved to {output_path}")
-    return output_path
+    os.makedirs(output_dir, exist_ok=True)
+    count = 0
+    for commit_datetime, package_results in results["executions"].items():
+        # Convert "YYYY-MM-DD HH:MM:SS" to "YYYY-MM-DD_HH-MM-SS"
+        timestamp = commit_datetime.replace(' ', '_').replace(':', '-')
+        fname = os.path.join(output_dir, f"results-{timestamp}.json")
+        with open(fname, 'w', encoding='utf-8') as f:
+            json.dump(package_results, f, indent=2)
+        count += 1
+    print(f"Saved {count} result files to {output_dir}")
 
 def main():
     parser = argparse.ArgumentParser(description='Extract test results from multiple commits.')
@@ -206,8 +204,8 @@ def main():
                         help='Number of commits to process if commit-range is not specified (default: 10)')
     parser.add_argument('--commit-range', type=str,
                         help='Git commit range (e.g., "abcdef..master")')
-    parser.add_argument('--output', type=str,
-                        help='Output file path (default: extracted-results-TIMESTAMP.json)')
+    parser.add_argument('--output-dir', type=str, default='results',
+                        help='Output directory for result files (default: results)')
     parser.add_argument('--processes', type=int, default=multiprocessing.cpu_count(),
                         help=f'Number of processes to use (default: {multiprocessing.cpu_count()})')
     args = parser.parse_args()
@@ -235,7 +233,7 @@ def main():
                 else:
                     print(f"Failed to extract test results for {commit_datetime}")
         
-        save_results(results, args.output)
+        save_results(results, args.output_dir)
         
         print(f"Processed {len(results['executions'])} commits successfully")
         
