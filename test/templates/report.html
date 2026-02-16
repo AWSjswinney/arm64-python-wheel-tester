@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+            $('#python-wheel-report').DataTable({
+                paginate: false
+            });
+        });
+</script>
+<style type="text/css">
+
+h1 {
+    text-align: center;
+}
+
+section.summary {
+    margin: 0 auto;
+    width: 900px;
+    font-family: sans-serif;
+}
+
+section.summary table {
+    margin: 0 auto;
+    width: 700px;
+    border-collapse: collapse;
+}
+
+section.summary th, section.summary td {
+    border: solid 1px;
+    margin: 0px;
+    padding: 3px;
+}
+
+table.python-wheel-report {
+    margin: 0 auto;
+    width: 100%;
+}
+
+table.python-wheel-report td, table.python-wheel-report th {
+    padding: 5px;
+    border-width: 0px;
+    margin: 5px;
+    font-family: monospace;
+    line-height: 1.6em;
+    width: 14%;
+    vertical-align: baseline;
+}
+
+table.python-wheel-report th {
+    position:sticky;
+    top:0px;
+    background-color: white;
+}
+
+table.python-wheel-report span.perfect-score {
+    color: white;
+    background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+}
+
+table.python-wheel-report span.test-name, span.failed {
+    color: white;
+    background: linear-gradient(to bottom, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%);
+}
+
+table.python-wheel-report span.all-passed, span.passed {
+    color: white;
+    background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+}
+
+table.python-wheel-report span.build-required, span.warning {
+    color: white;
+    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
+}
+
+table.python-wheel-report span.slow-install {
+    color: white;
+    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
+}
+
+table.python-wheel-report span.badge {
+    border-radius: 4px;
+    margin: 3px;
+    padding: 2px;
+    white-space: nowrap;
+}
+
+table.python-wheel-report span.file-indicator {
+    font-size: 0.5em;
+}
+
+table.python-wheel-report tr.odd {
+    background-color: #f1f1f1;
+}
+
+table.python-wheel-report td.wheel-name.different {
+    background: #d1ffd9;
+    font-style: italic;
+}
+
+input.output-toggle {
+    display: none;
+}
+label.output-toggle {
+    cursor: pointer;
+}
+input.output-toggle + label.output-toggle + pre.output-content {
+    display: none;
+}
+input.output-toggle:checked + label.output-toggle + pre.output-content {
+    display: block;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Python Wheels on aarch64 test results from {{ pretty_date }}</h1>
+
+<section class="summary">
+{% if summary_rows %}
+<table class="summary">
+{% for label, values, diff in summary_rows %}
+<tr>
+  <th>{{ label }}</th>
+  {% for val in values %}
+  <td>{{ val }}</td>
+  {% endfor %}
+  {% if diff is not none %}
+  <td>{{ diff }}</td>
+  {% else %}
+  <td></td>
+  {% endif %}
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<p>The table shows test results from the current test run and differences, if any, with previous runs.
+When differences exist, the first test report exhibting the difference is shown. The current test result
+is always shown, regardless of whether there is any difference.</p>
+</section>
+
+<section>
+<table class="python-wheel-report" id="python-wheel-report">
+<thead>
+<tr>
+  <th></th>
+  <th>rank by downloads on pypi</th>
+  <th>at least one passing option per distribution?</th>
+  {% for test_name in all_test_names %}
+  <th class="test-column {{ get_package_name_class(test_name) }}">{{ test_name }}</th>
+  {% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for wheel in wheels %}
+<tr class="wheel-line {{ loop.cycle('odd', 'even') }}">
+  <td class="wheel-name">{{ wheel.name }}</td>
+  <td>{{ wheel.rank }}</td>
+  <td>
+    {% if wheel.distro_passing is not none %}
+      {% if wheel.distro_passing %}
+        <span class="passed badge">yes</span>
+      {% else %}
+        <span class="failed badge">no</span>
+        {{ wheel.distro_last_passing }}
+      {% endif %}
+    {% endif %}
+  </td>
+  {% for test_name in all_test_names %}
+  <td class="test-column {{ get_package_name_class(test_name) }}">
+    {% if test_name in wheel.results %}
+    {% set result = wheel.results[test_name] %}
+      {% if result['test-passed'] %}
+        <span class="passed badge">passed</span>
+      {% else %}
+        <span class="failed badge">failed</span>
+      {% endif %}
+      {% if result['installed-version'] %}
+        <span class="passed badge">installed version {{ result['installed-version'] }}</span>
+      {% endif %}
+      {% if result['installed-version'] and result['installed-version'] != result['latest-version'] %}
+        <span class="warning badge">latest version {{ result['latest-version'] }}</span>
+      {% endif %}
+      {% if result['build-required'] %}
+        <span class="warning badge">build required</span>
+      {% endif %}
+      {% if result['slow-install'] %}
+        <span class="warning badge">slow install</span>
+      {% endif %}
+      {% if result.get('timeout') %}
+        <span class="failed badge">timed out</span>
+      {% endif %}
+      {% if not result['test-passed'] or result.get('timeout') %}
+        {{ wheel.last_passing.get(test_name, '') }}
+        {% set output_id = "output_%s_%s_%s"|format(current_date, wheel.name, test_name)|e %}
+        <input type="checkbox" id="{{ output_id }}" class="output-toggle" />
+        <label for="{{ output_id }}" class="output-toggle">Toggle Output</label>
+        <pre class="output-content">{{ result['output']|e }}</pre>
+      {% endif %}
+    {% endif %}
+  </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</section>
+
+</body>
+</html>

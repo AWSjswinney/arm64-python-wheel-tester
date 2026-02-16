@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import re
 import glob
 import json
@@ -7,10 +8,9 @@ import lzma
 import math
 import argparse
 import requests
-from functools import reduce
-from collections import OrderedDict, defaultdict
+from collections import defaultdict
 from datetime import datetime, timedelta
-from html import escape as html_escape
+from jinja2 import Environment, FileSystemLoader
 
 def main():
     parser = argparse.ArgumentParser(description="Parse result files and render an HTML page with a status summary")
@@ -269,308 +269,107 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
     leading_zeros = math.floor(math.log10(len(wheel_ranks))) + 1
     wheel_rank_format = f'{{n:0{leading_zeros}d}}'
 
-    html = []
-    html.append(HTML_HEADER)
-    pretty_date = test_results_list[0].date.strftime("%B %d, %Y")
-    html.append(f'<h1>Python Wheels on aarch64 test results from {pretty_date}</h1>')
-    html.append('<section class="summary">')
-
-    # Find the result file to compare against for the top-level summary.
-    reference_test_file = None
+    # Build summary rows for the comparison table
+    summary_rows = []
     if type(compare_weekday_num) is int:
         reference_date = test_results_list[0].date
         reference_date = reference_date.replace(hour=23, minute=59)
         reference_date = reference_date - timedelta(days=reference_date.weekday()) + timedelta(days=compare_weekday_num)
-        current_weekday = test_results_list[0].date.weekday()
-        if current_weekday <= compare_weekday_num:
+        if test_results_list[0].date.weekday() <= compare_weekday_num:
             reference_date -= timedelta(days=7)
-        
+
         reference_test_file = None
-        for test_result_file in test_results_list:
-            if test_result_file.date < reference_date:
-                reference_test_file = test_result_file
+        for tf in test_results_list:
+            if tf.date < reference_date:
+                reference_test_file = tf
                 break
-                
-        # If no reference test file was found, only show current results
-        if reference_test_file is None or reference_test_file.content is None:
+
+        files_to_summarize = [test_results_list[0]]
+        if reference_test_file is not None and reference_test_file.content is not None:
+            files_to_summarize = [reference_test_file, test_results_list[0]]
+        else:
             print("Warning: No valid reference test file found for comparison")
-            summary_table = [['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']]
-            test_result_file = test_results_list[0]
-            count = len(test_result_file.content)
-            failures = len(get_failing_tests(test_result_file.content))
-            all_passing = count - failures
-            date = test_result_file.date.strftime("%A, %B %d, %Y")
-            passing_options = len(list(filter(lambda wheel: wheel['each-distribution-has-passing-option'], test_result_file.wheels.values())))
-            summary_table.append([date, count, all_passing, failures, passing_options])
-        else:
-            summary_table = [['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']]
-            for test_result_file in [reference_test_file, test_results_list[0]]:
-                count = len(test_result_file.content)
-                failures = len(get_failing_tests(test_result_file.content))
-                all_passing = count - failures
-                date = test_result_file.date.strftime("%A, %B %d, %Y")
-                passing_options = len(list(filter(lambda wheel: wheel['each-distribution-has-passing-option'], test_result_file.wheels.values())))
-                summary_table.append([date, count, all_passing, failures, passing_options])
 
-        html.append('<table class="summary">')
-        for index in range(len(summary_table[0])):
-            html.append('<tr>')
-            for column_index, column_data in enumerate(summary_table):
-                element = 'th' if column_index == 0 else 'td'
-                html.append(f'<{element}>{column_data[index]}</{element}>')
-            
-            # Only add difference column if we have a reference test file
-            if len(summary_table) > 2 and summary_table[0][index] != 'date':
-                difference = summary_table[2][index] - summary_table[1][index]
-                plus = '+' if difference >= 0 else ''
-                html.append(f'<td>{plus}{difference}</td>')
-            elif summary_table[0][index] != 'date':
-                html.append('<td>N/A</td>')  # No comparison available
+        labels = ['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']
+        columns = []
+        for tf in files_to_summarize:
+            count = len(tf.content)
+            failures = len(get_failing_tests(tf.content))
+            passing_options = len([w for w in tf.wheels.values() if w['each-distribution-has-passing-option']])
+            columns.append([tf.date.strftime("%A, %B %d, %Y"), count, count - failures, failures, passing_options])
+
+        has_ref = len(columns) == 2
+        for i, label in enumerate(labels):
+            values = [col[i] for col in columns]
+            if label == 'date':
+                diff = None
+            elif has_ref:
+                d = values[-1] - values[0]
+                diff = f"+{d}" if d >= 0 else str(d)
             else:
-                html.append('<td></td>')
-            html.append('</tr>')
-        html.append('</table>')
+                diff = "N/A"
+            summary_rows.append((label, values, diff))
 
-
-    html.append('<p>The table shows test results from the current test run and differences, if any, with previous runs.')
-    html.append('When differences exist, the first test report exhibting the difference is shown. The current test result')
-    html.append('is always shown, regardless of whether there is any difference.</p>')
-    html.append('</section>')
-    html.append('<section>')
-    html.append('<table class="python-wheel-report" id="python-wheel-report">')
-    html.append('<thead><tr>')
-    html.append('<th></th>')
-    html.append('<th>rank by downloads on pypi</th>')
-    html.append('<th>at least one passing option per distribution?</th>')
-    for test_name in all_test_names:
-        html.append(f'<th class="test-column {get_package_name_class(test_name)}">{test_name}</th>')
-    html.append('</thead></tr><tbody>')
-
-    def date_of_last_passing_html(wheel, test_name):
-        if test_name == 'each-distribution-has-passing-option':
-            passing_lambda = lambda tf: tf.wheels[wheel][test_name]
-        else:
-            passing_lambda = lambda tf: tf.content[wheel][test_name]['test-passed']
-        last_passing = None
-        for test_result_file in test_results_list[1:]:
+    # Helper to find last passing date for a wheel/test
+    def date_of_last_passing(wheel, test_name):
+        for tf in test_results_list[1:]:
             try:
-                if passing_lambda(test_result_file):
-                    last_passing = test_result_file.date
-                    break
+                if test_name == 'each-distribution-has-passing-option':
+                    passed = tf.wheels[wheel][test_name]
+                else:
+                    passed = tf.content[wheel][test_name]['test-passed']
+                if passed:
+                    return '<br /><span class="file-indicator">last passed on ' + tf.date.strftime("%B %d, %Y") + '</span>'
             except KeyError:
                 continue
-        if last_passing:
-            last_passing = last_passing.strftime("%B %d, %Y")
-            return f'<br /><span class="file-indicator">last passed on {last_passing}</span>'
-        else:
-            return ''
+        return ''
 
-    test_result_file = test_results_list[0]
-    # Iterate over the sorted list of wheel names
-    for i, wheel in enumerate(wheel_name_set):
-        odd_even = 'even' if (i+1) % 2 == 0 else 'odd'
-        different = False
-        different_class = 'different' if different else ''
-        if different:
-            pretty_date = test_result_file.date.strftime("%B %d, %Y")
-            file_indicator = f'<br /><span class="file-indicator">{pretty_date}</span>'
-        else:
-            file_indicator = ''
-        html.append(f'<tr class="wheel-line {odd_even}">')
-        html.append(f'<td class="wheel-name {different_class}">{wheel}{file_indicator}</td>')
+    # Build wheel data for the template
+    current = test_results_list[0]
+    wheels = []
+    for wheel_name in wheel_name_set:
         try:
-            wheel_rank = wheel_rank_format.format(n=wheel_ranks.index(wheel) + 1)
+            rank = wheel_rank_format.format(n=wheel_ranks.index(wheel_name) + 1)
         except (IndexError, ValueError):
-            wheel_rank = '~'
-        html.append(f'<td class="">{wheel_rank}</td>')
-        html.append('<td class="">')
-        if wheel in test_result_file.wheels:
-            distro_passing = test_result_file.wheels[wheel]['each-distribution-has-passing-option']
-            if distro_passing:
-                html.append(make_badge(classes=['passed'], text='yes'))
-            else:
-                html.append(make_badge(classes=['failed'], text='no'))
-                html.append(date_of_last_passing_html(wheel, 'each-distribution-has-passing-option'))
-        html.append('</td>')
-        for test_name in all_test_names:
-            html.append(f'<td class="test-column {get_package_name_class(test_name)}">')
-            if wheel in test_result_file.content and test_name in test_result_file.content[wheel]:
-                result = test_result_file.content[wheel][test_name]
-                show_output = False
-                if result['test-passed']:
-                    html.append(make_badge(classes=['passed'], text='passed'))
-                else:
-                    html.append(make_badge(classes=['failed'], text='failed'))
-                    show_output = True
-                if result["installed-version"]:
-                    html.append(make_badge(classes=['passed'], text=f"installed version {result['installed-version']}"))
-                if result["installed-version"] and (result["installed-version"] != result["latest-version"]):
-                    html.append(make_badge(classes=['warning'], text=f"latest version {result['latest-version']}"))
-                if result['build-required']:
-                    html.append(make_badge(classes=['warning'], text='build required'))
-                if result['slow-install']:
-                    html.append(make_badge(classes=['warning'], text='slow install'))
-                if 'timeout' in result and result['timeout']:
-                    html.append(make_badge(classes=['failed'], text='timed out'))
-                    show_output = True
+            rank = '~'
 
-                if show_output:
-                    html.append(date_of_last_passing_html(wheel, test_name))
-                    output_id = html_escape(f"output_{test_result_file.date}_{wheel}_{test_name}")
-                    output_html = html_escape(result['output'])
-                    html.append(f'<input type="checkbox" id="{output_id}" class="output-toggle" />')
-                    html.append(f'<label for="{output_id}" class="output-toggle">Toggle Output</label>')
-                    html.append(f'<pre class="output-content">{output_html}</pre>')
+        distro_passing = None
+        distro_last_passing = ''
+        if wheel_name in current.wheels:
+            distro_passing = current.wheels[wheel_name]['each-distribution-has-passing-option']
+            if not distro_passing:
+                distro_last_passing = date_of_last_passing(wheel_name, 'each-distribution-has-passing-option')
 
-            html.append('</td>')
+        results = {}
+        last_passing = {}
+        if wheel_name in current.content:
+            results = current.content[wheel_name]
+            for test_name in all_test_names:
+                if test_name in results and (not results[test_name]['test-passed'] or results[test_name].get('timeout')):
+                    last_passing[test_name] = date_of_last_passing(wheel_name, test_name)
 
-        html.append('</tr>')
+        wheels.append({
+            'name': wheel_name,
+            'rank': rank,
+            'distro_passing': distro_passing,
+            'distro_last_passing': distro_last_passing,
+            'results': results,
+            'last_passing': last_passing,
+        })
 
-    html.append('</tbody></table>')
-    html.append('</section>')
-    html.append(HTML_FOOTER)
-    html = '\n'.join(html)
-    return html
+    # Render template
+    template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
+    env = Environment(loader=FileSystemLoader(template_dir), autoescape=False)
+    template = env.get_template('report.html')
+    return template.render(
+        pretty_date=current.date.strftime("%B %d, %Y"),
+        summary_rows=summary_rows,
+        all_test_names=all_test_names,
+        wheels=wheels,
+        current_date=current.date,
+        get_package_name_class=get_package_name_class,
+    )
 
-HTML_HEADER = '''
-<!doctype html>
-<html>
-<head>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-            $('#python-wheel-report').DataTable({
-                paginate: false
-            });
-        });
-</script>
-<style type="text/css">
-
-h1 {
-    text-align: center;
-}
-
-section.summary {
-    margin: 0 auto;
-    width: 900px;
-    font-family: sans-serif;
-}
-
-section.summary table {
-    margin: 0 auto;
-    width: 700px;
-    border-collapse: collapse;
-}
-
-section.summary th, section.summary td {
-    border: solid 1px;
-    margin: 0px;
-    padding: 3px;
-}
-
-table.python-wheel-report {
-    margin: 0 auto;
-    width: 100%;
-}
-
-table.python-wheel-report td, table.python-wheel-report th {
-    padding: 5px;
-    border-width: 0px;
-    margin: 5px;
-    font-family: monospace;
-    line-height: 1.6em;
-    width: 14%;
-    vertical-align: baseline;
-}
-
-table.python-wheel-report th {
-    position:sticky;
-    top:0px;
-    background-color: white;
-}
-
-table.python-wheel-report span.perfect-score {
-    color: white;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
-background: #bfd255; /* Old browsers */
-background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
-}
-
-table.python-wheel-report span.test-name, span.failed {
-    color: white;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f85032+0,f16f5c+50,f6290c+51,f02f17+71,e73827+100;Red+Gloss+%231 */
-background: #f85032; /* Old browsers */
-background: linear-gradient(to bottom,  #f85032 0%,#f16f5c 50%,#f6290c 51%,#f02f17 71%,#e73827 100%);
-}
-
-table.python-wheel-report span.all-passed, span.passed {
-    color: white;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
-background: #bfd255; /* Old browsers */
-background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
-}
-
-table.python-wheel-report span.build-required, span.warning {
-    color: white;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
-background: #ffd65e; /* Old browsers */
-background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
-}
-
-table.python-wheel-report span.slow-install {
-    color: white;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffd65e+0,febf04+100;Yellow+3D+%232 */
-background: #ffd65e; /* Old browsers */
-background: linear-gradient(to bottom,  #ffd65e 0%,#febf04 100%);
-}
-
-
-table.python-wheel-report span.badge {
-    border-radius: 4px;
-    margin: 3px;
-    padding: 2px;
-    white-space: nowrap;
-}
-table.python-wheel-report span.file-indicator {
-    font-size: 0.5em;
-}
-
-
-table.python-wheel-report tr.odd {
-    background-color: #f1f1f1;
-}
-
-table.python-wheel-report td.wheel-name.different {
-    background: #d1ffd9;
-    font-style: italic;
-}
-
-
-/* Styles for "Toggle Output" accordions */
-input.output-toggle {
-    display: none;
-}
-label.output-toggle {
-    cursor: pointer;
-}
-input.output-toggle + label.output-toggle + pre.output-content {
-    display: none;
-}
-input.output-toggle:checked + label.output-toggle + pre.output-content {
-    display: block;
-}
-
-</style>
-</head>
-<body>
-'''
-
-HTML_FOOTER = '''
-</body>
-</html>
-'''
 
 if __name__ == '__main__':
     main()

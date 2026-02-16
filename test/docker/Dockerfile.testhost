@@ -18,4 +18,4 @@ USER $USER_NAME:$USER_GID
 RUN /bin/bash -c "python3.11 -m venv $HOME/python-venv && source $HOME/python-venv/bin/activate && pip install --upgrade pip"
 ENV PATH=/home/$USER_NAME/python-venv/bin:$PATH
 ENV VIRTUAL_ENV=/home/$USER_NAME/python-venv
-RUN pip3 install --upgrade pip pyyaml requests
+RUN pip3 install --upgrade pip pyyaml requests jinja2
