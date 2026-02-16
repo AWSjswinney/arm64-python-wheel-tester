@@ -167,7 +167,9 @@ is always shown, regardless of whether there is any difference.</p>
         <span class="passed badge">yes</span>
       {% else %}
         <span class="failed badge">no</span>
-        {{ wheel.distro_last_passing }}
+        {% if wheel.distro_last_passing %}
+        <br /><span class="file-indicator">last passed on {{ wheel.distro_last_passing }}</span>
+        {% endif %}
       {% endif %}
     {% endif %}
   </td>
@@ -196,7 +198,9 @@ is always shown, regardless of whether there is any difference.</p>
         <span class="failed badge">timed out</span>
       {% endif %}
       {% if not result['test-passed'] or result.get('timeout') %}
-        {{ wheel.last_passing.get(test_name, '') }}
+        {% if wheel.last_passing.get(test_name) %}
+        <br /><span class="file-indicator">last passed on {{ wheel.last_passing[test_name] }}</span>
+        {% endif %}
         {% set output_id = "output_%s_%s_%s"|format(current_date, wheel.name, test_name)|e %}
         <input type="checkbox" id="{{ output_id }}" class="output-toggle" />
         <label for="{{ output_id }}" class="output-toggle">Toggle Output</label>

@@ -192,10 +192,10 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
                 else:
                     passed = tf.content[wheel][test_name]['test-passed']
                 if passed:
-                    return '<br /><span class="file-indicator">last passed on ' + tf.date.strftime("%B %d, %Y") + '</span>'
+                    return tf.date.strftime("%B %d, %Y")
             except KeyError:
                 continue
-        return ''
+        return None
 
     # Build wheel data for the template
     current = test_results_list[0]
