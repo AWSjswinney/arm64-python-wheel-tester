@@ -11,7 +11,7 @@ for image in 'ubuntu:jammy' 'ubuntu:noble' 'amazonlinux:2023'; do
     docker pull ${image}
 done
 
-for image in 'jammy' 'noble' 'amazon-linux2023' 'amazon-linux2023-py311'; do
+for image in 'jammy' 'noble' 'amazon-linux2023' 'amazon-linux2023-py311' 'amazon-linux2023-py313'; do
     docker build -t wheel-tester/${image} -f docker/Dockerfile.${image} .
 done
 

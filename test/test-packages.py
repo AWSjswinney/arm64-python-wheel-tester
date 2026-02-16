@@ -47,6 +47,7 @@ def main():
             'noble': ['PIP'],
             'amazon-linux2023': ['PIP', 'YUM'],
             'amazon-linux2023-py311': ['PIP'],
+            'amazon-linux2023-py313': ['PIP'],
         }
         if args.container is not None and len(args.container) > 0:
             test_containers = args.container

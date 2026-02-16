@@ -1,0 +1,13 @@
+FROM amazonlinux:2023
+
+RUN dnf install -y \
+        "@Development tools" \
+        python3.13-devel \
+        python3.13-pip \
+        libgomp \
+        mesa-libGL
+
+RUN python3.13 -m venv /python-venv
+ENV PATH=/python-venv/bin:$PATH
+ENV VIRTUAL_ENV=/python-venv
+RUN pip install --upgrade pip
