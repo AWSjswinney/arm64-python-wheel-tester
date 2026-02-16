@@ -196,6 +196,42 @@ def save_results(results, output_dir):
         count += 1
     print(f"Saved {count} result files to {output_dir}")
 
+def push_to_gh_pages(repo_path, results_dir):
+    """Commit extracted result files into the gh-pages branch of the given repo."""
+    import shutil
+
+    results_dest = os.path.join(repo_path, "results")
+    os.makedirs(results_dest, exist_ok=True)
+
+    # Check out gh-pages
+    subprocess.run(["git", "checkout", "gh-pages"], check=True, cwd=repo_path)
+
+    # Copy result files
+    count = 0
+    for fname in sorted(os.listdir(results_dir)):
+        if fname.startswith("results-") and fname.endswith(".json"):
+            shutil.copy2(os.path.join(results_dir, fname), os.path.join(results_dest, fname))
+            count += 1
+
+    if count == 0:
+        print("No result files to commit")
+        return
+
+    subprocess.run(["git", "add", "results/"], check=True, cwd=repo_path)
+
+    # Check if there's anything to commit
+    result = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=repo_path)
+    if result.returncode == 0:
+        print("No new results to commit")
+        return
+
+    subprocess.run(
+        ["git", "commit", "-m", f"Add {count} extracted result files"],
+        check=True, cwd=repo_path
+    )
+    print(f"Committed {count} result files to gh-pages in {repo_path}")
+    print("Review the commit and push with: git push origin gh-pages")
+
 def main():
     parser = argparse.ArgumentParser(description='Extract test results from multiple commits.')
     parser.add_argument('--repo', type=str, default='arm64-python-wheel-tester-pages',
@@ -208,6 +244,8 @@ def main():
                         help='Output directory for result files (default: results)')
     parser.add_argument('--processes', type=int, default=multiprocessing.cpu_count(),
                         help=f'Number of processes to use (default: {multiprocessing.cpu_count()})')
+    parser.add_argument('--push-to-gh-pages', type=str, metavar='REPO_PATH',
+                        help='Commit result files into the gh-pages branch of the given repo')
     args = parser.parse_args()
     
     # Initialize the results structure
@@ -236,6 +274,9 @@ def main():
         save_results(results, args.output_dir)
         
         print(f"Processed {len(results['executions'])} commits successfully")
+
+        if args.push_to_gh_pages:
+            push_to_gh_pages(args.push_to_gh_pages, args.output_dir)
         
     except Exception as e:
         print(f"Error: {e}")
