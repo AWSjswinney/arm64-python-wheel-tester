@@ -158,25 +158,19 @@ def parse_html_results(html_content):
                             # Assume latest version is the same as installed version
                             dist_results["latest-version"] = version_match.group(1)
                 
-                # Check for build required badge
-                build_badge = col.select_one('span.build.badge')
-                if build_badge and 'build' in build_badge.text:
-                    dist_results["build-required"] = True
+                # Check warning badges (build required, slow install)
+                warning_badges = col.select('span.warning.badge')
+                for badge in warning_badges:
+                    if 'build required' in badge.text:
+                        dist_results["build-required"] = True
+                    if 'slow install' in badge.text:
+                        dist_results["slow-install"] = True
                 
-                # Check for binary wheel badge
-                binary_badge = col.select_one('span.binary.badge')
-                if binary_badge and 'binary' in binary_badge.text:
-                    dist_results["binary-wheel"] = True
-                
-                # Check for slow install badge
-                slow_badge = col.select_one('span.slow.badge')
-                if slow_badge and 'slow' in slow_badge.text:
-                    dist_results["slow-install"] = True
-                
-                # Check for timeout badge
-                timeout_badge = col.select_one('span.timeout.badge')
-                if timeout_badge and 'timeout' in timeout_badge.text:
-                    dist_results["timeout"] = True
+                # Check for timeout badge (uses 'failed' class)
+                failed_badges = col.select('span.failed.badge')
+                for badge in failed_badges:
+                    if 'timed out' in badge.text:
+                        dist_results["timeout"] = True
                 
                 package_results[package_name][dist_name] = dist_results
     
@@ -241,13 +235,7 @@ def main():
                 else:
                     print(f"Failed to extract test results for {commit_datetime}")
         
-        # Save all results to a single JSON file
-        output_path = args.output
-        if not output_path:
-            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-            output_path = os.path.join(os.getcwd(), f"extracted-results-{timestamp}.json")
-        
-        save_results(results, output_path)
+        save_results(results, args.output)
         
         print(f"Processed {len(results['executions'])} commits successfully")
         
