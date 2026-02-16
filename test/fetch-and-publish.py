@@ -12,7 +12,7 @@ import importlib
 import subprocess
 from datetime import datetime, timedelta
 
-process_results = importlib.import_module("process-results")
+process_results = importlib.import_module("generate-report")
 
 def main():
     parser = argparse.ArgumentParser(description="Generate the static website")

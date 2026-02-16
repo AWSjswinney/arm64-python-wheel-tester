@@ -179,7 +179,7 @@ def parse_html_results(html_content):
 def save_results(results, output_dir):
     """
     Save each execution as an individual JSON file, matching the format
-    consumed by process-results.py.
+    consumed by generate-report.py.
     
     Args:
         results: Dictionary with "executions" key

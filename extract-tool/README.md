@@ -11,7 +11,7 @@ allows you to extract the test results directly from multiple commits in a repos
 which contains the rendered website with all the test results.
 
 The intent is to extract results from the `gh-pages` branch and save them in a
-structured JSON format. In the future, `generate-website.py` can be updated to
+structured JSON format. In the future, `fetch-and-publish.py` can be updated to
 consume this format directly, eliminating the need to fetch history via the GitHub
 artifacts API.
 
@@ -81,13 +81,13 @@ The script will:
 3. Display a progress bar to track the processing
 4. Save all results to a single JSON file
 
-## Integration with generate-website.py
+## Integration with fetch-and-publish.py
 
 This script is the first step toward replacing the GitHub artifacts-based history
-in `generate-website.py`. The workflow will be:
+in `fetch-and-publish.py`. The workflow will be:
 
 1. Run this script to extract historical results from the `gh-pages` branch
-2. Update `generate-website.py` to read from the extracted JSON instead of fetching artifacts
+2. Update `fetch-and-publish.py` to read from the extracted JSON instead of fetching artifacts
 3. Going forward, save new results in this JSON format alongside the HTML
 
 This integration is not yet complete.
