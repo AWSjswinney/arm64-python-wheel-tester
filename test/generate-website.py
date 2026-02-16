@@ -79,7 +79,7 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
 
 def fetch_local_results(results_dir, exclude_fname=None):
     """Load result files from a local directory, excluding the current run's file."""
-    fnames = sorted(glob.glob(os.path.join(results_dir, 'results-*.json.xz')), reverse=True)
+    fnames = sorted(glob.glob(os.path.join(results_dir, 'results-*.json*')), reverse=True)
     if exclude_fname:
         exclude_base = os.path.basename(exclude_fname)
         fnames = [f for f in fnames if os.path.basename(f) != exclude_base]
