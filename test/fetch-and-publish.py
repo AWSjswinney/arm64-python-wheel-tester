@@ -77,13 +77,18 @@ def generate_website(output_dir, new_results, github_token, days_ago_list=[], re
 
 
 
-def fetch_local_results(results_dir, exclude_fname=None, max_results=90):
-    """Load result files from a local directory, excluding the current run's file."""
+def fetch_local_results(results_dir, exclude_fname=None, max_results=2500):
+    """Load result files from a local directory, excluding the current run's file.
+    
+    max_results caps history to limit memory (~0.8 MB per file in memory).
+    Default of 2500 keeps usage under ~2 GB.
+    """
     fnames = sorted(glob.glob(os.path.join(results_dir, 'results-*.json*')), reverse=True)
     if exclude_fname:
         exclude_base = os.path.basename(exclude_fname)
         fnames = [f for f in fnames if os.path.basename(f) != exclude_base]
-    if max_results and len(fnames) > max_results:
+    if len(fnames) > max_results:
+        print(f"Limiting to {max_results} most recent result files (of {len(fnames)})")
         fnames = fnames[:max_results]
     if not fnames:
         print("Warning: No previous result files found in " + results_dir)
