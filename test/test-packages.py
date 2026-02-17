@@ -176,6 +176,11 @@ def do_test(package_main_name, package_list, container, test_sh_script, test_py_
             encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     container_id = proc.stdout.strip()
 
+    if proc.returncode != 0 or not container_id:
+        print(f"{package_manager}: Package {package_main_name} on {test_name} failed to start container: {container_id}")
+        result['output'] = container_id
+        return result
+
     # wait until the timeout for the container to complete
     while True:
         time.sleep(1)
