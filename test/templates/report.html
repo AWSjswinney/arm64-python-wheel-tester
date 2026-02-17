@@ -56,27 +56,7 @@ table.python-wheel-report th {
     background-color: white;
 }
 
-table.python-wheel-report span.perfect-score {
-    color: white;
-    background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
-}
-
-table.python-wheel-report span.test-name, span.failed {
-    color: white;
-    background: linear-gradient(to bottom, #f85032 0%, #f16f5c 50%, #f6290c 51%, #f02f17 71%, #e73827 100%);
-}
-
-table.python-wheel-report span.all-passed, span.passed {
-    color: white;
-    background: linear-gradient(to bottom, #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
-}
-
-table.python-wheel-report span.build-required, span.warning {
-    color: white;
-    background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
-}
-
-table.python-wheel-report span.slow-install {
+table.python-wheel-report span.warning {
     color: white;
     background: linear-gradient(to bottom, #ffd65e 0%, #febf04 100%);
 }
@@ -96,22 +76,25 @@ table.python-wheel-report tr.odd {
     background-color: #f1f1f1;
 }
 
-table.python-wheel-report td.wheel-name.different {
-    background: #d1ffd9;
-    font-style: italic;
-}
-
 input.output-toggle {
     display: none;
 }
 label.output-toggle {
     cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.8em;
 }
 input.output-toggle + label.output-toggle + pre.output-content {
     display: none;
 }
 input.output-toggle:checked + label.output-toggle + pre.output-content {
     display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    font-size: 0.75em;
+    background: #f8f8f8;
+    padding: 4px;
+    border: 1px solid #ddd;
 }
 
 </style>
@@ -164,9 +147,9 @@ is always shown, regardless of whether there is any difference.</p>
   <td>
     {% if wheel.distro_passing is not none %}
       {% if wheel.distro_passing %}
-        <span class="passed badge">yes</span>
+        ✅
       {% else %}
-        <span class="failed badge">no</span>
+        ❌
         {% if wheel.distro_last_passing %}
         <br /><span class="file-indicator">last passed on {{ wheel.distro_last_passing }}</span>
         {% endif %}
@@ -178,15 +161,16 @@ is always shown, regardless of whether there is any difference.</p>
     {% if test_name in wheel.results %}
     {% set result = wheel.results[test_name] %}
       {% if result['test-passed'] %}
-        <span class="passed badge">passed</span>
+        {% if result['installed-version'] %}
+        <span title="installed {{ result['installed-version'] }}">✅</span>
+        {% else %}
+        ✅
+        {% endif %}
       {% else %}
-        <span class="failed badge">failed</span>
-      {% endif %}
-      {% if result['installed-version'] %}
-        <span class="passed badge">installed version {{ result['installed-version'] }}</span>
+        ❌
       {% endif %}
       {% if result['installed-version'] and result['installed-version'] != result['latest-version'] %}
-        <span class="warning badge">latest version {{ result['latest-version'] }}</span>
+        <span class="warning badge">latest {{ result['latest-version'] }}</span>
       {% endif %}
       {% if result['build-required'] %}
         <span class="warning badge">build required</span>
@@ -195,7 +179,7 @@ is always shown, regardless of whether there is any difference.</p>
         <span class="warning badge">slow install</span>
       {% endif %}
       {% if result.get('timeout') %}
-        <span class="failed badge">timed out</span>
+        ⏱️
       {% endif %}
       {% if not result['test-passed'] or result.get('timeout') %}
         {% if wheel.last_passing.get(test_name) %}
@@ -203,8 +187,8 @@ is always shown, regardless of whether there is any difference.</p>
         {% endif %}
         {% set output_id = "output_%s_%s_%s"|format(current_date, wheel.name, test_name)|e %}
         <input type="checkbox" id="{{ output_id }}" class="output-toggle" />
-        <label for="{{ output_id }}" class="output-toggle">Toggle Output</label>
-        <pre class="output-content">{{ result['output']|e }}</pre>
+        <label for="{{ output_id }}" class="output-toggle">show log</label>
+        <pre class="output-content">{{ result['output']|e|tail_lines(20) }}</pre>
       {% endif %}
     {% endif %}
   </td>

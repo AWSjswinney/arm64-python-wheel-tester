@@ -233,6 +233,7 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
     # Render template
     template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     env = Environment(loader=FileSystemLoader(template_dir), autoescape=False)
+    env.filters['tail_lines'] = lambda text, n=20: '\n'.join(text.splitlines()[-n:])
     template = env.get_template('report.html')
     return template.render(
         pretty_date=current.date.strftime("%B %d, %Y"),
