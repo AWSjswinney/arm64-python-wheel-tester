@@ -1,4 +1,4 @@
-FROM public.ecr.aws/ubuntu/ubuntu:jammy
+FROM public.ecr.aws/ubuntu/ubuntu:resolute
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
@@ -9,6 +9,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     libglib2.0-0 \
     tzdata
 
-RUN /bin/bash -c "python3 -m venv /python-venv && source /python-venv/bin/activate && pip install --upgrade pip"
+RUN python3 -m venv /python-venv
 ENV PATH=/python-venv/bin:$PATH
 ENV VIRTUAL_ENV=/python-venv
+RUN pip install --upgrade pip

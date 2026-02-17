@@ -45,6 +45,7 @@ def main():
         containers = {
             'jammy': ['PIP', 'APT'],
             'noble': ['PIP'],
+            'resolute': ['PIP'],
             'amazon-linux2023': ['PIP', 'YUM'],
             'amazon-linux2023-py311': ['PIP'],
             'amazon-linux2023-py313': ['PIP'],

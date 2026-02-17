@@ -51,7 +51,7 @@ def get_package_name_class(test_name):
         return 'package-pip'
 
 def get_distribution_name(test_name):
-    distros = ["amazon-linux2", "centos8", "focal", "jammy", "noble"]
+    distros = ["amazon-linux2023", "jammy", "noble", "resolute"]
     for distro in distros:
         if distro in test_name:
             return distro
