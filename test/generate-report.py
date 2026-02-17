@@ -103,7 +103,10 @@ def get_wheel_ranks():
         print('unable to parse top pypi packages list; the format may have changed')
         return []
 
+RETIRED_DISTROS = ['amazon-linux2', 'amazon-linux2-py38', 'centos8', 'centos8-py38', 'centos8-yum', 'focal', 'focal-apt']
+
 def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compare_weekday_num=None):
+    ignore_tests = list(ignore_tests) + RETIRED_DISTROS
 
     test_results_list = []
     for fname in test_results_fname_list:
