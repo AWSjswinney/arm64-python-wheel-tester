@@ -133,7 +133,6 @@ is always shown, regardless of whether there is any difference.</p>
 <tr>
   <th></th>
   <th>rank by downloads on pypi</th>
-  <th>at least one passing option per distribution?</th>
   {% for test_name in all_test_names %}
   <th class="test-column {{ get_package_name_class(test_name) }}">{{ test_name }}</th>
   {% endfor %}
@@ -144,18 +143,6 @@ is always shown, regardless of whether there is any difference.</p>
 <tr class="wheel-line {{ loop.cycle('odd', 'even') }}">
   <td class="wheel-name">{{ wheel.name }}</td>
   <td>{{ wheel.rank }}</td>
-  <td>
-    {% if wheel.distro_passing is not none %}
-      {% if wheel.distro_passing %}
-        ✅
-      {% else %}
-        ❌
-        {% if wheel.distro_last_passing %}
-        <br /><span class="file-indicator">last passed on {{ wheel.distro_last_passing }}</span>
-        {% endif %}
-      {% endif %}
-    {% endif %}
-  </td>
   {% for test_name in all_test_names %}
   <td class="test-column {{ get_package_name_class(test_name) }}">
     {% if test_name in wheel.results %}

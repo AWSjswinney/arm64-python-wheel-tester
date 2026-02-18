@@ -166,13 +166,12 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
         else:
             print("Warning: No valid reference test file found for comparison")
 
-        labels = ['date', 'number of wheels', 'all tests passed', 'some tests failed', 'each dist has passing option']
+        labels = ['date', 'number of wheels', 'all tests passed', 'some tests failed']
         columns = []
         for tf in files_to_summarize:
             count = len(tf.content)
             failures = len(get_failing_tests(tf.content))
-            passing_options = len([w for w in tf.wheels.values() if w['each-distribution-has-passing-option']])
-            columns.append([tf.date.strftime("%A, %B %d, %Y"), count, count - failures, failures, passing_options])
+            columns.append([tf.date.strftime("%A, %B %d, %Y"), count, count - failures, failures])
 
         has_ref = len(columns) == 2
         for i, label in enumerate(labels):
@@ -190,11 +189,7 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
     def date_of_last_passing(wheel, test_name):
         for tf in test_results_list[1:]:
             try:
-                if test_name == 'each-distribution-has-passing-option':
-                    passed = tf.wheels[wheel][test_name]
-                else:
-                    passed = tf.content[wheel][test_name]['test-passed']
-                if passed:
+                if tf.content[wheel][test_name]['test-passed']:
                     return tf.date.strftime("%B %d, %Y")
             except KeyError:
                 continue
@@ -209,13 +204,6 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
         except (IndexError, ValueError):
             rank = '~'
 
-        distro_passing = None
-        distro_last_passing = ''
-        if wheel_name in current.wheels:
-            distro_passing = current.wheels[wheel_name]['each-distribution-has-passing-option']
-            if not distro_passing:
-                distro_last_passing = date_of_last_passing(wheel_name, 'each-distribution-has-passing-option')
-
         results = {}
         last_passing = {}
         if wheel_name in current.content:
@@ -227,8 +215,6 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
         wheels.append({
             'name': wheel_name,
             'rank': rank,
-            'distro_passing': distro_passing,
-            'distro_last_passing': distro_last_passing,
             'results': results,
             'last_passing': last_passing,
         })
