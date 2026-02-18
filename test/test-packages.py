@@ -22,11 +22,10 @@ TIMEOUT = 180
 
 def main():
     parser = argparse.ArgumentParser(description="Run wheel tests")
-    parser.add_argument('--token', type=str, help="Github API token")
     parser.add_argument('--ignore', type=str, action='append', help='Ignore tests with the specified name; can be used more than once.', default=[])
     parser.add_argument('--container', type=str, nargs='*', help='Specify which containers to test')
     parser.add_argument('--packages', type=str, nargs='*', help='Specify which packages to test')
-    parser.add_argument('--skip-webpage', action='store_true', help='Do not download history from GitHub to generate the web report')
+    parser.add_argument('--skip-webpage', action='store_true', help='Do not generate the web report')
     parser.add_argument('--results-dir', type=str, help='Local directory containing previous result files', default=None)
     args = parser.parse_args()
 
@@ -112,8 +111,6 @@ def main():
     print("generate the website...")
     generate_website.generate_website(output_dir='build',
             new_results=new_results_file,
-            github_token=args.token,
-            days_ago_list=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 21],
             compare_weekday_num=0,
             ignore_tests=args.ignore,
             results_dir=args.results_dir)

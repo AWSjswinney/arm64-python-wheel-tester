@@ -38,11 +38,8 @@ jobs:
           -v $(pwd)/test:/io \
           -v $(pwd):/repo \
           --env WORK_PATH=$(realpath test) \
-          --env GITHUB_REPOSITORY="$GITHUB_REPOSITORY" \
-          --env GITHUB_API_URL="$GITHUB_API_URL" \
           wheel-tester/testhost python3 /io/test-packages.py \
-                     --results-dir /io/previous-results \
-                     --token ${{ secrets.GITHUB_TOKEN }}
+                     --results-dir /io/previous-results
 
       - name: "Upload results file"
         uses: actions/upload-artifact@v4
