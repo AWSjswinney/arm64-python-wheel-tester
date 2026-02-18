@@ -1,13 +1,16 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/4.0.1/css/fixedHeader.dataTables.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.slim.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/4.0.1/js/dataTables.fixedHeader.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
             $('#python-wheel-report').DataTable({
-                paginate: false
+                paging: false,
+                fixedHeader: true
             });
         });
 </script>
@@ -51,9 +54,11 @@ table.python-wheel-report td, table.python-wheel-report th {
 }
 
 table.python-wheel-report th {
-    position:sticky;
-    top:0px;
     background-color: white;
+}
+
+table.python-wheel-report thead th {
+    border-bottom: 2px solid #ddd;
 }
 
 table.python-wheel-report span.warning {
