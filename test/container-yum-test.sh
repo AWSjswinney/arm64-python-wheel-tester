@@ -4,4 +4,4 @@ set -e
 
 cd /io
 yum install -y $PACKAGE_LIST
-python3 test-script.py
+/usr/bin/python3 test-script.py
