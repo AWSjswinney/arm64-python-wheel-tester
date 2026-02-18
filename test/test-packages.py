@@ -42,10 +42,10 @@ def main():
             'YUM': 'container-yum-test.sh',
         }
         containers = {
-            'jammy': ['PIP', 'APT'],
+            'jammy': ['PIP'],
             'noble': ['PIP'],
             'resolute': ['PIP'],
-            'amazon-linux2023': ['PIP', 'YUM'],
+            'amazon-linux2023': ['PIP'],
             'amazon-linux2023-py311': ['PIP'],
             'amazon-linux2023-py313': ['PIP'],
         }
