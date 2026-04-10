@@ -509,13 +509,13 @@ packages:
     PKG_TEST: import iminuit
   - PKG_NAME: hidapi
     PIP_NAME: hidapi
-    PKG_TEST: import hidapi
+    PKG_TEST: import hid
   - PIP_NAME: fastrlock
     PKG_NAME: fastrlock
     PKG_TEST: import fastrlock.rlock
   - PKG_NAME: pyagrum-nightly
     PIP_NAME: pyagrum-nightly
-    PKG_TEST: import pyAgrum
+    PKG_TEST: import pyagrum
   - PIP_NAME: pygeos
     PKG_NAME: pygeos
     PKG_TEST: import pygeos
@@ -538,7 +538,7 @@ packages:
       parser = MarkdownParser()
   - PKG_NAME: pyagrum
     PIP_NAME: pyagrum
-    PKG_TEST: import pyAgrum
+    PKG_TEST: import pyagrum
   - PKG_NAME: rjsmin
     PIP_NAME: rjsmin
     PKG_TEST: import rjsmin
