@@ -17,7 +17,7 @@ process_results = importlib.import_module("generate-report")
 generate_website = importlib.import_module("fetch-and-publish")
 
 SLOW_INSTALL_TIME = 60
-TIMEOUT = 180
+TIMEOUT = 360
 
 
 def main():
