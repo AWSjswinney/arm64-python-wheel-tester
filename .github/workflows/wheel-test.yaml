@@ -24,12 +24,6 @@ jobs:
       - name: Setup or update test containers
         run: test/setup-containers.sh
 
-      - name: Fetch previous results from gh-pages
-        run: |
-          mkdir -p test/previous-results
-          git fetch origin gh-pages || true
-          git checkout origin/gh-pages -- results/ 2>/dev/null && mv results/* test/previous-results/ && rm -rf results/ || echo "No previous results on gh-pages"
-
       - name: Execute tests and generate report
         run: |
           docker run -i --rm \
@@ -39,20 +33,13 @@ jobs:
           -v $(pwd):/repo \
           --env WORK_PATH=$(realpath test) \
           wheel-tester/testhost python3 /io/test-packages.py \
-                     --results-dir /io/previous-results
-
-      - name: "Upload results file"
-        uses: actions/upload-artifact@v4
-        with:
-          name: results
-          path: |
-            test/results/results*.json.xz
-            test/results/report*.html
+                     --results-branch origin/gh-pages \
+                     --repo-path /repo
 
       - name: Copy results for gh-pages
         run: |
           mkdir -p test/build/results
-          cp test/results/results-*.json.xz test/build/results/
+          cp test/results/results-*.json test/build/results/
 
       - name: Upload report to github pages
         uses: JamesIves/github-pages-deploy-action@4.1.5

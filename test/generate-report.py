@@ -151,7 +151,8 @@ def print_table_by_distro_report(test_results_fname_list, ignore_tests=[], compa
         reference_date = test_results_list[0].date
         reference_date = reference_date.replace(hour=23, minute=59)
         reference_date = reference_date - timedelta(days=reference_date.weekday()) + timedelta(days=compare_weekday_num)
-        reference_date -= timedelta(days=7)
+        if reference_date >= test_results_list[0].date:
+            reference_date -= timedelta(days=7)
 
         reference_test_file = None
         for tf in test_results_list:

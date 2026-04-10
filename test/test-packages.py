@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--packages', type=str, nargs='*', help='Specify which packages to test')
     parser.add_argument('--skip-webpage', action='store_true', help='Do not generate the web report')
     parser.add_argument('--results-dir', type=str, help='Local directory containing previous result files', default=None)
+    parser.add_argument('--results-branch', type=str, help='Git branch containing previous result files (e.g. fork/gh-pages)', default=None)
+    parser.add_argument('--repo-path', type=str, help='Path to the git repo (for use with --results-branch)', default='.')
     args = parser.parse_args()
 
     # change working directory the path of this script
@@ -93,10 +95,9 @@ def main():
         pass
     with open(f'{output_dir}/results.json', 'w') as f:
         json.dump(results, f, indent=2)
-    subprocess.run(['xz', 'results.json'], check=True, cwd=output_dir)
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    new_results_file = f'{output_dir}/results-{now}.json.xz'
-    os.rename(f'{output_dir}/results.json.xz', new_results_file)
+    new_results_file = f'{output_dir}/results-{now}.json'
+    os.rename(f'{output_dir}/results.json', new_results_file)
 
     print("process results...")
     # Also generate an html report of the results
@@ -113,7 +114,9 @@ def main():
             new_results=new_results_file,
             compare_weekday_num=0,
             ignore_tests=args.ignore,
-            results_dir=args.results_dir)
+            results_dir=args.results_dir,
+            results_branch=args.results_branch,
+            repo_path=args.repo_path)
 
 
 process_work_dir = ''
